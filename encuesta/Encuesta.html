@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Audición</title>
+    <link rel="stylesheet" href="/encuesta/codigo.css">
+    <!-- Incluir la librería SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="volver-box">
+        <a href="/inicio/index.html">← Volver</a>
+    </div>
+    <div class="container">
+        <h1>sol</h1>
+        <form id="surveyForm">
+            <div class="question">
+                <label for="audioQuality">1. ¿Cómo calificarías la calidad del audio en los videos didácticos?</label><br>
+                <select id="audioQuality" name="audioQuality" required>
+                    <option value="Excelente">Excelente</option>
+                    <option value="Buena">Buena</option>
+                    <option value="Regular">Regular</option>
+                    <option value="Mala">Mala</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label for="videoTest">2. Reproduce el audio, ponga pausa cuando deje de escuchar el sonido:</label><br>
+                <div class="video-container">
+                    <video id="videoTest" width="320" height="240" controls>
+                        <source src="/video/How Old Are Your Ears_ _ HEARING TEST! - White Noise & Relaxation (720p, h264, youtube) (online-video-cutter.com).mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de este video.
+                    </video>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="hearingIssues">3. ¿Has tenido problemas para escuchar el audio?</label><br>
+                <input type="radio" id="yes" name="hearingIssues" value="Sí" required>
+                <label for="yes">Sí</label>
+                <input type="radio" id="no" name="hearingIssues" value="No">
+                <label for="no">No</label>
+            </div>
+
+            <div class="question">
+                <label for="suggestions">4. ¿Desde qué edad dejaste de escuchar?</label><br>
+                <textarea id="suggestions" name="suggestions" rows="4"></textarea>
+            </div>
+            
+            <div class="question">
+                <label for="hearWell">5. ¿Escuchas bien?</label>
+                <select id="hearWell" name="hearWell" onchange="handleSelection()">
+                    <option value="">Selecciona una opción</option>
+                    <option value="yes">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div id="followUp" class="hidden">
+                <label for="details">¿Puedes proporcionar más detalles?</label>
+                <textarea id="details" name="details" rows="4"></textarea>
+            </div>
+
+            <div class="question">
+                <label for="ageHearingIssues">6. ¿A qué edad empezaste a notar problemas de audición?</label><br>
+                <input type="number" id="ageHearingIssues" name="ageHearingIssues" min="0" max="100" placeholder="Edad (años)">
+            </div>
+
+            <div class="question">
+                <label for="familyHistory">7. ¿Hay antecedentes familiares de hipoacusia?</label><br>
+                <input type="radio" id="familyYes" name="familyHistory" value="Sí" required>
+                <label for="familyYes">Sí</label>
+                <input type="radio" id="familyNo" name="familyHistory" value="No">
+                <label for="familyNo">No</label>
+            </div>
+
+            <div class="question">
+                <label for="consultation">8. ¿Has consultado a un profesional de la salud sobre tu audición?</label><br>
+                <input type="radio" id="consultationYes" name="consultation" value="Sí" required>
+                <label for="consultationYes">Sí</label>
+                <input type="radio" id="consultationNo" name="consultation" value="No">
+                <label for="consultationNo">No</label>
+            </div>
+
+            <div class="question">
+                <label for="hearingAid">9. ¿Utilizas algún dispositivo de asistencia auditiva (audífonos, implantes, etc.)?</label><br>
+                <input type="radio" id="aidYes" name="hearingAid" value="Sí" required>
+                <label for="aidYes">Sí</label>
+                <input type="radio" id="aidNo" name="hearingAid" value="No">
+                <label for="aidNo">No</label>
+            </div>
+
+            <div class="question">
+                <label for="audioClarity">10. ¿Cuánto calificarías nuestro test de audición? (1 a 100)</label><br>
+                <input type="range" id="audioClarity" name="audioClarity" min="1" max="100" value="50" oninput="document.getElementById('rangeValue').textContent = this.value">
+                <span id="rangeValue">50</span>
+            </div>
+
+            <button type="submit">Enviar</button>
+            <button type="button" onclick="document.getElementById('surveyForm').reset();">Borrar</button>
+        </form>
+    </div>
+
+    <script src="/encuesta/Codigo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>
