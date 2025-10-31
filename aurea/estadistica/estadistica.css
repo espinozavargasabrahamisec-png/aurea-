@@ -1,0 +1,249 @@
+/* ================= GENERAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    color: #222;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ================= HEADER ================= */
+header {
+    color: white;
+    padding: 6rem 20px;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+        url(https://azurecdn.widex.com/-/media/widex/global/images/campaigns/widex-sound-philosophy/sound-philosophy_woman-with-friends_1920x1080.jpg?w=1900&rev=e1908d21f1f94ca0a91f8e2219131e92&extension=webp&hash=94388D80FC8D302AF6B61F0DEC511D15) no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+
+
+.volver-box a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.volver-box a:hover {
+    text-decoration: underline;
+}
+
+/* ================= SECCIÓN DE BIENVENIDA ================= */
+.welcome {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.welcome .text-content {
+    flex: 1;
+    min-width: 250px;
+    margin-right: 20px;
+}
+
+.welcome .text-content h2 {
+    font-size: 28px;
+    color: #851111;
+    margin-bottom: 10px;
+}
+
+.welcome .text-content p {
+    font-size: 16px;
+    color: #555;
+}
+
+.welcome .image-box {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.welcome .image-box img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ================= SECCIÓN SOBRE AUDÍFONOS ================= */
+.about {
+    background-color: #fff;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.about h2 {
+    font-size: 32px;
+    color: #851111;
+    margin-bottom: 20px;
+}
+
+.text-image {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-image .text-content {
+    flex: 1;
+    min-width: 250px;
+    margin-right: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+.text-image .image-box {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.text-image .image-box img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ================= SECCIÓN DE BENEFICIOS ================= */
+.benefits {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.benefits h2 {
+    color: #851111;
+    margin-bottom: 30px;
+}
+
+.benefit-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: linear-gradient(90deg, #881118, #ff4800);
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer h4 {
+    font-weight: bold;
+}
+
+footer p {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+footer hr {
+    border-top: 1px solid rgba(255,255,255,0.5);
+    margin: 20px 0;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    background: linear-gradient(135deg, #851111, #f2982e);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    border-radius: 0 0 15px 15px;
+    padding: 15px 20px;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #fff !important;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    font-weight: 600;
+    margin: 0 8px;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+    padding: 8px 16px;
+}
+
+.navbar-nav .nav-link:hover {
+    background: #fff;
+    color: #851111 !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.dropdown-menu {
+    background: #851111;
+    border-radius: 12px;
+}
+
+.dropdown-item {
+    color: #fff !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background: #f2982e;
+    transform: translateX(5px);
+}

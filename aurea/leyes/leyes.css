@@ -1,0 +1,179 @@
+/* ======================== VARIABLES DE COLOR ======================== */
+:root {
+  --aurea-granate: #851111;
+  --aurea-orange: #f2982e;
+  --aurea-dark: #222;
+  --aurea-gray: #555;
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+  --shadow: rgba(0,0,0,0.2);
+}
+
+/* ======================== BASE ======================== */
+body {
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  color: var(--aurea-dark);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background: url('https://www.resound.com/-/media/resound/resound-international/products/hearing-aids/nexia/overlay/full-family/rs_nx_hero-fade/hero-fade-overlay-rs_nx_concert_close2_00255-3200x1500-lighter2.ashx?w=3200') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* ======================== NAVBAR ======================== */
+.navbar {
+  background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
+  box-shadow: 0 6px 20px var(--shadow);
+  border-radius: 0 0 15px 15px;
+  padding: 15px 20px;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--white);
+}
+
+.navbar-nav .nav-link {
+  color: var(--white) !important;
+  font-weight: 600;
+  margin: 0 8px;
+  transition: all 0.3s ease;
+  border-radius: 30px;
+  padding: 8px 16px;
+}
+
+.navbar-nav .nav-link:hover {
+  background: var(--white);
+  color: var(--aurea-granate) !important;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.dropdown-menu {
+  background: var(--aurea-granate);
+  border-radius: 12px;
+}
+
+.dropdown-item {
+  color: var(--white) !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background: var(--aurea-orange);
+  transform: translateX(5px);
+}
+
+/* ======================== HEADER ======================== */
+header {
+  padding: 6rem 20px;
+  text-align: center;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+header h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--white);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  background: rgba(133, 17, 17, 0.7);
+  padding: 20px 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ======================== SECCIÓN DE LEYES ======================== */
+.welcome {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 50px 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  text-align: left;
+  color: var(--aurea-dark);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+  margin-bottom: 50px;
+  border: 2px solid var(--aurea-orange);
+}
+
+.welcome ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.welcome ul li {
+  margin: 25px 0;
+  font-size: 1.3em;
+  line-height: 1.8;
+  padding-left: 20px;
+  border-left: 4px solid var(--aurea-granate);
+}
+
+.welcome ul li span {
+  font-weight: bold;
+  color: var(--aurea-granate);
+  font-size: 1.2em;
+}
+
+.welcome p {
+  margin-top: 25px;
+  font-size: 1.25em;
+  color: var(--aurea-dark);
+  text-align: center;
+  font-style: italic;
+  padding: 15px;
+  background: rgba(242, 152, 46, 0.2);
+  border-radius: 10px;
+}
+
+/* ======================== FOOTER ======================== */
+footer {
+  background: linear-gradient(90deg, var(--aurea-granate), var(--aurea-orange));
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+  margin-top: 50px;
+  border-radius: 15px 15px 0 0;
+}
+
+footer h4 {
+  font-weight: bold;
+  color: white;
+}
+
+footer p {
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+footer hr {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ======================== RESPONSIVE ======================== */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+    padding: 15px 25px;
+  }
+  
+  .welcome {
+    padding: 30px 20px;
+  }
+  
+  .welcome ul li {
+    font-size: 1.1em;
+  }
+}
