@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   width: 260px; /* antes 440px → más proporcionado */
   height: 100px; /* antes 140px */
-  background-image: url('/aurea/docs/imagenes/Asset\ 2.png');
+  background-image: url('imagenes/Asset 2.png');
   background-size: contain;    /* conserva proporción del logo */
   background-repeat: no-repeat;
   background-position: center;
