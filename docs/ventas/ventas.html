@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venta de Audífonos</title>
+    <link rel="stylesheet" href="ventas.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="aurea2" href="/aurea/inicio/index.html">Logo Aurea</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-semibold" href="#">Inicio</a>
+                </li>
+                <li class="nav-item dropdown">
+    <a class="nav-link text-white fw-semibold dropdown-toggle" href="#servicios" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Servicios
+    </a>
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="/aurea/ventas/ventas.html">Audiologia</a></li>
+         <li><a class="dropdown-item" href="/perdidaauditiva/auditiva.html">Servicio Tecnico</a></li>
+          <li><a class="dropdown-item" href="/perdidaauditiva/auditiva.html">Laboratorio</a></li>
+    </ul>
+</li>
+
+<li class="nav-item dropdown">
+    <a class="nav-link text-white fw-semibold dropdown-toggle" href="#audifonos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Productos
+    </a>
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="/audifonos/tipo1.html">audifonos</a></li>
+        <li><a class="dropdown-item" href="/audifonos/tipo2.html">accesonios</a></li>
+       </ul>
+              
+
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-semibold" href="#contactanos">Nosotros</a>
+                </li>
+              </div>
+    </div>
+</nav>
+<!-- ----------------------------------------------------------------------------------* -->
+    <section class="audifonos-section">
+        <div class="containere">
+            <h2>Nuestros Audífonos</h2>
+            <p class="letras">Explora nuestra variedad de audífonos diseñados para mejorar tu experiencia auditiva.</p>
+
+            <div class="audifonos-grid">
+                <div class="audifono-item">
+                    <img src="https://cdn.audioservice.com/-/media/audioservice/global/images/products/hearing-aids/sr-li-7.jpg?w=1900&rev=b8f50a2ccab24170be765232cc1bb74b&extension=webp&hash=540C7E849051B52608263DA2436A2648" alt="Audífono Modelo 1">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h3>Audífono Compacto</h3>
+                     
+                    <p>Diseño compacto, discreto y ligero, ideal para el día a día.</p>
+                    <h2 id="modal-producto"></h2>
+                    <p id="modal-precio"></p>
+                    <button class="btn"onclick="confirmarCompra()">Mas Adetalles</button>
+                </div>
+                <div class="audifono-item">
+                    <img src="https://cdn.audioservice.com/-/media/audioservice/global/images/products/hearing-aids/r_li_7.jpg?w=1900&rev=3798c2c722744b0f888255f47dfcce4c&extension=webp&hash=BF0DEB54AF9C9AA072C460C3ED135752" alt="Audífono Modelo 2">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h3>Audífono Compacto</h3>
+                   
+                    <p>Diseño compacto, discreto y ligero, ideal para el día a día.</p>
+                    <h2 id="modal-producto"></h2>
+                    <p id="modal-precio"></p>
+                    <button class="btn"onclick="confirmarCompra()">Mas Adetalles</button>
+                </div>
+                <div class="audifono-item">
+                    <img src="https://cdn.audioservice.com/-/media/audioservice/global/images/products/hearing-aids/ite-li-7-pair.jpg?w=1900&rev=4b4118f5985041cdb285adab5b42f6a3&extension=webp&hash=F22B5EC0178F98C1C726B93113564B13" alt="Audífono Modelo 3">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h3>Audífono Compacto</h3>
+                    
+                    <p>Diseño compacto, discreto y ligero, ideal para el día a día.</p>
+                    <h2 id="modal-producto"></h2>
+                    <p id="modal-precio"></p>
+                    <button class="btn"onclick="confirmarCompra()">Mas Adetalles</button>
+                </div>
+                <div class="audifono-item">
+                    <img src="https://cdn.audioservice.com/-/media/audioservice/global/images/products/hearing-aids/ite-li-7-pair.jpg?w=1900&rev=4b4118f5985041cdb285adab5b42f6a3&extension=webp&hash=F22B5EC0178F98C1C726B93113564B13" alt="Audífono Modelo 3">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h3>Audífono Compacto</h3>
+                    
+                    <p>Diseño compacto, discreto y ligero, ideal para el día a día.</p>
+                    <h2 id="modal-producto"></h2>
+                    <p id="modal-precio"></p>
+                    <button class="btn"onclick="confirmarCompra()">Mas Adetalles</button>
+                </div>
+                <div class="audifono-item">
+                    <img src="https://cdn.audioservice.com/-/media/audioservice/global/images/products/hearing-aids/mood_g6-1020x680.png?w=1900&rev=f07004e59347429b817c10f0413e7074&extension=webp&hash=2A33446EAA612E870C47CB1C35A0DDC7" alt="Audífono Modelo 3">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h3>Audífono Compacto</h3>
+                    
+                    <p>Diseño compacto, discreto y ligero, ideal para el día a día.</p>
+                    <h2 id="modal-producto"></h2>
+                    <p id="modal-precio"></p>
+                    <button class="btn"onclick="confirmarCompra()">Mas Adetalles</button>
+                </div>
+                <div class="audifono-item">
+                   
+                    <img src="https://cdn.audioservice.com/-/media/audioservice/global/images/products/hearing-aids/duo-g4-4.png?w=1900&rev=dc94f2517b834250a2481f0378837b2d&extension=webp&hash=0959BB019EA3814149562C42C64D274B   " alt="Audífono Modelo 3">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h3>Audífono Compacto</h3>
+                  
+                    <p>Diseño compacto, discreto y ligero, ideal para el día a día.</p>
+                    <h2 id="modal-producto"></h2>
+                    <p id="modal-precio"></p>
+                    <button class="btn"onclick="confirmarCompra()">Mas Adetalles</button>
+                </div>
+            </div>
+            
+        </div>
+<!-- //---------------------------------------------js-------------------------------------------- -->
+  <!-- Lista de productos -->
+  <div class="products">
+    <!-- Audífono 1 -->
+    <div class="producta-carda">
+        <div class="imgBx">
+            <img id="producta-img-1" src="https://www.mr-hear.com/thumbnail/e0/46/d7/1653046150/Audio_Service-R_Li_7-black_1920x1920.png" alt="Audífono Tech Black">
+        </div>
+        <div class="details">
+            <h2>R8 Li-7 <span>G5</span></h2>
+            <p>Un audífono diseñado para ofrecer una experiencia de sonido completamente natural.</p>
+            <p class="producta-colors">Colores disponibles:
+                <span class="black" style="background-color: #000;" onclick="changeColor(1, 'black')"></span>
+                <span class="red" style="background-color: #4e3629;" onclick="changeColor(1, 'red')"></span>
+                <span class="blue" style="background-color: #858585;" onclick="changeColor(1, 'blue')"></span>
+            </p>
+           
+            <button class="btna">Enviar</button>
+        </div>
+    </div>
+
+    <!-- Audífono 2 -->
+    <div class="producta-carda">
+        <div class="imgBx">
+            <img id="producta-img-2" src="https://www.mr-hear.com/thumbnail/86/d2/ea/1653046150/Audio_Service-R_Li_7-deepbrown_1920x1920.png">
+        </div>
+        <div class="detailsa">
+            <h2>R 12-S-7  <span>G5</span></h2>
+            <p>Combina un diseño vibrante con la tecnología más avanzada en audífonos.</p>
+            <p class="producta-colors">Colores disponibles:
+                <span class="black" style="background-color: #000;" onclick="changeColor(2, 'black')"></span>
+                <span class="red" style="background-color: #4e3629;" onclick="changeColor(2, 'red')"></span>
+                <span class="blue" style="background-color: #858585;" onclick="changeColor(2, 'blue')"></span>
+            </p>
+            
+            <button class="btna">Enviar</button>
+        </div>
+    </div>
+
+    <!-- Audífono 3 -->
+    <div class="producta-carda">
+        <div class="imgBx">
+            <img id="producta-img-3" src="https://www.mr-hear.com/thumbnail/0b/aa/70/1653046150/Audio_Service-R_Li_7-grey_1920x1920.png" alt="Audífono Deep Blue">
+        </div>
+        <div class="detailsa">
+            <h2>R 16LiT-7  <span>G5</span></h2>
+            <p>Diseñado para un estilo de vida activo, con un sonido claro y natural.</p>
+            <p class="producta-colors">Colores disponibles:
+                <span class="black" style="background-color: #000;" onclick="changeColor(3, 'black')"></span>
+                <span class="red" style="background-color: #4e3629;" onclick="changeColor(3, 'red')"></span>
+                <span class="blue" style="background-color: #858585;" onclick="changeColor(3, 'blue')"></span>
+            </p>
+            
+            <button class="btna">Enviar</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Vendor Script -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<script>
+// JavaScript para cambiar imágenes cuando se presiona un color
+function changeColor(productId, color) {
+    const productImage = document.getElementById(`producta-img-${productId}`);
+
+    if (color === 'black') {
+        productImage.src = "https://www.mr-hear.com/thumbnail/e0/46/d7/1653046150/Audio_Service-R_Li_7-black_1920x1920.png";
+    } else if (color === 'red') {
+        productImage.src = "https://www.mr-hear.com/thumbnail/86/d2/ea/1653046150/Audio_Service-R_Li_7-deepbrown_1920x1920.png";
+    } else if (color === 'blue') {
+        productImage.src = "https://www.mr-hear.com/thumbnail/0b/aa/70/1653046150/Audio_Service-R_Li_7-grey_1920x1920.png";
+    }
+}
+</script>
+
+
+
+ <!-- ================= FOOTER ================= -->
+  <footer id="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Áurea Centro Auditivo</h4>
+        <p>Expertos en soluciones auditivas con más de 15 años de experiencia mejorando la calidad de vida de nuestros pacientes.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p>📍 Calle Principal, 123</p>
+        <p>📞 +34 912 345 678</p>
+        <p>✉️ info@aureaauditivo.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Horario</h4>
+        <p>Lunes a Viernes: 9:00 - 19:00</p>
+        <p>Sábados: 10:00 - 14:00</p>
+        <p>Domingos: Cerrado</p>
+      </div>
+      <div class="footer-col">
+        <h4>Síguenos</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i>FB</i></a>
+          <a href="#" aria-label="Instagram"><i>IG</i></a>
+          <a href="#" aria-label="Twitter"><i>TW</i></a>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <p>&copy; 2025 Áurea Centro Auditivo. Todos los derechos reservados.</p>
+  </footer>
+</body>
