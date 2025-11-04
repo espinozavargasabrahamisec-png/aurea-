@@ -70,6 +70,7 @@ h1, h2, h3, h4, h5, h6 {
 .dropdown-menu {
   background: var(--aurea-granate);
   border-radius: 12px;
+   overflow: hidden;
 }
 
 .dropdown-item {
@@ -80,7 +81,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .dropdown-item:hover {
   background: var(--aurea-orange);
-  transform: translateX(5px);
+  transform: translateX(3px);
+   border-radius: 8px; 
 }
 /* ----------- Logo de Aurea ----------- */
 .aurea2 {
