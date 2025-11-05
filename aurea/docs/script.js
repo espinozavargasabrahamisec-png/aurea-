@@ -31,4 +31,13 @@ window.scrollTo({
     behavior: "smooth"
 });
 });
-
+/* Cierre del menu automatico */
+document.querySelectorAll('.nav-item.dropdown').forEach(item => {
+  const menu = item.querySelector('.dropdown-menu');
+  let timeout;
+  item.addEventListener('mouseleave', () => {
+    timeout = setTimeout(() => {
+      menu.classList.remove('show');
+    }, 300); //retardo al cerrar
+  });
+});
