@@ -33,13 +33,11 @@ window.scrollTo({
 });
 /* Cierre del menu automatico */
 document.querySelectorAll('.nav-item.dropdown').forEach(item => {
-    item.addEventListener('mouseleave', () => {
-      const menu = item.querySelector('.dropdown-menu');
-      const bsDropdown = bootstrap.Dropdown.getInstance(
-        item.querySelector('[data-bs-toggle="dropdown"]')
-      );
-      if (bsDropdown && menu.classList.contains('show')) {
-        bsDropdown.hide();
-      }
-    });
+  const menu = item.querySelector('.dropdown-menu');
+  let timeout;
+  item.addEventListener('mouseleave', () => {
+    timeout = setTimeout(() => {
+      menu.classList.remove('show');
+    }, 300); //retardo al cerrar
   });
+});
