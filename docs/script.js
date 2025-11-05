@@ -31,4 +31,15 @@ window.scrollTo({
     behavior: "smooth"
 });
 });
-
+/* Cierre del menu automatico */
+document.querySelectorAll('.nav-item.dropdown').forEach(item => {
+    item.addEventListener('mouseleave', () => {
+      const menu = item.querySelector('.dropdown-menu');
+      const bsDropdown = bootstrap.Dropdown.getInstance(
+        item.querySelector('[data-bs-toggle="dropdown"]')
+      );
+      if (bsDropdown && menu.classList.contains('show')) {
+        bsDropdown.hide();
+      }
+    });
+  });
