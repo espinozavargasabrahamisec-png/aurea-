@@ -377,83 +377,94 @@ body {
     box-shadow: 0 20px 45px rgba(0,0,0,0.3);
 }
 
-/* ================= FOOTER ================= */
-#footer {
-    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-    color: #fff;
-    padding: 60px 0 20px;
-    text-align: center;
+/* ========================
+   FOOTER
+   ======================== */
+footer {
+  background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
+  color: var(--white);
+  padding: 50px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  border-radius: 15px 15px 0 0;
 }
 
-.footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    max-width: 1200px;
-    margin: 0 auto 40px;
+footer h4 {
+  font-weight: 1000;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
 }
 
-.footer-col {
-    flex: 1;
-    min-width: 250px;
-    margin: 20px;
+footer p {
+  margin-bottom: 10px;
+  color: rgba(255,255,255,0.9);
 }
 
-#footer h4 {
-    font-weight: bold;
-    margin-bottom: 15px;
-    font-size: 1.3rem;
-    position: relative;
-    display: inline-block;
+footer a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
 }
 
-#footer h4::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: var(--secondary-color);
-    border-radius: 2px;
+footer a:hover {
+  color: var(--aurea-orange);
+  text-decoration: underline;
 }
 
-#footer p {
-    font-size: 1rem;
-    margin-bottom: 10px;
+footer hr {
+  border-top: 1px solid rgba(255,255,255,0.3);
+  margin: 30px 0;
 }
 
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 15px;
+
+/* ========================
+   otro footer ojo
+   ======================== */
+
+footer {
+  background: linear-gradient(to right, #F4911E, #8B2C2C); /* amarillo arriba, rojo abajo */
+  color: #fff;
+  padding: 40px 0;
+  font-family: 'Poppins', sans-serif;
 }
 
-.social-icons a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background: #fff;
-    color: var(--primary-color);
-    border-radius: 50%;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
+footer h4 {
+  font-weight: bold;
+  color: #f8d5b3;
+  margin-bottom: 15px;
 }
 
-.social-icons a:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+footer p {
+  color: #f2f2f2;
+  line-height: 1.6;
+  font-size: 15px;
 }
 
-#footer hr {
-    border-top: 1px solid rgba(255,255,255,0.5);
-    margin: 20px auto;
-    width: 80%;
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
+footer .row {
+  margin-bottom: 20px;
+}
+
+footer .text-center {
+  text-align: center;
+}
+
+footer .text-md-start {
+  text-align: left;
+}
+
+footer .col-md-4 {
+  margin-bottom: 20px;
+}
+
+footer .col-md-4 p {
+  margin-bottom: 8px;
+}
+
 
 /* ================= ANIMATIONS ================= */
 @keyframes fadeIn {
