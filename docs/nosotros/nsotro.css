@@ -14,6 +14,139 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* prueba */
+.about-page * {
+  box-sizing: border-box;
+}
+
+.about-page {
+  font-family: inherit;
+  color: #333;
+  background-color: #f8fafc;
+  line-height: 1.6;
+}
+
+.about-page .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.about-page .about-intro {
+  background: linear-gradient(135deg, #F4911E, #8B2c2c);
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  border-radius: 0 0 25px 25px;
+}
+
+.about-page .about-intro h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.about-page .about-intro p {
+  font-size: 1.1em;
+}
+
+/* Grids */
+.about-page .grid-2,
+.about-page .grid-3 {
+  display: grid;
+  gap: 20px;
+}
+
+.about-page .grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.about-page .grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Tarjetas genéricas */
+.about-page .card,
+.about-page .service-card,
+.about-page .team-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-page .card:hover,
+.about-page .service-card:hover,
+.about-page .team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Sección títulos */
+.about-page h2,
+.about-page h3,
+.about-page h4 {
+  color: #8B2c2c;
+  margin-bottom: 15px;
+}
+
+/* Servicios */
+.about-page .service-card h4 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.about-page .service-card p {
+  color: #555;
+  font-size: 0.95em;
+}
+
+/* Equipo */
+.about-page .team-card {
+  text-align: center;
+}
+
+.about-page .team-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+/* Valores */
+.about-page .values-list {
+  list-style: none;
+  padding: 0;
+}
+
+.about-page .values-list li {
+  background: linear-gradient(135deg,  #F4911E, #8B2c2c);
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Compromiso */
+.about-page .about-commitment {
+  background: linear-gradient(135deg, #8B2c2c, #F4911E);
+  border-radius: 12px;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.about-page .about-commitment h2 {
+  color: #F4911E;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-page .about-intro h1 {
+    font-size: 2em;
+  }
+}
+
+
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -187,7 +320,7 @@ body {
 /* Header con onda */
 .wave-header {
   position: relative;
-  background: linear-gradient(135deg, var(--aurea-granate) 0%, #b72222 100%);
+  background: linear-gradient(135deg,  #F4911E, #8B2c2c);
   height: 500px;
   display: flex;
   align-items: center;
