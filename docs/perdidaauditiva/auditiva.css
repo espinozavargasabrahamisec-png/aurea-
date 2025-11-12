@@ -20,6 +20,116 @@ body {
     line-height: 1.6;
 }
 
+/* ----------- Logo de Aurea ----------- */
+.aurea2 {
+  display: inline-block;
+  width: 260px; /* antes 440px → más proporcionado */
+  height: 100px; /* antes 140px */
+  background-image: url('../imagenes/Asset 4.png');
+  background-size: contain;    /* conserva proporción del logo */
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2); /* sombra más natural */
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+/* ----------------------boton flotante---------------------- */
+/* Botón Facebook */
+.flotante.facebook {
+  background-color: #1877F2; /* Azul Facebook */
+  background-image: url('ruta/a/icono-facebook.png'); /* Opcional: icono personalizado */
+  bottom: 90px; /* Posición arriba del WhatsApp */
+}
+
+.flotante.facebook:hover {
+  background-color: #166FE5; /* Azul más oscuro al hover */
+}
+
+/* Si usas Font Awesome */
+.flotante.facebook .icono {
+  margin-top: 15px;
+  display: block;
+}
+/* Estilos base para botones flotantes */
+.flotante {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* WhatsApp */
+.flotante.whatsapp {
+  background-color: #25D366;
+  bottom: 20px;
+}
+
+/* Facebook */
+.flotante.facebook {
+  background-color: #1877F2;
+  bottom: 90px; /* 60px de altura + 10px de separación */
+}
+
+/* Efectos hover */
+.flotante:hover {
+  transform: scale(1.1);
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.flotante.whatsapp:hover {
+  background-color: #1DA851;
+}
+
+.flotante.facebook:hover {
+  background-color: #166FE5;
+}
+
+/* Iconos whap */
+.icono {
+  font-size: 30px;
+  margin-top: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+}
+
+/* Botón Scroll Top */
+.acroll {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 20px;
+  left: 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.acroll:hover {
+  background-color: #555;
+  transform: scale(1.1);
+}
 /* ================= CONTAINER ================= */
 .container {
     max-width: 1200px;
