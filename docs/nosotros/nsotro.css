@@ -333,13 +333,16 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
+  z-index: 2;
 }
 
 .header-content {
   text-align: center;
-  color: var(--white);
-  z-index: 1;
+  color: #fff;
+  z-index: 2;
+   margin-bottom: 80px; 
   padding: 0 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .header-content h1 {
@@ -348,11 +351,19 @@ body {
   margin-bottom: 15px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
-
+.header-content h1,
+.header-content p {
+  color: #fff;
+  text-shadow:
+    2px 2px 4px rgba(0,0,0,0.6),
+    0 0 10px rgba(0,0,0,0.4);
+}
 .header-content p {
   font-size: 1.3rem;
   opacity: 0.9;
 }
+
+
 
 /* Sección Sobre Nosotros */
 .about-us {

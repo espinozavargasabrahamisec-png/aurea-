@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encuesta de Audición</title>
-    <link rel="stylesheet" href="codigo.css">
+    <link rel="stylesheet" href="encuesta.css">
     <!-- Incluir la librería SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="volver-box">
@@ -101,58 +103,72 @@
             <button type="button" onclick="document.getElementById('surveyForm').reset();">Borrar</button>
         </form>
     </div>
-     <!-- ================= FOOTER ================= -->
-<footer>
-    <div class="container">
-        <div class="row text-center text-md-start">
-            <div class="col-md-4 mb-4 mb-md-0">
-                <h4>Áurea Centro Auditivo</h4>
+
+    <!-- ================= FOOTER ================= -->
+   
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer-menu">
+        <div class="footer-contenedor">
+            <div class="footer-columna">
+                <h3>Áurea Centro Auditivo</h3>
                 <p>Expertos en soluciones auditivas con más de 15 años de experiencia mejorando la calidad de vida de nuestros pacientes.</p>
             </div>
-            <div class="col-md-4 mb-4 mb-md-0">
-                <h4>Contacto</h4>
-                <p>📍 Av.Arce.Nro.2652 Edif.MILA Mezanine 1 Of.L21<br> (al frente del Multicine  La Paz)La Paz Bolivia </p>
-                <p>📞 +591 70111673</p>
-                <p>✉️ contacto@aureamed.com.bo</p>
+
+            <div class="footer-columna">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Arce Nro. 2652 Edif. MILA Mezanine 1 Of. L21<br>
+                    (al frente del Multicine La Paz) - La Paz, Bolivia</p>
+                <p><i class="fas fa-phone"></i> +591 70111673</p>
+                <p><i class="fas fa-envelope"></i> contacto@aureamed.com.bo</p>
+
+                <!-- Botón del mapa -->
+                <button type="button" class="footer-boton" data-bs-toggle="modal" data-bs-target="#mapaModal">
+                    <i class="fas fa-map"></i> Ver Mapa
+                </button>
             </div>
-      
-            <div class="col-md-4">
-                <h4>Horario</h4>
-                <p>Lunes y Miercoles: 15:00 am - 19:00pm</p>
-                <p> Martes y jueves: 10:00 am - 18:00pm</p>
-                <p> Viernes : 14:00 pm - 18:00pm</p>       
+
+            <div class="footer-columna">
+                <h3>Horario</h3>
+                <p>Lunes y Miércoles: 15:00 - 19:00</p>
+                <p>Martes y Jueves: 10:00 - 18:00</p>
+                <p>Viernes: 14:00 - 18:00</p>
             </div>
         </div>
-              <!-- ================= MAPA ================= -->
 
-  <!-- Botón  -->
-<button type="button" class="btn btn-light btn-sm rounded-pill px-4 py-2 shadow" data-bs-toggle="modal" data-bs-target="#mapaModal">
-  📍 Ver Mapa
-</button>
-
-<!-- Ventana Emergente -->
-<div class="modal fade" id="mapaModal" tabindex="-1" aria-labelledby="mapaModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="mapaModalLabel">Ubicación</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      </div>
-      <div class="modal-body p-0">
-         <iframe src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d1116.1146343179062!2d-68.12314552347775!3d-16.5115717753784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e6!4m4!1s0x915f2061d125ed5b%3A0x79c073ff64b8ac2b!3m2!1d-16.5115216!2d-68.1227171!4m5!1s0x915f2061d125ed5b%3A0x79c073ff64b8ac2b!2sAv.%20Arce%20Nro.%202652%20Edificio%20MILA%20Mezzanine%202%20Of.%202%2C%20La%20Paz!3m2!1d-16.5115216!2d-68.1227171!5e0!3m2!1ses-419!2sbo!4v1761098004108!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-      </div>
-    </div>
-  </div>
-</div>
         <hr>
-        <p class="text-center mb-0">&copy; 2025 Áurea Centro Auditivo. Todos los derechos reservados.</p>
+        <p class="footer-derechos">&copy; 2025 Áurea Centro Auditivo. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- ================= MODAL DEL MAPA ================= -->
+    <div class="modal fade" id="mapaModal" tabindex="-1" aria-labelledby="mapaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mapaModalLabel">
+                        <i class="fas fa-map-marker-alt me-2"></i>Ubicación - Áurea Centro Auditivo
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="mapa-contenedor">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.112234478961!2d-68.124731924686!3d-16.5115715753784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915f2061d125ed5b%3A0x79c073ff64b8ac2b!2sAv.%20Arce%20Nro.%202652%2C%20La%20Paz!5e0!3m2!1ses!2sbo!4v1693425678901"
+                        allowfullscreen="" loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="info-ubicacion">
+                    <h6><i class="fas fa-info-circle me-2"></i>Información de ubicación</h6>
+                    <p class="mb-1"><strong>Dirección:</strong> Av. Arce Nro. 2652 Edificio MILA Mezanine 1, Oficina L21</p>
+                    <p class="mb-1"><strong>Referencia:</strong> Frente al Multicine La Paz</p>
+                    <p class="mb-0"><strong>Zona:</strong> Zona Central, La Paz, Bolivia</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    
-    
-</footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js">
+        
+    </script>
 
     <script src="/encuesta/Codigo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
