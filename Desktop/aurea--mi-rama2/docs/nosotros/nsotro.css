@@ -1,0 +1,387 @@
+/* ============================================================
+   TIPOGRAFÍA
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@200;400;700;900&display=swap');
+
+body {
+  font-family: 'Exo 2', sans-serif; /* Fuente sugerida */
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+
+  /* Fondo degradado */
+  background:
+    radial-gradient(circle at top left, rgba(242,152,46,0.15), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(133,17,17,0.12), transparent 60%),
+    #f8f8f8;
+
+  color: #222;
+}
+
+
+/* ============================================================
+   VARIABLES
+   ============================================================ */
+:root {
+  --aurea-granate: #851111;
+  --aurea-orange: #f2982e;
+  --aurea-dark: #222;
+  --aurea-gray: #555;
+  --white: #fff;
+  --light-gray: #f8f9fa;
+
+  --shadow-sm: 0 3px 8px rgba(0,0,0,.15);
+  --shadow-md: 0 6px 16px rgba(0,0,0,.22);
+  --shadow-lg: 0 10px 28px rgba(0,0,0,.25);
+
+  --transition: .3s ease;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.navbar {
+  background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
+  box-shadow: var(--shadow-md);
+  padding: 12px 20px;
+}
+
+.navbar-nav .nav-link {
+  color: var(--white) !important;
+  font-weight: 700; /* Exo2 Bold */
+  padding: 10px 14px;
+  margin: 0 6px;
+  border-radius: 25px;
+  transition: var(--transition);
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: var(--white);
+  color: var(--aurea-granate) !important;
+  box-shadow: var(--shadow-sm);
+}
+
+.dropdown-menu {
+  background: var(--aurea-granate);
+  border-radius: 12px;
+}
+
+.dropdown-item {
+  color: var(--white);
+  border-radius: 6px;
+  font-weight: 400; /* Regular */
+}
+
+.dropdown-item:hover {
+  background-color: var(--aurea-orange);
+
+}
+
+/* Logo */
+.aurea2 {
+  width: 180px;
+  height: 70px;
+  display: block;
+  background: url('../imagenes/Asset 4.png') center/contain no-repeat;
+  text-indent: -9999px;
+  transition: var(--transition);
+}
+
+.aurea2:hover {
+  transform: scale(1.06);
+}
+
+/* ============================================================
+   HEADER OLA
+   ============================================================ */
+.wave-header {
+  height: 420px;
+  background: linear-gradient(135deg, #f4911e, #8b2c2c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-header svg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--white);
+  padding: 0 20px;
+  animation: fadeUp .8s ease-out;
+}
+
+.header-content h1 {
+  font-size: 3.2rem;
+  font-weight: 900; /* Exo2 Extra Bold */
+  text-shadow: 3px 3px 8px rgba(0,0,0,.4);
+}
+
+.header-content p {
+  font-size: 1.2rem;
+  opacity: .95;
+}
+
+/* Animación */
+@keyframes fadeUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+}
+
+/* ============================================================
+   SECCIONES GENERALES
+   ============================================================ */
+section {
+  padding: 80px 10px;
+}
+
+h2 {
+  color: var(--aurea-granate);
+  font-weight: 900;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+/* ============================================================
+   GRIDS
+   ============================================================ */
+.grid-2, .grid-3 {
+  display: grid;
+  gap: 25px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* ============================================================
+   TARJETAS
+   ============================================================ */
+.card,
+.service-card,
+.team-card {
+  background: var(--white);
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.card:hover,
+.service-card:hover,
+.team-card:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================================
+   VALORES
+   ============================================================ */
+.values-list {
+  list-style: none;
+}
+
+.values-list li {
+  background: linear-gradient(135deg, var(--aurea-orange), var(--aurea-granate));
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  color: var(--white);
+  font-weight: 400;
+}
+
+/* ============================================================
+   EQUIPO
+   ============================================================ */
+.team-card img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 12px;
+}
+
+/* ============================================================
+   COMPROMISO
+   ============================================================ */
+.about-commitment {
+  background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
+  color: var(--white);
+  padding: 50px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
+  color: var(--white);
+  padding: 60px 20px;
+  border-radius: 18px 18px 0 0;
+  box-shadow: var(--shadow-lg);
+}
+
+footer h4 {
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+footer p {
+  opacity: .95;
+}
+
+footer hr {
+  border-color: rgba(255,255,255,.3);
+  margin: 25px 0;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .wave-header {
+    height: 300px;
+  }
+
+  .header-content h1 {
+    font-size: 2.2rem;
+  }
+}
+/* ============================================================
+   Emergente
+   ============================================================ */
+   .toast-custom {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--aurea-granate);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  z-index: 9999;
+}
+
+.toast-custom.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.flotante {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background: var(--white);
+  color: var(--aurea-granate);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s;
+  text-decoration: none; 
+}
+
+.flotante:hover {
+  transform: scale(1.1);
+}
+.floating-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  line-height: 1;       
+  text-decoration: none; 
+  vertical-align: middle;
+}
+/* Botón Scroll Mejorado */
+.acroll {
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.acroll.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+.acroll:hover {
+  transform: scale(1.1);
+}
+.dropdown-menu {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Botones Flotantes posiciones*/
+.whatsapp { 
+  bottom: 20px;  
+  right: 20px; 
+  font-size: 30px;
+  
+}
+
+.facebook { 
+  bottom: 90px; 
+  right: 20px; 
+  font-size: 25px;
+  
+}
+
+#btntop {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--aurea-granate);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 22px;
+
+  border: none;          /* elimina cualquier borde por defecto */
+  outline: none;         /* elimina outline al hacer focus */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* opcional: sombra suave */
+}
+
+
