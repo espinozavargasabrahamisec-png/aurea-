@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encuesta de Audición</title>
+    <title>Encuesta de Audición - Áurea Centro Auditivo</title>
     <link rel="stylesheet" href="encuesta.css">
-    <!-- Incluir la librería SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="volver-box">
-        <a href="../index.html">← Volver</a>
+        <a href="../index.html">← Volver al Inicio</a>
     </div>
+    
     <div class="container">
-        <h1>sol</h1>
+        <h1 class="text-center mb-4">Test de Audición</h1>
+        <p class="text-center mb-4">Complete este cuestionario para evaluar su salud auditiva</p>
+        
         <form id="surveyForm">
             <div class="question">
-                <label for="audioQuality">1. ¿Cómo calificarías la calidad del audio en los videos didácticos?</label><br>
-                <select id="audioQuality" name="audioQuality" required>
+                <label for="audioQuality">1. ¿Cómo calificarías la calidad del audio en los videos didácticos?</label>
+                <select id="audioQuality" name="audioQuality" class="form-control" required>
+                    <option value="">Selecciona una opción</option>
                     <option value="Excelente">Excelente</option>
                     <option value="Buena">Buena</option>
                     <option value="Regular">Regular</option>
@@ -28,9 +31,9 @@
             </div>
 
             <div class="question">
-                <label for="videoTest">2. Reproduce el audio, ponga pausa cuando deje de escuchar el sonido:</label><br>
+                <label>2. Reproduce el audio, ponga pausa cuando deje de escuchar el sonido:</label>
                 <div class="video-container">
-                    <video id="videoTest" width="320" height="240" controls>
+                    <video id="videoTest" width="100%" controls class="rounded">
                         <source src="/video/How Old Are Your Ears_ _ HEARING TEST! - White Noise & Relaxation (720p, h264, youtube) (online-video-cutter.com).mp4" type="video/mp4">
                         Tu navegador no soporta la reproducción de este video.
                     </video>
@@ -38,74 +41,86 @@
             </div>
 
             <div class="question">
-                <label for="hearingIssues">3. ¿Has tenido problemas para escuchar el audio?</label><br>
-                <input type="radio" id="yes" name="hearingIssues" value="Sí" required>
-                <label for="yes">Sí</label>
-                <input type="radio" id="no" name="hearingIssues" value="No">
-                <label for="no">No</label>
+                <label>3. ¿Has tenido problemas para escuchar el audio?</label>
+                <div class="radio-group">
+                    <input type="radio" id="yes" name="hearingIssues" value="Sí" required>
+                    <label for="yes" class="radio-label">Sí</label>
+                    <input type="radio" id="no" name="hearingIssues" value="No">
+                    <label for="no" class="radio-label">No</label>
+                </div>
             </div>
 
             <div class="question">
-                <label for="suggestions">4. ¿Desde qué edad dejaste de escuchar?</label><br>
-                <textarea id="suggestions" name="suggestions" rows="4"></textarea>
+                <label for="suggestions">4. ¿Desde qué edad dejaste de escuchar?</label>
+                <textarea id="suggestions" name="suggestions" rows="4" class="form-control" placeholder="Describe desde qué edad has notado cambios en tu audición..."></textarea>
             </div>
             
             <div class="question">
                 <label for="hearWell">5. ¿Escuchas bien?</label>
-                <select id="hearWell" name="hearWell" onchange="handleSelection()">
+                <select id="hearWell" name="hearWell" class="form-control" onchange="handleSelection()">
                     <option value="">Selecciona una opción</option>
                     <option value="yes">Sí</option>
                     <option value="no">No</option>
                 </select>
             </div>
 
-            <div id="followUp" class="hidden">
-                <label for="details">¿Puedes proporcionar más detalles?</label>
-                <textarea id="details" name="details" rows="4"></textarea>
+            <div id="followUp" class="question hidden">
+                <label for="details">¿Puedes proporcionar más detalles sobre tus dificultades auditivas?</label>
+                <textarea id="details" name="details" rows="4" class="form-control" placeholder="Describe tus síntomas, situaciones donde tienes dificultades, etc..."></textarea>
             </div>
 
             <div class="question">
-                <label for="ageHearingIssues">6. ¿A qué edad empezaste a notar problemas de audición?</label><br>
-                <input type="number" id="ageHearingIssues" name="ageHearingIssues" min="0" max="100" placeholder="Edad (años)">
+                <label for="ageHearingIssues">6. ¿A qué edad empezaste a notar problemas de audición?</label>
+                <input type="number" id="ageHearingIssues" name="ageHearingIssues" min="0" max="100" class="form-control" placeholder="Edad en años">
             </div>
 
             <div class="question">
-                <label for="familyHistory">7. ¿Hay antecedentes familiares de hipoacusia?</label><br>
-                <input type="radio" id="familyYes" name="familyHistory" value="Sí" required>
-                <label for="familyYes">Sí</label>
-                <input type="radio" id="familyNo" name="familyHistory" value="No">
-                <label for="familyNo">No</label>
+                <label>7. ¿Hay antecedentes familiares de problemas auditivos?</label>
+                <div class="radio-group">
+                    <input type="radio" id="familyYes" name="familyHistory" value="Sí" required>
+                    <label for="familyYes" class="radio-label">Sí</label>
+                    <input type="radio" id="familyNo" name="familyHistory" value="No">
+                    <label for="familyNo" class="radio-label">No</label>
+                </div>
             </div>
 
             <div class="question">
-                <label for="consultation">8. ¿Has consultado a un profesional de la salud sobre tu audición?</label><br>
-                <input type="radio" id="consultationYes" name="consultation" value="Sí" required>
-                <label for="consultationYes">Sí</label>
-                <input type="radio" id="consultationNo" name="consultation" value="No">
-                <label for="consultationNo">No</label>
+                <label>8. ¿Has consultado a un profesional de la salud sobre tu audición?</label>
+                <div class="radio-group">
+                    <input type="radio" id="consultationYes" name="consultation" value="Sí" required>
+                    <label for="consultationYes" class="radio-label">Sí</label>
+                    <input type="radio" id="consultationNo" name="consultation" value="No">
+                    <label for="consultationNo" class="radio-label">No</label>
+                </div>
             </div>
 
             <div class="question">
-                <label for="hearingAid">9. ¿Utilizas algún dispositivo de asistencia auditiva (audífonos, implantes, etc.)?</label><br>
-                <input type="radio" id="aidYes" name="hearingAid" value="Sí" required>
-                <label for="aidYes">Sí</label>
-                <input type="radio" id="aidNo" name="hearingAid" value="No">
-                <label for="aidNo">No</label>
+                <label>9. ¿Utilizas algún dispositivo de asistencia auditiva (audífonos, implantes, etc.)?</label>
+                <div class="radio-group">
+                    <input type="radio" id="aidYes" name="hearingAid" value="Sí" required>
+                    <label for="aidYes" class="radio-label">Sí</label>
+                    <input type="radio" id="aidNo" name="hearingAid" value="No">
+                    <label for="aidNo" class="radio-label">No</label>
+                </div>
             </div>
 
             <div class="question">
-                <label for="audioClarity">10. ¿Cuánto calificarías nuestro test de audición? (1 a 100)</label><br>
-                <input type="range" id="audioClarity" name="audioClarity" min="1" max="100" value="50" oninput="document.getElementById('rangeValue').textContent = this.value">
-                <span id="rangeValue">50</span>
+                <label for="audioClarity">10. ¿Cuánto calificarías nuestro test de audición? (1 a 100)</label>
+                <div class="range-container">
+                    <input type="range" id="audioClarity" name="audioClarity" min="1" max="100" value="50" class="form-range" oninput="document.getElementById('rangeValue').textContent = this.value">
+                    <div class="range-value">
+                        <span id="rangeValue">50</span>/100
+                    </div>
+                </div>
             </div>
 
-            <button type="submit">Enviar</button>
-            <button type="button" onclick="document.getElementById('surveyForm').reset();">Borrar</button>
+            <div class="form-buttons">
+                <button type="submit" class="btn-submit">Enviar Encuesta</button>
+                <button type="button" class="btn-reset" onclick="document.getElementById('surveyForm').reset(); handleSelection();">Borrar Respuestas</button>
+            </div>
         </form>
     </div>
 
-    <!-- ================= FOOTER ================= -->
-   
     <!-- ================= FOOTER ================= -->
     <footer class="footer-menu">
         <div class="footer-contenedor">
@@ -121,7 +136,6 @@
                 <p><i class="fas fa-phone"></i> +591 70111673</p>
                 <p><i class="fas fa-envelope"></i> contacto@aureamed.com.bo</p>
 
-                <!-- Botón del mapa -->
                 <button type="button" class="footer-boton" data-bs-toggle="modal" data-bs-target="#mapaModal">
                     <i class="fas fa-map"></i> Ver Mapa
                 </button>
@@ -166,12 +180,7 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js">
-        
-    </script>
-
-    <script src="/encuesta/Codigo.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="encuesta.js"></script>
 </body>
 </html>
