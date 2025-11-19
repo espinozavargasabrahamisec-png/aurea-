@@ -112,6 +112,8 @@ body {
 }
 
 .header-content {
+  position: relative;
+  z-index: 2;
   text-align: center;
   color: var(--white);
   padding: 0 20px;
