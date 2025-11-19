@@ -1,3 +1,13 @@
+/* ======================== VARIABLES DE COLOR ======================== */
+:root {
+  --aurea-granate: #851111;
+  --aurea-orange: #f2982e;
+  --aurea-dark: #222;
+  --aurea-gray: #555;
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+  --shadow: rgba(0,0,0,0.2);
+}
 body {
     font-family: Arial, sans-serif;
     background-color: #d31353; /* Color de fondo más suave */
@@ -264,6 +274,134 @@ button:hover {
 .volver-box a:hover {
     text-decoration: underline;
 }
+/* ======================== FOOTER ======================== */
+.footer-menu {
+    background: linear-gradient(90deg, var(--aurea-granate), var(--aurea-orange));
+    color: var(--white);
+    padding: 40px 0 20px;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 -2px 10px var(--shadow);
+    margin-top: 50px;
+}
 
+.footer-contenedor {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    text-align: left;
+}
 
+.footer-columna {
+    max-width: 320px;
+}
 
+.footer-columna h3 {
+    font-weight: bold;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.footer-columna p {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ================= BOTÓN MAPA ================= */
+.footer-boton {
+    background-color: var(--white);
+    color: var(--aurea-granate);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-boton:hover {
+    background-color: var(--light-gray);
+    transform: scale(1.05);
+}
+
+/* ================= MODAL PERSONALIZADO ================= */
+.modal-header {
+    background: linear-gradient(90deg, var(--aurea-granate), var(--aurea-orange));
+    color: var(--white);
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+.btn-close {
+    filter: invert(1);
+}
+
+.mapa-contenedor {
+    position: relative;
+    height: 500px;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+}
+
+.mapa-contenedor iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.info-ubicacion {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+}
+
+.info-ubicacion h6 {
+    color: var(--aurea-granate);
+    margin-bottom: 5px;
+}
+
+/* ================= LÍNEA Y DERECHOS ================= */
+footer hr {
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 1px;
+    border: none;
+    margin: 30px auto 15px;
+    width: 80%;
+}
+
+.footer-derechos {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .footer-contenedor {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-columna {
+        max-width: 90%;
+    }
+
+    .footer-boton {
+        margin-top: 10px;
+    }
+
+    .mapa-contenedor {
+        height: 300px;
+    }
+}
