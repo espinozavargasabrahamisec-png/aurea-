@@ -1,3 +1,4 @@
+
 // Función para manejar la selección de "¿Escuchas bien?"
 function handleSelection() {
     var hearWell = document.getElementById('hearWell').value;
@@ -168,3 +169,4 @@ function calculatePreliminaryResult() {
                        'Se recomienda evaluación profesional'
     };
 }
+
