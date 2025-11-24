@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
   
   background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
   box-shadow: 0 6px 20px var(--shadow);
-  border-radius: 0 0 15px 15px;
+  
   padding: 15px 20px;
   position: fixed;
   top: 0;
@@ -89,7 +89,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   width: 260px; /* antes 440px → más proporcionado */
   height: 100px; /* antes 140px */
-  background-image: url('imagenes/Asset 4.png');
+  background-image: url('./Asset\ 10@4x.png');
   background-size: contain;    /* conserva proporción del logo */
   background-repeat: no-repeat;
   background-position: center;
@@ -98,6 +98,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform 0.2s, box-shadow 0.2s;
   text-indent: -9999px;
   overflow: hidden;
+  background-color: white;
 }
 
 .aurea2:hover {
