@@ -3,23 +3,6 @@
    ============================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@200;400;700;900&display=swap');
 
-body {
-  font-family: 'Exo 2', sans-serif; /* Fuente sugerida */
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-
-  /* Fondo degradado */
-  background:
-    radial-gradient(circle at top left, rgba(242,152,46,0.15), transparent 60%),
-    radial-gradient(circle at bottom right, rgba(133,17,17,0.12), transparent 60%),
-    #f8f8f8;
-
-  color: #222;
-}
-
-
 /* ============================================================
    VARIABLES
    ============================================================ */
@@ -39,17 +22,45 @@ body {
 }
 
 /* ============================================================
+   BASE
+   ============================================================ */
+body {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background:
+    radial-gradient(circle at top left, rgba(242,152,46,0.15), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(133,17,17,0.12), transparent 60%),
+    #f8f8f8;
+  color: #222;
+  padding-top: 130px;
+}
+
+ h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--aurea-granate);
+}
+
+/* ============================================================
    NAVBAR
    ============================================================ */
 .navbar {
   background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
   box-shadow: var(--shadow-md);
   padding: 12px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 130px;
 }
 
 .navbar-nav .nav-link {
   color: var(--white) !important;
-  font-weight: 700; /* Exo2 Bold */
+  font-weight: 700;
   padding: 10px 14px;
   margin: 0 6px;
   border-radius: 25px;
@@ -65,46 +76,119 @@ body {
 .dropdown-menu {
   background: var(--aurea-granate);
   border-radius: 12px;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .dropdown-item {
   color: var(--white);
   border-radius: 6px;
-  font-weight: 400; /* Regular */
+  font-weight: 400;
+  transition: var(--transition);
 }
 
 .dropdown-item:hover {
   background-color: var(--aurea-orange);
-
+  transform: translateX(5px);
 }
 
-/* Logo */
 .aurea2 {
-  width: 180px;
-  height: 70px;
-  display: block;
-  background: url('../imagenes/Asset 4.png') center/contain no-repeat;
+  display: inline-block;
+  width: 260px; /* antes 440px → más proporcionado */
+  height: 100px; /* antes 140px */
+  background-image: url('../Asset\ 10@4x.png');
+  background-size: contain;    /* conserva proporción del logo */
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2); /* sombra más natural */
+  transition: transform 0.2s, box-shadow 0.2s;
   text-indent: -9999px;
-  transition: var(--transition);
+  overflow: hidden;
+  background-color: white;
 }
 
 .aurea2:hover {
-  transform: scale(1.06);
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+
 /* ============================================================
-   HEADER OLA
+   HEADER OLA sobre  nosostros 
    ============================================================ */
+
 .wave-header {
   height: 420px;
-  background: linear-gradient(135deg, #f4911e, #8b2c2c);
+  background: 
+    /* Imagen de fondo de oficinas */
+    url('./oficina.jpg') center/cover no-repeat,
+    /* Gradiente superpuesto para mejor contraste */
+    linear-gradient(135deg, rgba(244, 145, 30, 0.85), rgba(139, 44, 44, 0.85));
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
 }
+.letras h1 {
+  color: white !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 900;
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+}
 
+
+.wave-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3); /* Capa oscura para mejor legibilidad */
+  z-index: 1;
+}
+
+.wave-header svg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.header-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: var(--white);
+  padding: 0 20px;
+  animation: fadeUp .8s ease-out;
+}
+
+.header-content h1 {
+  font-size: 3.2rem;
+  font-weight: 900;
+  text-shadow: 3px 3px 8px rgba(0,0,0,.6);
+  margin-bottom: 1rem;
+}
+
+.header-content p {
+  font-size: 1.2rem;
+  opacity: .95;
+  margin-bottom: 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,.5);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .wave-header svg {
   position: absolute;
   bottom: 0;
@@ -122,20 +206,26 @@ body {
 
 .header-content h1 {
   font-size: 3.2rem;
-  font-weight: 900; /* Exo2 Extra Bold */
+  font-weight: 900;
   text-shadow: 3px 3px 8px rgba(0,0,0,.4);
+  margin-bottom: 1rem;
 }
 
 .header-content p {
   font-size: 1.2rem;
   opacity: .95;
+  margin-bottom: 0;
 }
 
-/* Animación */
+/* ------------Animación----------------------- */
 @keyframes fadeUp {
   from {
     transform: translateY(30px);
     opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -143,7 +233,11 @@ body {
    SECCIONES GENERALES
    ============================================================ */
 section {
-  padding: 80px 10px;
+  padding: 80px 20px;
+}
+
+.container section {
+  padding: 80px 0;
 }
 
 h2 {
@@ -151,6 +245,7 @@ h2 {
   font-weight: 900;
   font-size: 2.2rem;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 /* ============================================================
@@ -159,6 +254,7 @@ h2 {
 .grid-2, .grid-3 {
   display: grid;
   gap: 25px;
+  margin-top: 30px;
 }
 
 .grid-2 {
@@ -180,6 +276,7 @@ h2 {
   border-radius: 14px;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
+  text-align: center;
 }
 
 .card:hover,
@@ -189,11 +286,20 @@ h2 {
   box-shadow: var(--shadow-md);
 }
 
+.service-card h4,
+.team-card h4 {
+  color: var(--aurea-granate);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
 /* ============================================================
    VALORES
    ============================================================ */
 .values-list {
   list-style: none;
+  padding: 0;
+  margin: 30px 0 0 0;
 }
 
 .values-list li {
@@ -203,6 +309,11 @@ h2 {
   border-radius: 8px;
   color: var(--white);
   font-weight: 400;
+  transition: var(--transition);
+}
+
+.values-list li:hover {
+  transform: translateX(5px);
 }
 
 /* ============================================================
@@ -215,6 +326,7 @@ h2 {
   object-fit: cover;
   box-shadow: var(--shadow-sm);
   margin-bottom: 12px;
+  border: 3px solid var(--aurea-orange);
 }
 
 /* ============================================================
@@ -227,6 +339,11 @@ h2 {
   border-radius: 12px;
   text-align: center;
   box-shadow: var(--shadow-md);
+  margin-top: 40px;
+}
+
+.about-commitment h2 {
+  color: var(--white);
 }
 
 /* ============================================================
@@ -238,15 +355,19 @@ footer {
   padding: 60px 20px;
   border-radius: 18px 18px 0 0;
   box-shadow: var(--shadow-lg);
+  margin-top: 60px;
 }
 
 footer h4 {
   font-weight: 900;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
+  color: #fdfdfc;
 }
 
 footer p {
   opacity: .95;
+  margin-bottom: 10px;
+  line-height: 1.6;
 }
 
 footer hr {
@@ -254,10 +375,121 @@ footer hr {
   margin: 25px 0;
 }
 
+footer .btn-light {
+  background-color: rgba(255,255,255,0.9);
+  border: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+footer .btn-light:hover {
+  background-color: white;
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   BOTONES FLOTANTES
+   ============================================================ */
+.flotante {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* WhatsApp */
+.flotante.whatsapp {
+  background-color: #25D366;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Facebook */
+.flotante.facebook {
+  background-color: #1877F2;
+  bottom: 90px;
+  right: 20px;
+}
+
+/* Efectos hover */
+.flotante:hover {
+  transform: scale(1.1);
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.flotante.whatsapp:hover {
+  background-color: #1DA851;
+}
+
+.flotante.facebook:hover {
+  background-color: #166FE5;
+}
+
+/* Iconos */
+.icono {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Botón Scroll Top */
+.acroll {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 20px;
+  left: 20px;
+  background-color: var(--aurea-granate);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  transition: all 0.3s ease;
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.acroll.show {
+  opacity: 1;
+  pointer-events: all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.acroll:hover {
+  background-color: var(--aurea-orange);
+  transform: scale(1.1);
+}
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 768px) {
+  body {
+    padding-top: 100px;
+  }
+  
+  .navbar {
+    height: 100px;
+    padding: 8px 15px;
+  }
+  
   .wave-header {
     height: 300px;
   }
@@ -265,123 +497,60 @@ footer hr {
   .header-content h1 {
     font-size: 2.2rem;
   }
-}
-/* ============================================================
-   Emergente
-   ============================================================ */
-   .toast-custom {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--aurea-granate);
-  color: white;
-  padding: 12px 20px;
-  border-radius: 8px;
-  box-shadow: var(--shadow-md);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.4s ease;
-  z-index: 9999;
-}
-
-.toast-custom.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.flotante {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  background: var(--white);
-  color: var(--aurea-granate);
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  box-shadow: var(--shadow-md);
-  transition: transform 0.3s;
-  text-decoration: none; 
-}
-
-.flotante:hover {
-  transform: scale(1.1);
-}
-.floating-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  line-height: 1;       
-  text-decoration: none; 
-  vertical-align: middle;
-}
-/* Botón Scroll Mejorado */
-.acroll {
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.3s ease;
-}
-
-.acroll.show {
-  opacity: 1;
-  pointer-events: all;
-}
-
-
-.acroll:hover {
-  transform: scale(1.1);
-}
-.dropdown-menu {
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  opacity: 0;
-  transform: translateY(-10px);
-}
-
-.dropdown-menu.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Botones Flotantes posiciones*/
-.whatsapp { 
-  bottom: 20px;  
-  right: 20px; 
-  font-size: 30px;
   
-}
-
-.facebook { 
-  bottom: 90px; 
-  right: 20px; 
-  font-size: 25px;
+  .aurea2 {
+    width: 150px;
+    height: 60px;
+  }
   
+  section {
+    padding: 60px 15px;
+  }
+  
+  .container section {
+    padding: 60px 0;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  footer {
+    padding: 40px 15px;
+  }
+  
+  .flotante {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .flotante.facebook {
+    bottom: 80px;
+  }
 }
 
-#btntop {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  z-index: 9999;
-
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: var(--aurea-granate);
-  color: white;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 22px;
-
-  border: none;          /* elimina cualquier borde por defecto */
-  outline: none;         /* elimina outline al hacer focus */
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* opcional: sombra suave */
+@media (max-width: 576px) {
+  .header-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .header-content p {
+    font-size: 1rem;
+  }
+  
+  .about-commitment {
+    padding: 30px 20px;
+  }
+  
+  .acroll {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
 }
-
-
