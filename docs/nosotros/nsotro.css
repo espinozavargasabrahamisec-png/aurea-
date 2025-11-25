@@ -3,24 +3,6 @@
    ============================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@200;400;700;900&display=swap');
 
-<<<<<<< HEAD
-=======
-body {
-  font-family: 'Exo 2', sans-serif;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  color: #222;
-
-  /* Fondo degradado como el ejemplo */
-  background:
-    radial-gradient(circle at top left, rgba(242,152,46,0.15), transparent 60%),
-    radial-gradient(circle at bottom right, rgba(133,17,17,0.12), transparent 60%),
-    #f8f8f8;
-}
-
->>>>>>> c9d28cb6b50f2c9aaa2805d776854b358075c0e3
 /* ============================================================
    VARIABLES
    ============================================================ */
