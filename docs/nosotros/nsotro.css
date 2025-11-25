@@ -13,6 +13,7 @@
   --aurea-gray: #555;
   --white: #fff;
   --light-gray: #f8f9fa;
+  --shadow: rgba(0,0,0,0.2);
 
   --shadow-sm: 0 3px 8px rgba(0,0,0,.15);
   --shadow-md: 0 6px 16px rgba(0,0,0,.22);
@@ -38,7 +39,7 @@ body {
   padding-top: 130px;
 }
 
- h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
   font-weight: 700;
   color: var(--aurea-granate);
 }
@@ -47,16 +48,9 @@ body {
    NAVBAR
    ============================================================ */
 .navbar {
-  
   background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
-
-  box-shadow: var(--shadow-md);
-  padding: 12px 20px;
-
   box-shadow: 0 6px 20px var(--shadow);
-  
   padding: 15px 20px;
-
   position: fixed;
   top: 0;
   left: 0;
@@ -67,19 +61,11 @@ body {
 
 .navbar-nav .nav-link {
   color: var(--white) !important;
-
-  font-weight: 700;
-  padding: 10px 14px;
-  margin: 0 6px;
-  border-radius: 25px;
-  transition: var(--transition);
-
   font-weight: 600;
   margin: 0 8px;
-
   border-radius: 30px;
   padding: 8px 16px;
-
+  transition: var(--transition);
 }
 
 .navbar-nav .nav-link:hover {
@@ -91,10 +77,10 @@ body {
 .dropdown-menu {
   background: var(--aurea-granate);
   border-radius: 12px;
-<<<<<<< HEAD
   transition: opacity 0.25s ease, transform 0.25s ease;
   opacity: 0;
   transform: translateY(-10px);
+  overflow: hidden;
 }
 
 .dropdown-menu.show {
@@ -103,42 +89,29 @@ body {
 }
 
 .dropdown-item {
-  color: var(--white);
-  border-radius: 6px;
-  font-weight: 400;
-  transition: var(--transition);
-}
-
-.dropdown-item:hover {
-  background-color: var(--aurea-orange);
-  transform: translateX(5px);
-=======
-   overflow: hidden;
-}
-
-.dropdown-item {
   color: var(--white) !important;
   font-weight: 500;
-
+  border-radius: 6px;
+  transition: var(--transition);
 }
 
 .dropdown-item:hover {
   background: var(--aurea-orange);
   transform: translateX(5px);
-   border-radius: 8px; 
->>>>>>> c9d28cb6b50f2c9aaa2805d776854b358075c0e3
+  border-radius: 8px;
 }
 
+/* Logo */
 .aurea2 {
   display: inline-block;
-  width: 260px; /* antes 440px → más proporcionado */
-  height: 100px; /* antes 140px */
-  background-image: url('../Asset\ 10@4x.png');
-  background-size: contain;    /* conserva proporción del logo */
+  width: 260px;
+  height: 100px;
+  background-image: url('../Asset 10@4x.png');
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2); /* sombra más natural */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s, box-shadow 0.2s;
   text-indent: -9999px;
   overflow: hidden;
@@ -150,17 +123,13 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-
 /* ============================================================
-   HEADER OLA sobre  nosostros 
+   HEADER OLA SOBRE NOSOTROS 
    ============================================================ */
-
 .wave-header {
   height: 420px;
   background: 
-    /* Imagen de fondo de oficinas */
     url('./oficina.jpg') center/cover no-repeat,
-    /* Gradiente superpuesto para mejor contraste */
     linear-gradient(135deg, rgba(244, 145, 30, 0.85), rgba(139, 44, 44, 0.85));
   display: flex;
   align-items: center;
@@ -168,6 +137,7 @@ body {
   position: relative;
   overflow: hidden;
 }
+
 .letras h1 {
   color: white !important;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -176,7 +146,6 @@ body {
   margin-bottom: 1rem;
 }
 
-
 .wave-header::before {
   content: '';
   position: absolute;
@@ -184,7 +153,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.3); /* Capa oscura para mejor legibilidad */
+  background: rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
 
@@ -220,38 +189,8 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-.wave-header svg {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
 
-.header-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: var(--white);
-  padding: 0 20px;
-  animation: fadeUp .8s ease-out;
-}
-
-.header-content h1 {
-  font-size: 3.2rem;
-  font-weight: 900;
-  text-shadow: 3px 3px 8px rgba(0,0,0,.4);
-  margin-bottom: 1rem;
-}
-
-.header-content p {
-  font-size: 1.2rem;
-  opacity: .95;
-  margin-bottom: 0;
-}
-
-<<<<<<< HEAD
-/* ------------Animación----------------------- */
-=======
->>>>>>> c9d28cb6b50f2c9aaa2805d776854b358075c0e3
+/* Animación */
 @keyframes fadeUp {
   from {
     transform: translateY(30px);
@@ -426,197 +365,6 @@ footer .btn-light:hover {
    ============================================================ */
 .flotante {
   position: fixed;
-  width: 60px;
-  height: 60px;
-  color: white;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 30px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  z-index: 100;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* WhatsApp */
-.flotante.whatsapp {
-  background-color: #25D366;
-  bottom: 20px;
-  right: 20px;
-}
-
-/* Facebook */
-.flotante.facebook {
-  background-color: #1877F2;
-  bottom: 90px;
-  right: 20px;
-}
-
-/* Efectos hover */
-.flotante:hover {
-  transform: scale(1.1);
-  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
-}
-
-.flotante.whatsapp:hover {
-  background-color: #1DA851;
-}
-
-.flotante.facebook:hover {
-  background-color: #166FE5;
-}
-
-/* Iconos */
-.icono {
-  font-size: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Botón Scroll Top */
-.acroll {
-  position: fixed;
-  width: 50px;
-  height: 50px;
-  bottom: 20px;
-  left: 20px;
-  background-color: var(--aurea-granate);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  z-index: 100;
-  transition: all 0.3s ease;
-  display: none;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.acroll.show {
-  opacity: 1;
-  pointer-events: all;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.acroll:hover {
-  background-color: var(--aurea-orange);
-  transform: scale(1.1);
-}
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-@media (max-width: 768px) {
-  body {
-    padding-top: 100px;
-  }
-  
-  .navbar {
-    height: 100px;
-    padding: 8px 15px;
-  }
-  
-  .wave-header {
-    height: 300px;
-  }
-
-  .header-content h1 {
-    font-size: 2.2rem;
-  }
-<<<<<<< HEAD
-  
-  .aurea2 {
-    width: 150px;
-    height: 60px;
-  }
-  
-  section {
-    padding: 60px 15px;
-  }
-  
-  .container section {
-    padding: 60px 0;
-  }
-  
-  h2 {
-    font-size: 1.8rem;
-  }
-  
-  .grid-2,
-  .grid-3 {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  footer {
-    padding: 40px 15px;
-  }
-  
-  .flotante {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .flotante.facebook {
-    bottom: 80px;
-  }
-}
-
-@media (max-width: 576px) {
-  .header-content h1 {
-    font-size: 1.8rem;
-  }
-  
-  .header-content p {
-    font-size: 1rem;
-  }
-  
-  .about-commitment {
-    padding: 30px 20px;
-  }
-  
-  .acroll {
-    width: 45px;
-    height: 45px;
-    font-size: 18px;
-  }
-}
-=======
-}
-
-/* ============================================================
-   EMERGENTES Y BOTONES FLOTANTES
-   ============================================================ */
-.toast-custom {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--aurea-granate);
-  color: white;
-  padding: 12px 20px;
-  border-radius: 8px;
-  box-shadow: var(--shadow-md);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.4s ease;
-  z-index: 9999;
-}
-
-.toast-custom.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-/* botones flotantes */
-.flotante {
-  position: fixed;
   width: 55px;
   height: 55px;
   border-radius: 50%;
@@ -651,7 +399,7 @@ footer .btn-light:hover {
   font-size: 32px;
 }
 
-/* Botón scrul */
+/* Botón Scroll Top */
 #btntop {
   position: fixed;
   bottom: 20px;
@@ -670,9 +418,114 @@ footer .btn-light:hover {
   border: none;
   outline: none;
   transition: transform 0.25s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#btntop.show {
+  opacity: 1;
+  pointer-events: all;
 }
 
 #btntop:hover {
   transform: scale(1.12);
 }
->>>>>>> c9d28cb6b50f2c9aaa2805d776854b358075c0e3
+
+/* Toast Emergente */
+.toast-custom {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--aurea-granate);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  z-index: 9999;
+}
+
+.toast-custom.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  body {
+    padding-top: 100px;
+  }
+  
+  .navbar {
+    height: 100px;
+    padding: 8px 15px;
+  }
+  
+  .wave-header {
+    height: 300px;
+  }
+
+  .header-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .aurea2 {
+    width: 150px;
+    height: 60px;
+  }
+  
+  section {
+    padding: 60px 15px;
+  }
+  
+  .container section {
+    padding: 60px 0;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  footer {
+    padding: 40px 15px;
+  }
+  
+  .flotante {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .facebook {
+    bottom: 80px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .header-content p {
+    font-size: 1rem;
+  }
+  
+  .about-commitment {
+    padding: 30px 20px;
+  }
+  
+  #btntop {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+}
