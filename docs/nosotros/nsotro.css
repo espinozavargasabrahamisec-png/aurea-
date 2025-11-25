@@ -67,50 +67,37 @@ body {
 .navbar {
   
   background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
-<<<<<<< HEAD
+
   box-shadow: var(--shadow-md);
   padding: 12px 20px;
-=======
+
   box-shadow: 0 6px 20px var(--shadow);
   
   padding: 15px 20px;
->>>>>>> c9d28cb6b50f2c9aaa2805d776854b358075c0e3
+
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-<<<<<<< HEAD
   z-index: 1000;
   height: 130px;
-=======
-  text-align: center;
-  z-index: 1000;
-  height: 130px;
-}
-
-.navbar-brand {
-  font-size: 1.8rem;
-  font-weight: 800;
-  letter-spacing: 1px;
-  color: var(--white);
->>>>>>> c9d28cb6b50f2c9aaa2805d776854b358075c0e3
 }
 
 .navbar-nav .nav-link {
   color: var(--white) !important;
-<<<<<<< HEAD
+
   font-weight: 700;
   padding: 10px 14px;
   margin: 0 6px;
   border-radius: 25px;
   transition: var(--transition);
-=======
+
   font-weight: 600;
   margin: 0 8px;
 
   border-radius: 30px;
   padding: 8px 16px;
->>>>>>> c9d28cb6b50f2c9aaa2805d776854b358075c0e3
+
 }
 
 .navbar-nav .nav-link:hover {
