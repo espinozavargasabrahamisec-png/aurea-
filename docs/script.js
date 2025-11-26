@@ -1,3 +1,6 @@
+/* ===============================
+   🚀 Enviar formulario con Fetch
+   =============================== */
 function enviarFormulario(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -14,30 +17,54 @@ function enviarFormulario(event) {
         alert('❌ Error: ' + error);
     });
 }
-/* boton Scrull */
-const btntop=document.getElementById("btntop");
-window.addEventListener("scroll",function(){
-    if(window.scrollY>300){
-        btntop.style.display="block";
-    }else{
-        btntop.style.display="none";
+
+
+/* ===============================
+   🔼 Botón Scroll hacia arriba
+   =============================== */
+const btnTop = document.getElementById("btntop");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+        btnTop.classList.add("show");
+    } else {
+        btnTop.classList.remove("show");
     }
 });
 
+btnTop.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
 
-btntop.addEventListener("click",function(){
-window.scrollTo({
-    top:0,
-    behavior: "smooth"
-});
-});
-/* Cierre del menu automatico */
+
+/* ===============================
+   📌 Menús desplegables (dropdown)
+   =============================== */
 document.querySelectorAll('.nav-item.dropdown').forEach(item => {
-  const menu = item.querySelector('.dropdown-menu');
-  let timeout;
-  item.addEventListener('mouseleave', () => {
-    timeout = setTimeout(() => {
-      menu.classList.remove('show');
-    }, 300); //retardo al cerrar
-  });
+    const menu = item.querySelector('.dropdown-menu');
+    if (!menu) return;
+
+    // Inicialmente cerrado
+    menu.style.display = 'none';
+
+    // Abrir al hacer click
+    item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menu.style.display = 'block';
+    });
+
+    // Cerrar al salir el mouse
+    menu.addEventListener('mouseleave', () => {
+        menu.style.display = 'none';
+    });
+});
+
+// Cerrar menús al hacer click fuera
+document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        menu.style.display = 'none';
+    });
 });
