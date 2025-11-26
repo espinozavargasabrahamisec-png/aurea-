@@ -8,400 +8,388 @@
   --light-gray: #f8f9fa;
   --shadow: rgba(0,0,0,0.2);
 }
+
+/* ======================== BASE ======================== */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #d31353; /* Color de fondo más suave */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
     margin: 0;
     padding: 20px;
+    min-height: 100vh;
 }
 
-.container {
-    max-width: 600px;
-    margin: auto;
-    background: white;
-    padding: 30px; /* Aumento del padding para más espacio */
-    border-radius: 10px; /* Bordes más redondeados */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+/* ======================== FORMULARIO CON FONDO BLANCO ======================== */
+.form-container {
+    max-width: 800px;
+    margin: 60px auto 30px;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
     text-align: center;
-    color: #007bff; /* Color azul para el encabezado */
-    margin-bottom: 20px; /* Espacio adicional debajo del encabezado */
+    color: var(--aurea-granate);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+/* ======================== FORMULARIO ======================== */
+#surveyForm {
+    margin-top: 20px;
 }
 
 .question {
-    margin-bottom: 25px; /* Espacio entre las preguntas */
-    border-bottom: 1px solid #dee2e6; /* Línea divisoria entre preguntas */
-    padding-bottom: 15px; /* Espacio debajo de cada pregunta */
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e9ecef;
 }
 
-.hidden {
-    display: none;
+.question:last-child {
+    border-bottom: none;
 }
 
 label {
-    display: block; /* Para que cada etiqueta ocupe una línea completa */
-    margin-bottom: 8px; /* Espacio entre la etiqueta y el input */
-    font-weight: bold; /* Negrita para las etiquetas */
-    color: #343a40; /* Color gris oscuro para las etiquetas */
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--aurea-dark);
+    font-size: 1.1rem;
 }
 
-input[type="radio"], input[type="number"], select, textarea {
-    width: 100%; /* Hacer que los inputs ocupen todo el ancho */
-    padding: 10px; /* Espacio interno */
-    border: 1px solid #ced4da; /* Borde gris claro */
-    border-radius: 5px; /* Bordes redondeados para inputs */
-    margin-top: 5px; /* Espacio entre el input y la etiqueta */
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: var(--light-gray);
+    color: var(--aurea-dark);
 }
 
-textarea {
-    resize: vertical; /* Permitir el ajuste vertical del textarea */
+.form-control:focus {
+    border-color: var(--aurea-orange);
+    box-shadow: 0 0 0 0.2rem rgba(242, 152, 46, 0.25);
+    outline: none;
+    background-color: var(--white);
 }
 
-button {
-    background-color: #007bff; /* Color azul para los botones */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+/* ======================== RADIO BUTTONS ======================== */
+.radio-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
     cursor: pointer;
-    font-size: 16px; /* Aumentar tamaño de texto */
-    transition: background-color 0.3s, transform 0.3s; /* Transición suave */
+    padding: 8px 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: var(--light-gray);
+    color: var(--aurea-dark);
 }
 
-button:hover {
-    background-color: #1abc9c; /* Color más oscuro al pasar el ratón */
-    transform: translateY(-2px); /* Efecto de elevación al pasar el ratón */
+.radio-label:hover {
+    border-color: var(--aurea-orange);
+    background-color: rgba(242, 152, 46, 0.1);
 }
 
-button:active {
-    transform: translateY(0); /* Regresar a la posición normal al hacer clic */
+input[type="radio"] {
+    margin: 0;
 }
 
-#thankYouMessage {
-    text-align: center;
-    font-size: 18px; /* Tamaño de texto más grande para el mensaje de agradecimiento */
-    color: #28a745; /* Color verde para el mensaje de agradecimiento */
-    margin-top: 20px; /* Espacio encima del mensaje */
-}
-/* Estilos Generales */
-body, main {
-    height: 100%;
+/* ======================== RANGE SLIDER ======================== */
+.range-container {
+    margin-top: 15px;
 }
 
-.transparent {
-    background: transparent;
-}
-
-.navbar-inverse {
-    transition: all 0.2s ease-in;
-}
-
-/* Menú Cuadro Azul */
-.menu-container {
-    background-color: #05203d; /* Color azul */
-    padding: 10px; /* Espaciado alrededor del contenido */
-    border-radius: 15px; /* Bordes redondeados */
-}
-
-/* Ajustar los colores de los enlaces para que sean visibles sobre el fondo azul */
-.menu-container .navbar-nav > li > a {
-    color: white; /* Color de texto blanco */
-}
-
-.Uvs { /* Estilo para "Una voz silenciosa" */
-    font-size: 30px; /* Tamaño de la fuente */
-    font-weight: bold; /* Texto en negrita */
-    color: #ffffff; /* Color del texto */
-    text-transform: uppercase; /* Texto en mayúsculas */
-    letter-spacing: 1px; /* Espaciado entre letras */
-    padding-left: 50px; /* Espacio a la izquierda */
-    transition: color 0.5s ease; /* Transición suave al cambiar el color */
-}
-
-/* Contenedor central */
-.container-txt {
-    text-align: center; /* Centrar contenido */
-    margin-top: 50px; /* Espacio superior */
-}
-
-/* Estilo para el título */
-.txt {
-    font-size: 48px; /* Tamaño grande */
-    font-weight: bold; /* Texto en negrita */
-    color: #05203d; /* Color azul oscuro */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil */
-    letter-spacing: 2px; /* Espaciado entre letras */
+.form-range {
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: #ddd;
+    outline: none;
     margin-bottom: 10px;
 }
 
-/* Estilo para el subtítulo o párrafo */
-.txt2 {
-    font-size: 20px;
-    color: #34495e; /* Texto gris oscuro */
-    margin-bottom: 30px;
+.form-range::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--aurea-orange);
+    cursor: pointer;
+    border: 2px solid var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-/* Título y descripción */
-h2 {
+.range-value {
     text-align: center;
-    color: #05203d;
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--aurea-granate);
+    font-size: 1.1rem;
 }
 
-p {
-    text-align: center;
-    font-size: 18px;
-    color: #ffffff; /* Color blanco */
-    margin-bottom: 40px;
-    font-weight: 700; /* Aumentar el peso de la fuente */
-}
-
-/* Adaptación a pantallas más pequeñas */
-@media (max-width: 768px) {
-    .empresas-grid {
-        grid-template-columns: 1fr;
-    }
-}
+/* ======================== VIDEO ======================== */
 .video-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh; /* O el valor que prefieras */
+    margin-top: 15px;
 }
 
 #videoTest {
     max-width: 100%;
     height: auto;
-}
-/* Estilo para la caja flotante de volver */
-.volver-box {
-    position: fixed;
-    top: 20px;
-    left: 10px;
-    width: 120px;
-    padding: 10px;
-    background-color: #05203d;
-    color: white;
-    border-radius: 8px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    font-size: 16px;
-}
-
-.volver-box a {
-    color: white;
-    text-decoration: none;
-}
-
-.volver-box a:hover {
-    text-decoration: underline;
-}
-
-.hidden { display: none; }
-.question { margin-bottom: 20px; }
-
-button {
-    margin-right: 10px; /* Espacio entre botones */
-    padding: 10px 15px; /* Espaciado interno */
-    border: none; /* Sin borde */
-    background-color: #05203d; /* Color de fondo */
-    color: white; /* Color de texto */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cambiar cursor */
-    transition: background-color 0.3s; /* Efecto de transición */
-}
-button:hover {
-    background-color: #05203d; /* Color al pasar el ratón */
-}
-
-
-.hidden {
-    display: none;
-}
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-.question {
-    margin-bottom: 20px;
-}
-button {
-    margin-right: 10px;
-    padding: 10px 15px;
-    border: none;
-    background-color: #1abc9c;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-button:hover {
-    background-color: #16a085;
-}
-#resultContainer {
-    background-color: #34495e;
-    color: white;
-    padding: 30px;
     border-radius: 10px;
-    margin-top: 30px;
-    text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-.btn {
-    margin-top: 20px;
-    padding: 12px 20px;
-    border: none;
-    background-color: #1abc9c;
-    color: white;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-.btn:hover {
-    background-color: #16a085;
-}
 
-.volver-box a {
-    color: white;
-    text-decoration: none;
-}
-
-.volver-box a:hover {
-    text-decoration: underline;
-}
-/* ======================== FOOTER ======================== */
-.footer-menu {
-    background: linear-gradient(90deg, var(--aurea-granate), var(--aurea-orange));
-    color: var(--white);
-    padding: 40px 0 20px;
-    text-align: center;
-    border-radius: 15px 15px 0 0;
-    box-shadow: 0 -2px 10px var(--shadow);
-    margin-top: 50px;
-}
-
-.footer-contenedor {
+/* ======================== BOTONES ======================== */
+.form-buttons {
     display: flex;
-    justify-content: space-around;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
     flex-wrap: wrap;
-    gap: 30px;
-    text-align: left;
 }
 
-.footer-columna {
-    max-width: 320px;
-}
-
-.footer-columna h3 {
-    font-weight: bold;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-    padding-bottom: 8px;
-    margin-bottom: 10px;
-    color: var(--white);
-}
-
-.footer-columna p {
-    font-size: 0.95rem;
-    margin-bottom: 5px;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-/* ================= BOTÓN MAPA ================= */
-.footer-boton {
-    background-color: var(--white);
-    color: var(--aurea-granate);
+.btn-submit, .btn-reset {
+    padding: 12px 30px;
     border: none;
-    padding: 10px 18px;
-    border-radius: 25px;
+    border-radius: 8px;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 10px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    min-width: 160px;
 }
 
-.footer-boton:hover {
-    background-color: var(--light-gray);
-    transform: scale(1.05);
-}
-
-/* ================= MODAL PERSONALIZADO ================= */
-.modal-header {
-    background: linear-gradient(90deg, var(--aurea-granate), var(--aurea-orange));
+.btn-submit {
+    background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
     color: var(--white);
 }
 
-.modal-title {
-    font-weight: bold;
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(133, 17, 17, 0.4);
 }
 
-.btn-close {
-    filter: invert(1);
+.btn-reset {
+    background-color: #6c757d;
+    color: var(--white);
 }
 
-.mapa-contenedor {
-    position: relative;
-    height: 500px;
-    border-radius: 0 0 8px 8px;
-    overflow: hidden;
+.btn-reset:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
 }
 
-.mapa-contenedor iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+/* ======================== VOLVER ======================== */
+.volver-box {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
 }
 
-.info-ubicacion {
-    padding: 15px;
-    background-color: #f8f9fa;
-    border-top: 1px solid #dee2e6;
+.volver-box a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
-.info-ubicacion h6 {
-    color: var(--aurea-granate);
-    margin-bottom: 5px;
+.volver-box a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    color: var(--white);
 }
 
-/* ================= LÍNEA Y DERECHOS ================= */
+/* ======================== UTILIDADES ======================== */
+.hidden {
+    display: none !important;
+}
+
+/* ======================== FOOTER ======================== */
+footer {
+    background: linear-gradient(to right, #F4911E, #8B2C2C);
+    color: #fff;
+    padding: 50px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    border-radius: 15px 15px 0 0;
+    margin-top: 40px;
+}
+
+footer h4 {
+    font-weight: 1000;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    color: #f8d5b3;
+}
+
+footer p {
+    margin-bottom: 10px;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.6;
+}
+
+footer a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer a:hover {
+    color: var(--aurea-orange);
+    text-decoration: underline;
+}
+
 footer hr {
-    background-color: rgba(255, 255, 255, 0.3);
-    height: 1px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    margin: 30px 0;
+}
+
+/* ======================== BOTONES FLOTANTES ======================== */
+.flotante {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    right: 20px;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* WhatsApp */
+.flotante.whatsapp {
+    background-color: #25D366;
+    bottom: 20px;
+}
+
+/* Facebook */
+.flotante.facebook {
+    background-color: #1877F2;
+    bottom: 90px;
+}
+
+/* Efectos hover */
+.flotante:hover {
+    transform: scale(1.1);
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.flotante.whatsapp:hover {
+    background-color: #1DA851;
+}
+
+.flotante.facebook:hover {
+    background-color: #166FE5;
+}
+
+/* Iconos */
+.icono {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Botón Scroll Top */
+.acroll {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    left: 20px;
+    background-color: #333;
+    color: white;
     border: none;
-    margin: 30px auto 15px;
-    width: 80%;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    transition: all 0.3s ease;
+    display: none;
 }
 
-.footer-derechos {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin: 0;
+.acroll:hover {
+    background-color: #555;
+    transform: scale(1.1);
 }
 
-/* ================= RESPONSIVE ================= */
+/* ======================== RESPONSIVE ======================== */
 @media (max-width: 768px) {
-    .footer-contenedor {
+    .form-container {
+        margin: 80px auto 20px;
+        padding: 20px;
+    }
+    
+    .form-buttons {
         flex-direction: column;
         align-items: center;
+    }
+    
+    .btn-submit, .btn-reset {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .radio-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .volver-box {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 20px;
         text-align: center;
     }
+}
 
-    .footer-columna {
-        max-width: 90%;
+@media (max-width: 576px) {
+    body {
+        padding: 10px;
     }
-
-    .footer-boton {
-        margin-top: 10px;
+    
+    .form-container {
+        padding: 15px;
     }
-
-    .mapa-contenedor {
-        height: 300px;
+    
+    h1 {
+        font-size: 1.8rem;
     }
 }

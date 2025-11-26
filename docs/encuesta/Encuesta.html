@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encuesta de Audición</title>
+    <title>Encuesta de Audición - Áurea Centro Auditivo</title>
     <link rel="stylesheet" href="encuesta.css">
-    <!-- Incluir la librería SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="volver-box">
-        <a href="../index.html">← Volver</a>
+        <a href="../index.html">← Volver al Inicio</a>
     </div>
-    <div class="container">
-        <h1>sol</h1>
+    
+    <div class="form-container">
+        <h1 class="text-center mb-4">Test de Audición</h1>
+        <p class="text-center mb-4">Complete este cuestionario para evaluar su salud auditiva</p>
+        
         <form id="surveyForm">
             <div class="question">
-                <label for="audioQuality">1. ¿Cómo calificarías la calidad del audio en los videos didácticos?</label><br>
-                <select id="audioQuality" name="audioQuality" required>
+                <label for="audioQuality">1. ¿Cómo calificarías la calidad del audio en los videos didácticos?</label>
+                <select id="audioQuality" name="audioQuality" class="form-control" required>
+                    <option value="">Selecciona una opción</option>
                     <option value="Excelente">Excelente</option>
                     <option value="Buena">Buena</option>
                     <option value="Regular">Regular</option>
@@ -28,150 +31,163 @@
             </div>
 
             <div class="question">
-                <label for="videoTest">2. Reproduce el audio, ponga pausa cuando deje de escuchar el sonido:</label><br>
+                <label>2. Reproduce el audio, ponga pausa cuando deje de escuchar el sonido:</label>
                 <div class="video-container">
-                    <video id="videoTest" width="320" height="240" controls>
-                        <source src="/video/How Old Are Your Ears_ _ HEARING TEST! - White Noise & Relaxation (720p, h264, youtube) (online-video-cutter.com).mp4" type="video/mp4">
+                    <video id="videoTest" width="100%" controls class="rounded">
+                     <source src="./How Old Are Your Ears_ _ HEARING TEST! - White Noise & Relaxation (720p, h264, youtube) (online-video-cutter.com).mp4"video/mp4">
                         Tu navegador no soporta la reproducción de este video.
                     </video>
                 </div>
             </div>
 
             <div class="question">
-                <label for="hearingIssues">3. ¿Has tenido problemas para escuchar el audio?</label><br>
-                <input type="radio" id="yes" name="hearingIssues" value="Sí" required>
-                <label for="yes">Sí</label>
-                <input type="radio" id="no" name="hearingIssues" value="No">
-                <label for="no">No</label>
+                <label>3. ¿Has tenido problemas para escuchar el audio?</label>
+                <div class="radio-group">
+                    <input type="radio" id="yes" name="hearingIssues" value="Sí" required>
+                    <label for="yes" class="radio-label">Sí</label>
+                    <input type="radio" id="no" name="hearingIssues" value="No">
+                    <label for="no" class="radio-label">No</label>
+                </div>
             </div>
 
             <div class="question">
-                <label for="suggestions">4. ¿Desde qué edad dejaste de escuchar?</label><br>
-                <textarea id="suggestions" name="suggestions" rows="4"></textarea>
+                <label for="suggestions">4. ¿Desde qué edad dejaste de escuchar?</label>
+                <textarea id="suggestions" name="suggestions" rows="4" class="form-control" placeholder="Describe desde qué edad has notado cambios en tu audición..."></textarea>
             </div>
             
             <div class="question">
                 <label for="hearWell">5. ¿Escuchas bien?</label>
-                <select id="hearWell" name="hearWell" onchange="handleSelection()">
+                <select id="hearWell" name="hearWell" class="form-control" onchange="handleSelection()">
                     <option value="">Selecciona una opción</option>
                     <option value="yes">Sí</option>
                     <option value="no">No</option>
                 </select>
             </div>
 
-            <div id="followUp" class="hidden">
-                <label for="details">¿Puedes proporcionar más detalles?</label>
-                <textarea id="details" name="details" rows="4"></textarea>
+            <div id="followUp" class="question hidden">
+                <label for="details">¿Puedes proporcionar más detalles sobre tus dificultades auditivas?</label>
+                <textarea id="details" name="details" rows="4" class="form-control" placeholder="Describe tus síntomas, situaciones donde tienes dificultades, etc..."></textarea>
             </div>
 
             <div class="question">
-                <label for="ageHearingIssues">6. ¿A qué edad empezaste a notar problemas de audición?</label><br>
-                <input type="number" id="ageHearingIssues" name="ageHearingIssues" min="0" max="100" placeholder="Edad (años)">
+                <label for="ageHearingIssues">6. ¿A qué edad empezaste a notar problemas de audición?</label>
+                <input type="number" id="ageHearingIssues" name="ageHearingIssues" min="0" max="100" class="form-control" placeholder="Edad en años">
             </div>
 
             <div class="question">
-                <label for="familyHistory">7. ¿Hay antecedentes familiares de hipoacusia?</label><br>
-                <input type="radio" id="familyYes" name="familyHistory" value="Sí" required>
-                <label for="familyYes">Sí</label>
-                <input type="radio" id="familyNo" name="familyHistory" value="No">
-                <label for="familyNo">No</label>
+                <label>7. ¿Hay antecedentes familiares de problemas auditivos?</label>
+                <div class="radio-group">
+                    <input type="radio" id="familyYes" name="familyHistory" value="Sí" required>
+                    <label for="familyYes" class="radio-label">Sí</label>
+                    <input type="radio" id="familyNo" name="familyHistory" value="No">
+                    <label for="familyNo" class="radio-label">No</label>
+                </div>
             </div>
 
             <div class="question">
-                <label for="consultation">8. ¿Has consultado a un profesional de la salud sobre tu audición?</label><br>
-                <input type="radio" id="consultationYes" name="consultation" value="Sí" required>
-                <label for="consultationYes">Sí</label>
-                <input type="radio" id="consultationNo" name="consultation" value="No">
-                <label for="consultationNo">No</label>
+                <label>8. ¿Has consultado a un profesional de la salud sobre tu audición?</label>
+                <div class="radio-group">
+                    <input type="radio" id="consultationYes" name="consultation" value="Sí" required>
+                    <label for="consultationYes" class="radio-label">Sí</label>
+                    <input type="radio" id="consultationNo" name="consultation" value="No">
+                    <label for="consultationNo" class="radio-label">No</label>
+                </div>
             </div>
 
             <div class="question">
-                <label for="hearingAid">9. ¿Utilizas algún dispositivo de asistencia auditiva (audífonos, implantes, etc.)?</label><br>
-                <input type="radio" id="aidYes" name="hearingAid" value="Sí" required>
-                <label for="aidYes">Sí</label>
-                <input type="radio" id="aidNo" name="hearingAid" value="No">
-                <label for="aidNo">No</label>
+                <label>9. ¿Utilizas algún dispositivo de asistencia auditiva (audífonos, implantes, etc.)?</label>
+                <div class="radio-group">
+                    <input type="radio" id="aidYes" name="hearingAid" value="Sí" required>
+                    <label for="aidYes" class="radio-label">Sí</label>
+                    <input type="radio" id="aidNo" name="hearingAid" value="No">
+                    <label for="aidNo" class="radio-label">No</label>
+                </div>
             </div>
 
             <div class="question">
-                <label for="audioClarity">10. ¿Cuánto calificarías nuestro test de audición? (1 a 100)</label><br>
-                <input type="range" id="audioClarity" name="audioClarity" min="1" max="100" value="50" oninput="document.getElementById('rangeValue').textContent = this.value">
-                <span id="rangeValue">50</span>
+                <label for="audioClarity">10. ¿Cuánto calificarías nuestro test de audición? (1 a 100)</label>
+                <div class="range-container">
+                    <input type="range" id="audioClarity" name="audioClarity" min="1" max="100" value="50" class="form-range" oninput="document.getElementById('rangeValue').textContent = this.value">
+                    <div class="range-value">
+                        <span id="rangeValue">50</span>/100
+                    </div>
+                </div>
             </div>
 
-            <button type="submit">Enviar</button>
-            <button type="button" onclick="document.getElementById('surveyForm').reset();">Borrar</button>
+            <div class="form-buttons">
+                <button type="submit" class="btn-submit">Enviar Encuesta</button>
+                <button type="button" class="btn-reset" onclick="document.getElementById('surveyForm').reset(); handleSelection();">Borrar Respuestas</button>
+            </div>
         </form>
     </div>
 
-    <!-- ================= FOOTER ================= -->
-   
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer-menu">
-        <div class="footer-contenedor">
-            <div class="footer-columna">
-                <h3>Áurea Centro Auditivo</h3>
+   <!-- ================= FOOTER ================= -->
+<footer>
+    <div class="container">
+        <div class="row text-center text-md-start">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h4>Áurea Centro Auditivo</h4>
                 <p>Expertos en soluciones auditivas con más de 15 años de experiencia mejorando la calidad de vida de nuestros pacientes.</p>
             </div>
-
-            <div class="footer-columna">
-                <h3>Contacto</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Av. Arce Nro. 2652 Edif. MILA Mezanine 1 Of. L21<br>
-                    (al frente del Multicine La Paz) - La Paz, Bolivia</p>
-                <p><i class="fas fa-phone"></i> +591 70111673</p>
-                <p><i class="fas fa-envelope"></i> contacto@aureamed.com.bo</p>
-
-                <!-- Botón del mapa -->
-                <button type="button" class="footer-boton" data-bs-toggle="modal" data-bs-target="#mapaModal">
-                    <i class="fas fa-map"></i> Ver Mapa
-                </button>
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h4>Contacto</h4>
+                <p>📍 Av.Arce.Nro.2652 Edif.MILA Mezanine 1 Of.L21<br> (al frente del Multicine La Paz) La Paz Bolivia</p>
+                <p>📞 +591 70111673</p>
+                <p>✉️ contacto@aureamed.com.bo</p>
             </div>
-
-            <div class="footer-columna">
-                <h3>Horario</h3>
+      
+            <div class="col-md-4">
+                <h4>Horario</h4>
                 <p>Lunes y Miércoles: 15:00 - 19:00</p>
                 <p>Martes y Jueves: 10:00 - 18:00</p>
-                <p>Viernes: 14:00 - 18:00</p>
+                <p>Viernes: 14:00 - 18:00</p>       
             </div>
         </div>
-
-        <hr>
-        <p class="footer-derechos">&copy; 2025 Áurea Centro Auditivo. Todos los derechos reservados.</p>
-    </footer>
-
-    <!-- ================= MODAL DEL MAPA ================= -->
-    <div class="modal fade" id="mapaModal" tabindex="-1" aria-labelledby="mapaModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="mapaModalLabel">
-                        <i class="fas fa-map-marker-alt me-2"></i>Ubicación - Áurea Centro Auditivo
-                    </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-                <div class="mapa-contenedor">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.112234478961!2d-68.124731924686!3d-16.5115715753784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915f2061d125ed5b%3A0x79c073ff64b8ac2b!2sAv.%20Arce%20Nro.%202652%2C%20La%20Paz!5e0!3m2!1ses!2sbo!4v1693425678901"
-                        allowfullscreen="" loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-                <div class="info-ubicacion">
-                    <h6><i class="fas fa-info-circle me-2"></i>Información de ubicación</h6>
-                    <p class="mb-1"><strong>Dirección:</strong> Av. Arce Nro. 2652 Edificio MILA Mezanine 1, Oficina L21</p>
-                    <p class="mb-1"><strong>Referencia:</strong> Frente al Multicine La Paz</p>
-                    <p class="mb-0"><strong>Zona:</strong> Zona Central, La Paz, Bolivia</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js">
         
-    </script>
+        <!-- ================= MAPA ================= -->
+        <div class="text-center mt-4">
+            <button type="button" class="btn btn-light btn-sm rounded-pill px-4 py-2 shadow" data-bs-toggle="modal" data-bs-target="#mapaModal">
+                📍 Ver Mapa
+            </button>
+        </div>
 
-    <script src="/encuesta/Codigo.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- Ventana Emergente -->
+        <div class="modal fade" id="mapaModal" tabindex="-1" aria-labelledby="mapaModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="mapaModalLabel">Ubicación</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d1116.1146343179062!2d-68.12314552347775!3d-16.5115717753784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e6!4m4!1s0x915f2061d125ed5b%3A0x79c073ff64b8ac2b!3m2!1d-16.5115216!2d-68.1227171!4m5!1s0x915f2061d125ed5b%3A0x79c073ff64b8ac2b!2sAv.%20Arce%20Nro.%202652%20Edificio%20MILA%20Mezzanine%202%20Of.%202%2C%20La%20Paz!3m2!1d-16.5115216!2d-68.1227171!5e0!3m2!1ses-419!2sbo!4v1761098004108!5m2!1ses-419!2sbo" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <hr>
+        <p class="text-center mb-0">&copy; 2025 Áurea Centro Auditivo. Todos los derechos reservados.</p>
+    </div>
+</footer>
 
+<!-- ================= Botones Flotantes ================= -->
+<!-- WhatsApp -->
+<a href="https://wa.link/cetggt" class="flotante whatsapp" target="_blank" title="Chat WhatsApp">
+  <i class="icono fab fa-whatsapp"></i>
+</a>
+
+<!-- Facebook -->
+<a href="https://www.facebook.com/AUREAEVOLUCIONAUDITIVA" class="flotante facebook" target="_blank" title="Síguenos en Facebook">
+  <i class="icono fab fa-facebook-f"></i>
+</a>
+
+<!-- Botón Scroll Top -->
+<button class="acroll" id="btntop">↑</button>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="Codigo.js"></script>
 </body>
 </html>

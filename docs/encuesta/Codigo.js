@@ -1,63 +1,172 @@
+
+// Función para manejar la selección de "¿Escuchas bien?"
 function handleSelection() {
     var hearWell = document.getElementById('hearWell').value;
     var followUp = document.getElementById('followUp');
+    
     if (hearWell === 'no') {
         followUp.classList.remove('hidden');
+        // Hacer el campo de detalles requerido si es visible
+        document.getElementById('details').required = true;
     } else {
         followUp.classList.add('hidden');
+        // Quitar el requerido si está oculto
+        document.getElementById('details').required = false;
     }
 }
 
+// Función para manejar el envío del formulario
 function handleSubmit(event) {
-    event.preventDefault(); // Evitar que el formulario se envíe de inmediato
+    event.preventDefault();
+
+    // Validar que todos los campos requeridos estén completos
+    const requiredFields = document.querySelectorAll('[required]');
+    let isValid = true;
+    
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            isValid = false;
+            field.style.borderColor = 'red';
+        } else {
+            field.style.borderColor = '';
+        }
+    });
+
+    if (!isValid) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Campos incompletos',
+            text: 'Por favor, complete todos los campos requeridos.',
+        });
+        return;
+    }
 
     var hearWell = document.getElementById('hearWell').value;
 
     if (hearWell === 'no') {
-        // Mostrar un pop-up recomendando ir a un diagnóstico con SweetAlert2
         Swal.fire({
             icon: 'warning',
             title: '¡Atención!',
-            text: 'Es recomendable que acudas a un diagnóstico con un profesional de la salud auditiva.',
+            html: `
+                <p>Es recomendable que acudas a un diagnóstico con un profesional de la salud auditiva.</p>
+                <p><strong>Áurea Centro Auditivo</strong> puede ayudarte con una evaluación completa.</p>
+            `,
+            confirmButtonText: 'Entendido',
+            confirmButtonColor: '#851111'
         });
     } else {
-        // Mostrar un pop-up de agradecimiento
         Swal.fire({
             icon: 'success',
-            title: '¡Gracias!',
-            text: 'Gracias por completar la encuesta. No es necesario un diagnóstico adicional.',
+            title: '¡Gracias por completar la encuesta!',
+            text: 'Según tus respuestas, no parece necesario un diagnóstico adicional en este momento.',
+            confirmButtonText: 'Cerrar',
+            confirmButtonColor: '#28a745'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Opcional: redirigir o resetear el formulario
+                document.getElementById('surveyForm').reset();
+                handleSelection(); // Resetear también la visibilidad del campo followUp
+            }
         });
     }
 }
 
-// Escuchar el envío del formulario
-document.getElementById('surveyForm').addEventListener('submit', handleSubmit);
-
-// JavaScript para el funcionamiento del modal del mapa
-document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar el modal de Bootstrap
-    const mapaModal = new bootstrap.Modal(document.getElementById('mapaModal'));
+// Función para inicializar la encuesta
+function initializeSurvey() {
+    // Agregar evento al formulario
+    document.getElementById('surveyForm').addEventListener('submit', handleSubmit);
     
-    // Agregar evento al botón "Ver Mapa"
-    const verMapaBtn = document.querySelector('.footer-boton');
-    verMapaBtn.addEventListener('click', function() {
-        mapaModal.show();
+    // Inicializar el estado del campo followUp
+    handleSelection();
+    
+    // Agregar validación en tiempo real a los campos requeridos
+    const requiredFields = document.querySelectorAll('[required]');
+    requiredFields.forEach(field => {
+        field.addEventListener('input', function() {
+            if (this.value.trim()) {
+                this.style.borderColor = '';
+            }
+        });
     });
     
-    // Mejorar la accesibilidad del modal
-    document.getElementById('mapaModal').addEventListener('shown.bs.modal', function () {
-        // Enfocar el botón de cerrar cuando se abre el modal
-        const closeBtn = this.querySelector('.btn-close');
-        closeBtn.focus();
-    });
+    // Mejorar la experiencia del rango
+    const rangeInput = document.getElementById('audioClarity');
+    const rangeValue = document.getElementById('rangeValue');
     
-    // Cerrar modal con tecla Escape
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && document.getElementById('mapaModal').classList.contains('show')) {
-            mapaModal.hide();
+    rangeInput.addEventListener('input', function() {
+        rangeValue.textContent = this.value;
+        
+        // Cambiar color basado en el valor
+        if (this.value < 30) {
+            rangeValue.style.color = '#dc3545';
+        } else if (this.value < 70) {
+            rangeValue.style.color = '#ffc107';
+        } else {
+            rangeValue.style.color = '#28a745';
         }
     });
     
-    // Mensaje de consola para verificar que el script está cargado
-    console.log('Áurea Centro Auditivo - Script cargado correctamente');
+    // Inicializar el color del rango
+    rangeInput.dispatchEvent(new Event('input'));
+}
+
+// Inicializar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', function() {
+    initializeSurvey();
+    
+    // Inicializar el modal de Bootstrap para el mapa
+    const mapaModal = new bootstrap.Modal(document.getElementById('mapaModal'));
+    
+    // Agregar evento al botón "Ver Mapa" en el footer
+    const verMapaBtn = document.querySelector('.footer-boton');
+    if (verMapaBtn) {
+        verMapaBtn.addEventListener('click', function() {
+            mapaModal.show();
+        });
+    }
+    
+    // Mejorar la accesibilidad del modal
+    document.getElementById('mapaModal').addEventListener('shown.bs.modal', function () {
+        const closeBtn = this.querySelector('.btn-close');
+        if (closeBtn) {
+            closeBtn.focus();
+        }
+    });
+    
+    // Mensaje de consola para desarrollo
+    console.log('Encuesta de Audición - Áurea Centro Auditivo');
+    console.log('Script cargado correctamente');
 });
+
+// Función para exportar datos (opcional, para uso futuro)
+function exportSurveyData() {
+    const formData = new FormData(document.getElementById('surveyForm'));
+    const data = {};
+    
+    for (let [key, value] of formData.entries()) {
+        data[key] = value;
+    }
+    
+    return data;
+}
+
+// Función para calcular resultado preliminar (opcional)
+function calculatePreliminaryResult() {
+    const data = exportSurveyData();
+    let score = 0;
+    
+    // Lógica simple de puntuación (puede ser más compleja)
+    if (data.hearWell === 'yes') score += 30;
+    if (data.hearingIssues === 'No') score += 20;
+    if (data.familyHistory === 'No') score += 15;
+    if (data.consultation === 'Sí') score += 10;
+    if (data.hearingAid === 'No') score += 10;
+    
+    return {
+        score: score,
+        interpretation: score >= 60 ? 'Buen estado auditivo' : 
+                       score >= 40 ? 'Estado auditivo regular' : 
+                       'Se recomienda evaluación profesional'
+    };
+}
+
