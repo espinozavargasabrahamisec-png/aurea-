@@ -4,21 +4,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@200;400;700;900&display=swap');
 
 body {
-  font-family: 'Exo 2', sans-serif; /* Fuente sugerida */
+  font-family: 'Exo 2', sans-serif;
   font-weight: 400;
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  color: #222;
 
-  /* Fondo degradado */
+  /* Fondo degradado como el ejemplo */
   background:
     radial-gradient(circle at top left, rgba(242,152,46,0.15), transparent 60%),
     radial-gradient(circle at bottom right, rgba(133,17,17,0.12), transparent 60%),
     #f8f8f8;
-
-  color: #222;
 }
-
 
 /* ============================================================
    VARIABLES
@@ -42,40 +40,58 @@ body {
    NAVBAR
    ============================================================ */
 .navbar {
+  
   background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
-  box-shadow: var(--shadow-md);
-  padding: 12px 20px;
+  box-shadow: 0 6px 20px var(--shadow);
+  
+  padding: 15px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 1000;
+  height: 130px;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--white);
 }
 
 .navbar-nav .nav-link {
   color: var(--white) !important;
-  font-weight: 700; /* Exo2 Bold */
-  padding: 10px 14px;
-  margin: 0 6px;
-  border-radius: 25px;
-  transition: var(--transition);
+  font-weight: 600;
+  margin: 0 8px;
+
+  border-radius: 30px;
+  padding: 8px 16px;
 }
 
 .navbar-nav .nav-link:hover {
-  background-color: var(--white);
+  background: var(--white);
   color: var(--aurea-granate) !important;
-  box-shadow: var(--shadow-sm);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
 .dropdown-menu {
   background: var(--aurea-granate);
   border-radius: 12px;
+   overflow: hidden;
 }
 
 .dropdown-item {
-  color: var(--white);
-  border-radius: 6px;
-  font-weight: 400; /* Regular */
+  color: var(--white) !important;
+  font-weight: 500;
+
 }
 
 .dropdown-item:hover {
-  background-color: var(--aurea-orange);
-
+  background: var(--aurea-orange);
+  transform: translateX(5px);
+   border-radius: 8px; 
 }
 
 /* Logo */
@@ -122,7 +138,7 @@ body {
 
 .header-content h1 {
   font-size: 3.2rem;
-  font-weight: 900; /* Exo2 Extra Bold */
+  font-weight: 900;
   text-shadow: 3px 3px 8px rgba(0,0,0,.4);
 }
 
@@ -131,7 +147,6 @@ body {
   opacity: .95;
 }
 
-/* Animación */
 @keyframes fadeUp {
   from {
     transform: translateY(30px);
@@ -266,10 +281,11 @@ footer hr {
     font-size: 2.2rem;
   }
 }
+
 /* ============================================================
-   Emergente
+   EMERGENTES Y BOTONES FLOTANTES
    ============================================================ */
-   .toast-custom {
+.toast-custom {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -288,100 +304,64 @@ footer hr {
   opacity: 1;
   transform: translateY(0);
 }
-
+/* botones flotantes */
 .flotante {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 26px;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease;
   z-index: 9999;
-  background: var(--white);
-  color: var(--aurea-granate);
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  box-shadow: var(--shadow-md);
-  transition: transform 0.3s;
-  text-decoration: none; 
 }
 
 .flotante:hover {
-  transform: scale(1.1);
-}
-.floating-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  line-height: 1;       
-  text-decoration: none; 
-  vertical-align: middle;
-}
-/* Botón Scroll Mejorado */
-.acroll {
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.3s ease;
+  transform: scale(1.12);
 }
 
-.acroll.show {
-  opacity: 1;
-  pointer-events: all;
+/* WhatsApp */
+.whatsapp {
+  background: #25D366;
+  bottom: 20px;
+  right: 20px;
+  font-size: 32px;
 }
 
-
-.acroll:hover {
-  transform: scale(1.1);
-}
-.dropdown-menu {
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  opacity: 0;
-  transform: translateY(-10px);
+/* Facebook */
+.facebook {
+  background: #1877F2;
+  bottom: 90px;
+  right: 20px;
+  font-size: 32px;
 }
 
-.dropdown-menu.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Botones Flotantes posiciones*/
-.whatsapp { 
-  bottom: 20px;  
-  right: 20px; 
-  font-size: 30px;
-  
-}
-
-.facebook { 
-  bottom: 90px; 
-  right: 20px; 
-  font-size: 25px;
-  
-}
-
+/* Botón scrul */
 #btntop {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  z-index: 9999;
-
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
-  background-color: var(--aurea-granate);
+  background: #800020;
   color: white;
-
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
   cursor: pointer;
-  font-size: 22px;
-
-  border: none;          /* elimina cualquier borde por defecto */
-  outline: none;         /* elimina outline al hacer focus */
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* opcional: sombra suave */
+  font-size: 26px;
+  border: none;
+  outline: none;
+  transition: transform 0.25s ease;
 }
 
-
+#btntop:hover {
+  transform: scale(1.12);
+}
