@@ -1,389 +1,416 @@
-:root {
-    --primary-color: #851111;   /* Rojo oscuro */
-    --secondary-color: #f2982e; /* Naranja */
-    --accent-color: #ff4800;    /* Naranja brillante */
-    --light-color: #f8f9fa;     /* Blanco claro */
-    --dark-color: #222;         /* Negro */
-}
-/* ----------------------boton flotante---------------------- */
-/* Botón Facebook */
-.flotante.facebook {
-  background-color: #1877F2; /* Azul Facebook */
-  background-image: url('ruta/a/icono-facebook.png'); /* Opcional: icono personalizado */
-  bottom: 90px; /* Posición arriba del WhatsApp */
-}
+ /* ========================
+       VARIABLES DE COLOR
+       ======================== */
+    :root {
+      --aurea-granate: #8B2C2C;
+      --aurea-orange: #F4911E;
+      --aurea-dark: #222;
+      --aurea-gray: #555;
+      --white: #ffffff;
+      --light-gray: #f8f9fa;
+      --shadow: rgba(0,0,0,0.2);
+    }
 
-.flotante.facebook:hover {
-  background-color: #166FE5; /* Azul más oscuro al hover */
-}
+    /* ========================
+       BASE
+       ======================== */
+    body {
+      font-family: 'Segoe UI', 'Roboto', sans-serif;
+      background-color: var(--light-gray);
+      color: var(--aurea-dark);
+      line-height: 1.6;
+      padding-top: 130px;
+      margin: 0;
+    }
 
-/* Si usas Font Awesome */
-.flotante.facebook .icono {
-  margin-top: 15px;
-  display: block;
-}
-/* Estilos base para botones flotantes */
-.flotante {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  right: 20px;
-  background-color: #25D366;
-  color: white;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 30px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  z-index: 100;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      color: var(--aurea-granate);
+    }
 
-/* WhatsApp */
-.flotante.whatsapp {
-  background-color: #25D366;
-  bottom: 20px;
-}
+    /* ========================
+       NAVBAR
+       ======================== */
+    .navbar {
+      background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
+      box-shadow: 0 6px 20px var(--shadow);
 
-/* Facebook */
-.flotante.facebook {
-  background-color: #1877F2;
-  bottom: 90px; /* 60px de altura + 10px de separación */
-}
+      padding: 15px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      height: 130px;
+    }
 
-/* Efectos hover */
-.flotante:hover {
-  transform: scale(1.1);
-  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
-}
+    .navbar-brand {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--white);
+    }
 
-.flotante.whatsapp:hover {
-  background-color: #1DA851;
-}
+    .navbar-nav .nav-link {
+      color: var(--white) !important;
+      font-weight: 600;
+      margin: 0 8px;
+      transition: all 0.3s ease;
+      border-radius: 30px;
+      padding: 8px 16px;
+    }
 
-.flotante.facebook:hover {
-  background-color: #166FE5;
-}
+    .navbar-nav .nav-link:hover {
+      background: var(--white);
+      color: var(--aurea-granate) !important;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
 
-/* Iconos whap */
-.icono {
-  font-size: 30px;
-  margin-top: 2px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60%;
-}
+    .dropdown-menu {
+      background: var(--aurea-granate);
+      border-radius: 12px;
+      overflow: hidden;
+    }
 
-/* Botón Scroll Top */
-.acroll {
-  position: fixed;
-  width: 50px;
-  height: 50px;
-  bottom: 20px;
-  left: 20px;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  z-index: 100;
-  transition: all 0.3s ease;
-}
+    .dropdown-item {
+      color: var(--white) !important;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
 
-.acroll:hover {
-  background-color: #555;
-  transform: scale(1.1);
-}
-/* ================= NAVBAR ================= */
-.navbar {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    padding: 15px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+    .dropdown-item:hover {
+      background: var(--aurea-orange);
+      transform: translateX(5px);
+      border-radius: 8px;
+    }
 
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    /* ----------- Logo de Aurea ----------- */
+    .aurea2 {
+      display: inline-block;
+      width: 260px;
+      height: 100px;
+        background-image: url('../Asset 10@4x.png');
+      background-color: var(--white);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-indent: -9999px;
+      overflow: hidden;
+    }
 
-.navbar-brand {
-    font-size: 1.8rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    color: var(--light-color);
-    text-decoration: none;
-}
+    .aurea2:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
 
-.navbar-nav {
-    display: flex;
-    list-style: none;
-    gap: 10px;
-}
+    /* ================= TEXTO ESPECÍFICO ================= */
+    p.letras {
+        color: var(--aurea-dark);
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.6;
+        text-align: center;
+    }
 
-.nav-link {
-    color: var(--light-color);
-    font-weight: 600;
-    padding: 8px 15px;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    position: relative;
-}
+    /* ================= BODY ================= */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: var(--light-gray);
+        color: var(--aurea-dark);
+        margin: 0;
+        padding: 0;
+    }
 
-.nav-link:hover {
-    background-color: var(--light-color);
-    color: var(--primary-color);
-}
+    /* BOTONES */
+    button, .btn, .btna {
+        background-color: var(--aurea-orange);
+        color: var(--white);
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
 
-/* ----------- Logo de Aurea ----------- */
-.aurea2 {
-  display: inline-block;
-  width: 260px; /* antes 440px → más proporcionado */
-  height: 100px; /* antes 140px */
-  background-image: url('../imagenes/Asset 4.png');
-  background-size: contain;    /* conserva proporción del logo */
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2); /* sombra más natural */
-  transition: transform 0.2s, box-shadow 0.2s;
-  text-indent: -9999px;
-  overflow: hidden;
-}
+    button:hover, .btn:hover, .btna:hover {
+        background-color: var(--aurea-granate);
+    }
 
-/* Dropdown */
-.dropdown {
-    position: relative;
-}
-/* ---verlo en casa urgente  las  dos de arriba y de abajo---- */
-.dropdown-toggle::after {
-    content: " ▼";
-    font-size: 0.7rem;
-}
+    /* ================= SECCIONES ================= */
+    .audifonos-section {
+        padding: 50px 20px;
+        background-color: #fff5f0;
+        text-align: center;
+    }
 
+    .audifonos-section h2 {
+        color: var(--aurea-granate);
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
 
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: var(--primary-color);
-    padding: 10px 0;
-    border-radius: 12px;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    min-width: 180px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    z-index: 1000;
-}
+    .audifonos-section p {
+        color: var(--aurea-dark);
+        font-size: 18px;
+        margin-bottom: 40px;
+    }
 
-.dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-}
+    /* GRID TARJETAS */
+    .audifonos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
 
-.dropdown-item {
-    color: var(--light-color);
-    padding: 10px 20px;
-    text-decoration: none;
-    display: block;
-    transition: all 0.3s ease;
-}
+    .audifono-item {
+        background-color: var(--white);
+        color: var(--aurea-dark);
+        padding: 20px;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
 
-.dropdown-item:hover {
-    background-color: var(--secondary-color);
-    transform: translateX(5px);
-}
+    .audifono-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
 
-/* Navbar Toggler (para móviles) */
-.navbar-toggler {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-}
+    .audifono-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
 
-.navbar-toggler span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--light-color);
-    border-radius: 2px;
-}
+    .audifono-item h3 {
+        color: var(--aurea-granate);
+        margin: 10px 0;
+    }
 
-/* * ----------- Logo de Aurea ----------- */
-.aurea2 {
-  display: inline-block;
-  width: 260px; /* antes 440px → más proporcionado */
-  height: 100px; /* antes 140px */
-  background-image: url('/aurea/300ppi/Asset\ 2.png');
-  background-size: contain;    /* conserva proporción del logo */
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2); /* sombra más natural */
-  transition: transform 0.2s, box-shadow 0.2s;
-  text-indent: -9999px;
-  overflow: hidden;
-}
+    .audifono-item p {
+        color: var(--aurea-dark);
+    }
 
-.aurea2:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
+    /* ================= PRODUCTS ================= */
+    .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 50px 20px;
+    }
 
-/* ================= TEXTO ESPECÍFICO ================= */
-p.letras {
-    color: var(--light-color);        /* Letras blancas */
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.6;
-    text-align: center;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Sombra para mejor visibilidad */
-}
+    .producta-carda {
+        background-color: var(--white);
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
 
+    .producta-carda:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
 
-/* ================= BODY ================= */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: var(--light-color);
-    color: var(--dark-color);
-    margin: 0;
-    padding: 0;
-}
+    .imgBx img {
+        width: 100%;
+        border-radius: 12px 12px 0 0;
+    }
 
-/* BOTONES */
-button, .btn, .btna {
-    background-color: var(--secondary-color);
-    color: var(--light-color);
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s ease;
-}
+    .details, .detailsa {
+        padding: 20px;
+    }
 
-button:hover, .btn:hover, .btna:hover {
-    background-color: var(--primary-color);
-}
+    .details h2, .detailsa h2 {
+        color: var(--aurea-granate);
+        margin-bottom: 10px;
+    }
 
-/* ================= SECCIONES ================= */
-.audifonos-section {
-    padding: 50px 20px;
-    background-color: #fff5f0;
-    text-align: center;
-}
+    .details p, .detailsa p {
+        color: var(--aurea-dark);
+        line-height: 1.5;
+    }
 
-.audifonos-section h2 {
-    color: var(--primary-color);
-    font-size: 36px;
-    margin-bottom: 15px;
-}
+    .producta-colors span {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        margin-right: 10px;
+        cursor: pointer;
+        border: 2px solid transparent;
+    }
 
-.audifonos-section p {
-    color: var(--light-color); /* letras blancas */
-    font-size: 18px;
-    margin-bottom: 40px;
-}
+    .producta-colors span:hover {
+        border: 2px solid var(--aurea-dark);
+    }
 
-/* GRID TARJETAS */
-.audifonos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
+    /* ========================
+       BOTONES FLOTANTES
+       ======================== */
+    .flotante {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      right: 20px;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      z-index: 100;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-.audifono-item {
-    background-color: var(--primary-color);
-    color: var(--light-color);
-    padding: 20px;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-}
+    /* WhatsApp */
+    .flotante.whatsapp {
+      background-color: #25D366;
+      bottom: 20px;
+    }
 
-.audifono-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-}
+    /* Facebook */
+    .flotante.facebook {
+      background-color: #1877F2;
+      bottom: 90px;
+    }
 
-.audifono-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
+    /* Efectos hover */
+    .flotante:hover {
+      transform: scale(1.1);
+      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+    }
 
-.audifono-item h3 {
-    color: var(--secondary-color);
-    margin: 10px 0;
-}
+    .flotante.whatsapp:hover {
+      background-color: #1DA851;
+    }
 
-.audifono-item p {
-    color: var(--light-color);
-}
+    .flotante.facebook:hover {
+      background-color: #166FE5;
+    }
 
-/* ================= PRODUCTS ================= */
-.products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 50px 20px;
-}
+    /* Iconos */
+    .icono {
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-.producta-carda {
-    background-color: var(--light-color);
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
+    /* Botón Scroll Top */
+    .acroll {
+      position: fixed;
+      width: 50px;
+      height: 50px;
+      bottom: 20px;
+      left: 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      z-index: 100;
+      transition: all 0.3s ease;
+      display: none;
+    }
 
-.producta-carda:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
+    .acroll:hover {
+      background-color: #555;
+      transform: scale(1.1);
+    }
 
-.imgBx img {
-    width: 100%;
-    border-radius: 12px 12px 0 0;
-}
+    /* ========================
+       FOOTER
+       ======================== */
+    footer {
+      background: linear-gradient(to right, #F4911E, #8B2C2C);
+      color: #fff;
+      padding: 50px 20px;
+      font-family: 'Segoe UI', sans-serif;
+      border-radius: 15px 15px 0 0;
+    }
 
-.details, .detailsa {
-    padding: 20px;
-}
+    footer h4 {
+      font-weight: 1000;
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+      color: #f8d5b3;
+    }
 
-.details h2, .detailsa h2 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
+    footer p {
+      margin-bottom: 10px;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.6;
+    }
 
-.details p, .detailsa p {
-    color: var(--dark-color);
-    line-height: 1.5;
-}
+    footer a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+    }
 
-.producta-colors span {
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    margin-right: 10px;
-    cursor: pointer;
-    border: 2px solid transparent;
-}
+    footer a:hover {
+      color: var(--aurea-orange);
+      text-decoration: underline;
+    }
 
-.producta-colors span:hover {
-    border: 2px solid var(--dark-color);
-}
+    footer hr {
+      border-top: 1px solid rgba(255,255,255,0.3);
+      margin: 30px 0;
+    }
+
+    /* ========================
+       RESPONSIVE
+       ======================== */
+    @media (max-width: 768px) {
+      body {
+        padding-top: 100px;
+      }
+      
+      .navbar {
+        height: 100px;
+      }
+      
+      .aurea2 {
+        width: 200px;
+        height: 80px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .aurea2 {
+        width: 150px;
+        height: 60px;
+      }
+    }
+
+    /* ========================
+       BOTONES
+       ======================== */
+    .btn-granate {
+      background: var(--aurea-granate);
+      color: var(--white);
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+    }
+
+    .btn-granate:hover {
+      background: var(--aurea-orange);
+      transform: translateY(-3px);
+      color: var(--white);
+    }
+  
