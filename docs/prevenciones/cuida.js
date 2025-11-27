@@ -53,11 +53,11 @@ if (statsSection) {
     observer.observe(statsSection);
 }
 
-// Función para solicitar servicio
+// Función para solicitar servicio - ENLACE CORREGIDO
 function solicitarServicio() {
     const servicio = confirm('¿Desea solicitar un servicio técnico para su audífono?');
     if (servicio) {
-        window.open('https://wa.link/8uq61i', '_blank');
+        window.open('https://wa.link/aqglwn', '_blank');
     }
 }
 
