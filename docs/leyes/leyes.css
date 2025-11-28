@@ -1,9 +1,10 @@
 
-
-        /* ======================== VARIABLES DE COLOR ======================== */
+        /* ========================
+           VARIABLES DE COLOR
+           ======================== */
         :root {
-            --aurea-granate: #851111;
-            --aurea-orange: #f2982e;
+            --aurea-granate: #8B2C2C;
+            --aurea-orange: #F4911E;
             --aurea-dark: #222;
             --aurea-gray: #555;
             --white: #ffffff;
@@ -11,41 +12,66 @@
             --shadow: rgba(0,0,0,0.2);
         }
 
-        /* ======================== BASE ======================== */
+        /* ========================
+           BASE
+           ======================== */
         body {
             font-family: 'Segoe UI', 'Roboto', sans-serif;
+            background-color: var(--light-gray);
             color: var(--aurea-dark);
             line-height: 1.6;
+            padding-top: 80px; /* Reducido para móviles */
             margin: 0;
-            padding: 0;
-            background: url('https://www.resound.com/-/media/resound/resound-international/products/hearing-aids/nexia/overlay/full-family/rs_nx_hero-fade/hero-fade-overlay-rs_nx_concert_close2_00255-3200x1500-lighter2.ashx?w=3200') no-repeat center center fixed;
-            background-size: cover;
-            position: relative;
-            min-height: 100vh;
         }
 
-        /* ======================== NAVBAR ======================== */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            color: var(--aurea-granate);
+        }
+
+        /* ========================
+           NAVBAR - CORREGIDO PARA MÓVILES
+           ======================== */
         .navbar {
             background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
             box-shadow: 0 6px 20px var(--shadow);
-            border-radius: 0 0 15px 15px;
-            padding: 15px 20px;
+            padding: 10px 15px; /* Reducido padding para móviles */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            min-height: 80px; /* Altura mínima reducida */
         }
 
         .navbar-brand {
-            font-size: 1.8rem;
+            font-size: 1.5rem; /* Tamaño reducido para móviles */
             font-weight: 800;
             letter-spacing: 1px;
             color: var(--white);
         }
 
+        .navbar-toggler {
+            border: 2px solid rgba(255,255,255,0.8);
+            padding: 5px 8px;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
         .navbar-nav .nav-link {
             color: var(--white) !important;
             font-weight: 600;
-            margin: 0 8px;
+            margin: 5px 0; /* Espaciado vertical en móviles */
             transition: all 0.3s ease;
             border-radius: 30px;
             padding: 8px 16px;
+            text-align: center; /* Centrado en móviles */
         }
 
         .navbar-nav .nav-link:hover {
@@ -57,25 +83,30 @@
         .dropdown-menu {
             background: var(--aurea-granate);
             border-radius: 12px;
+            overflow: hidden;
+            border: none;
+            margin-top: 5px;
         }
 
         .dropdown-item {
             color: var(--white) !important;
             font-weight: 500;
             transition: all 0.3s ease;
+            text-align: center; /* Centrado en móviles */
         }
 
         .dropdown-item:hover {
             background: var(--aurea-orange);
             transform: translateX(5px);
+            border-radius: 8px;
         }
 
         /* ----------- Logo de Aurea ----------- */
         .aurea2 {
             display: inline-block;
-            width: 260px;
-            height: 100px;
-            background-image: url('../imagenes/Asset 4.png');
+            width: 180px; /* Reducido para móviles */
+            height: 60px; /* Reducido para móviles */
+            background-image: url('../Asset\ 10@4x.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
@@ -84,61 +115,97 @@
             transition: transform 0.2s, box-shadow 0.2s;
             text-indent: -9999px;
             overflow: hidden;
+            background-color: var(--white);
         }
 
-        /* ======================== HEADER ======================== */
-        header {
-            padding: 6rem 20px;
+        .aurea2:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ========================
+           HEADER
+           ======================== */
+        .hero-section {
+            background: linear-gradient(rgba(139, 44, 44, 0.7), rgba(244, 145, 30, 0.7)), 
+                        url('https://images.unsplash.com/photo-1576097449790-4d4cb1b8b0b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 15px; /* Reducido para móviles */
             text-align: center;
-            height: 50vh;
+            height: 50vh; /* Reducido para móviles */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: transparent;
+            color: white;
+            margin-bottom: 30px;
         }
 
-        header h1 {
-            font-size: 3rem;
+        .hero-section h1 {
+            font-size: 2.2rem; /* Reducido para móviles */
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             color: var(--white);
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-            background: rgba(133, 17, 17, 0.7);
-            padding: 20px 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            margin-bottom: 1rem;
+            line-height: 1.2;
         }
 
-        /* ======================== SECCIÓN LABORATORIO ======================== */
+        .hero-section p {
+            font-size: 1.1rem; /* Reducido para móviles */
+            max-width: 100%;
+            margin: 0 auto;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            padding: 0 10px;
+        }
+
+        /* ========================
+           SECCIÓN LABORATORIO
+           ======================== */
         .lab-section {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 50px 40px;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px 20px; /* Reducido para móviles */
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
             text-align: left;
             color: var(--aurea-dark);
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             border: 2px solid var(--aurea-orange);
         }
 
         .lab-section h2 {
             color: var(--aurea-granate);
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+            font-size: 1.8rem; /* Ajustado para móviles */
+        }
+
+        .lab-section h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px; /* Reducido para móviles */
+            height: 3px;
+            background: linear-gradient(to right, var(--aurea-granate), var(--aurea-orange));
         }
 
         .lab-section h3 {
             color: var(--aurea-orange);
-            margin-top: 30px;
+            margin-top: 25px;
             margin-bottom: 15px;
+            font-size: 1.4rem; /* Ajustado para móviles */
         }
 
         .lab-section p {
-            font-size: 1.1em;
-            line-height: 1.8;
-            margin-bottom: 20px;
+            font-size: 1em; /* Ajustado para móviles */
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
 
         .lab-section ul {
@@ -147,9 +214,9 @@
         }
 
         .lab-section ul li {
-            margin: 15px 0;
-            font-size: 1.1em;
-            line-height: 1.8;
+            margin: 12px 0;
+            font-size: 1em;
+            line-height: 1.6;
             padding-left: 25px;
             position: relative;
         }
@@ -162,21 +229,25 @@
             font-weight: bold;
         }
 
-        /* ======================== SERVICIOS ======================== */
+        /* ========================
+           SERVICIOS
+           ======================== */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+            grid-template-columns: 1fr; /* Una columna en móviles */
+            gap: 20px;
+            margin-top: 25px;
         }
 
         .service-card {
             background: white;
             border-radius: 12px;
-            padding: 25px;
+            padding: 20px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-top: 4px solid var(--aurea-orange);
+            cursor: pointer;
+            text-align: center;
         }
 
         .service-card:hover {
@@ -184,28 +255,150 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
-        .service-card h4 {
+        .service-card i {
+            font-size: 2.5rem; /* Reducido para móviles */
             color: var(--aurea-granate);
             margin-bottom: 15px;
+        }
+
+        .service-card h4 {
+            color: var(--aurea-granate);
+            margin-bottom: 12px;
             font-weight: 600;
+            font-size: 1.2rem; /* Ajustado para móviles */
         }
 
         .service-card p {
-            font-size: 1em;
+            font-size: 0.95em;
             color: var(--aurea-gray);
         }
 
-        /* ======================== BOTONES FLOTANTES ======================== */
+        /* ========================
+           MOLDES
+           ======================== */
+        .moldes-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Una columna en móviles */
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .molde-card {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--aurea-granate);
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .molde-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .molde-card img {
+            width: 100%;
+            height: 150px; /* Reducido para móviles */
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .molde-card h4 {
+            color: var(--aurea-granate);
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 1.1rem; /* Ajustado para móviles */
+        }
+
+        /* ========================
+           MODAL
+           ======================== */
+        .modal-molde .modal-content {
+            border-radius: 15px;
+            overflow: hidden;
+            border: 3px solid var(--aurea-orange);
+        }
+
+        .modal-molde .modal-header {
+            background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
+            color: white;
+            border-bottom: none;
+            padding: 15px 20px;
+        }
+
+        .modal-molde .modal-body {
+            padding: 20px;
+        }
+
+        .modal-molde .modal-body img {
+            width: 100%;
+            max-height: 200px; /* Reducido para móviles */
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* ========================
+           TECNOLOGÍA
+           ======================== */
+        .tecnologia-section {
+            background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
+            color: white;
+            padding: 40px 15px; /* Reducido para móviles */
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .tecnologia-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem; /* Ajustado para móviles */
+        }
+
+        .tecnologia-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Una columna en móviles */
+            gap: 25px;
+        }
+
+        .tecnologia-item {
+            text-align: center;
+            padding: 15px;
+        }
+
+        .tecnologia-item i {
+            font-size: 2.5rem; /* Reducido para móviles */
+            margin-bottom: 12px;
+            color: white;
+        }
+
+        .tecnologia-item h4 {
+            color: white;
+            margin-bottom: 12px;
+            font-size: 1.2rem; /* Ajustado para móviles */
+        }
+
+        .tecnologia-item p {
+            font-size: 0.95em;
+        }
+
+        /* ========================
+           BOTONES FLOTANTES
+           ======================== */
         .flotante {
             position: fixed;
-            width: 60px;
-            height: 60px;
-            right: 20px;
-            background-color: #25D366;
+            width: 50px; /* Reducido para móviles */
+            height: 50px; /* Reducido para móviles */
+            right: 15px; /* Ajustado para móviles */
             color: white;
             border-radius: 50%;
             text-align: center;
-            font-size: 30px;
+            font-size: 24px; /* Reducido para móviles */
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
             z-index: 100;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -218,13 +411,13 @@
         /* WhatsApp */
         .flotante.whatsapp {
             background-color: #25D366;
-            bottom: 20px;
+            bottom: 15px; /* Ajustado para móviles */
         }
 
         /* Facebook */
         .flotante.facebook {
             background-color: #1877F2;
-            bottom: 90px;
+            bottom: 75px; /* Ajustado para móviles */
         }
 
         /* Efectos hover */
@@ -243,30 +436,29 @@
 
         /* Iconos */
         .icono {
-            font-size: 30px;
-            margin-top: 2px;
+            font-size: 24px; /* Reducido para móviles */
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 60%;
         }
 
         /* Botón Scroll Top */
         .acroll {
             position: fixed;
-            width: 50px;
-            height: 50px;
-            bottom: 20px;
-            left: 20px;
+            width: 45px; /* Reducido para móviles */
+            height: 45px; /* Reducido para móviles */
+            bottom: 15px; /* Ajustado para móviles */
+            left: 15px; /* Ajustado para móviles */
             background-color: #333;
             color: white;
             border: none;
             border-radius: 50%;
-            font-size: 20px;
+            font-size: 18px; /* Reducido para móviles */
             cursor: pointer;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
             z-index: 100;
             transition: all 0.3s ease;
+            display: none;
         }
 
         .acroll:hover {
@@ -274,44 +466,142 @@
             transform: scale(1.1);
         }
 
-        /* ======================== FOOTER ======================== */
+        /* ========================
+           FOOTER
+           ======================== */
         footer {
-            background: linear-gradient(90deg, var(--aurea-granate), var(--aurea-orange));
+            background: linear-gradient(to right, #F4911E, #8B2C2C);
             color: #fff;
-            padding: 40px 0;
-            text-align: center;
-            margin-top: 50px;
+            padding: 40px 15px; /* Reducido para móviles */
+            font-family: 'Segoe UI', sans-serif;
             border-radius: 15px 15px 0 0;
         }
 
         footer h4 {
-            font-weight: bold;
-            color: white;
+            font-weight: 1000;
+            margin-bottom: 15px;
+            font-size: 1.2rem; /* Ajustado para móviles */
+            color: #f8d5b3;
         }
 
         footer p {
-            font-size: 0.95rem;
-            margin-bottom: 5px;
-            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 10px;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.6;
+            font-size: 0.9rem; /* Ajustado para móviles */
+        }
+
+        footer a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            color: var(--aurea-orange);
+            text-decoration: underline;
         }
 
         footer hr {
-            background-color: rgba(255, 255, 255, 0.3);
+            border-top: 1px solid rgba(255,255,255,0.3);
+            margin: 25px 0;
         }
 
-        /* ======================== RESPONSIVE ======================== */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-                padding: 15px 25px;
+        /* ========================
+           MEDIA QUERIES PARA DISPOSITIVOS MÁS GRANDES
+           ======================== */
+        @media (min-width: 768px) {
+            body {
+                padding-top: 100px;
+            }
+            
+            .navbar {
+                padding: 15px 20px;
+                min-height: 100px;
+            }
+            
+            .aurea2 {
+                width: 220px;
+                height: 80px;
+            }
+            
+            .navbar-brand {
+                font-size: 1.8rem;
+            }
+            
+            .hero-section {
+                padding: 6rem 20px;
+                height: 60vh;
+                margin-bottom: 50px;
+            }
+            
+            .hero-section h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-section p {
+                font-size: 1.4rem;
             }
             
             .lab-section {
-                padding: 30px 20px;
+                padding: 40px 30px;
+                margin-bottom: 40px;
             }
             
-            .lab-section ul li {
-                font-size: 1em;
+            .lab-section h2 {
+                font-size: 2.2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .moldes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .tecnologia-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 992px) {
+            body {
+                padding-top: 130px;
+            }
+            
+            .navbar {
+                min-height: 130px;
+            }
+            
+            .aurea2 {
+                width: 260px;
+                height: 100px;
+            }
+            
+            .navbar-nav .nav-link {
+                margin: 0 8px;
+                text-align: left;
+            }
+            
+            .dropdown-item {
+                text-align: left;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .moldes-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .tecnologia-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .hero-section h1 {
+                font-size: 3.5rem;
             }
         }
     
