@@ -39,7 +39,7 @@ window.addEventListener('scroll', function() {
             title: "Manguera",
             imagenes: [
                 "../leyes/manguera.png",
-                "../leyes/convencional2.png"
+                "../leyes/manguera.png"
             ],
             subtitle: "Para pérdidas auditivas leves a moderadas",
             caracteristicas: [
