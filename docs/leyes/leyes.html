@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="leyes.css">
 </head>
 <body>
-    <!-- ================= NAVBAR CORREGIDO ================= -->
+    <!-- ================= NAVBAR ================= -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="../index.html">
@@ -70,7 +70,6 @@
         </div>
     </nav>
 
-    <!-- El resto del contenido permanece igual -->
     <!-- ================= HERO SECTION ================= -->
     <section class="hero-section">
         <div class="container">
@@ -113,37 +112,89 @@
                     <p>Servicios de limpieza profunda y mantenimiento preventivo para prolongar la vida útil de los dispositivos.</p>
                 </div>
             </div>
-            
-            <h3>Tipos de Moldes Auditivos</h3>
-            <p>Ofrecemos diferentes tipos de moldes auditivos según las necesidades específicas de cada paciente:</p>
-            
-            <div class="moldes-grid">
-                <div class="molde-card" data-bs-toggle="modal" data-bs-target="#moldeConvencional">
-                    <img src="https://images.unsplash.com/photo-1576097449790-4d4cb1b8b0b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Molde Convencional">
-                    <h4>Molde Convencional</h4>
-                    <p>Para pérdidas auditivas leves a moderadas</p>
-                </div>
-                
-                <div class="molde-card" data-bs-toggle="modal" data-bs-target="#moldeEsqueleto">
-                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Molde Esqueleto">
-                    <h4>Molde Esqueleto</h4>
-                    <p>Ideal para mayor ventilación del oído</p>
-                </div>
-                
-                <div class="molde-card" data-bs-toggle="modal" data-bs-target="#moldeCanal">
-                    <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Molde Canal">
-                    <h4>Molde Canal</h4>
-                    <p>Diseño discreto y cómodo</p>
-                </div>
-                
-                <div class="molde-card" data-bs-toggle="modal" data-bs-target="#moldeVentilado">
-                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Molde Ventilado">
-                    <h4>Molde Ventilado</h4>
-                    <p>Permite el paso de aire natural</p>
-                </div>
-            </div>
         </div>
     </section>
+
+   <!-- ================= CARRUSEL 3D ================= -->
+<section class="container my-5">
+    <div class="lab-section">
+        <h2>Tipos de Moldes Auditivos</h2>
+        <p>Descubre nuestra variedad de moldes auditivos diseñados para adaptarse a tus necesidades específicas:</p>
+        
+        <div class="wrap">
+            <h3 class="carrusel-title">Selecciona un molde para más información</h3>
+
+            <div class="stage" id="stage">
+                <div class="carousel" id="carousel">
+                    <div class="item" data-index="0">
+                        <div class="item-content">
+                            <div class="item-icon">
+                                <img src="../leyes/manguera.png" alt="Molde Convencional">
+                            </div>
+                            <h3>Manguera</h3>
+                        </div>
+                    </div>
+                    <div class="item" data-index="1">
+                        <div class="item-content">
+                            <div class="item-icon">
+                                <img src="../leyes/concha3.png" alt="Molde Esqueleto">
+                            </div>
+                            <h3>Tapado concha</h3>
+                        </div>
+                    </div>
+                    <div class="item" data-index="2">
+                        <div class="item-content">
+                            <div class="item-icon">
+                                <img src="../leyes/canal.png" alt="Molde Canal">
+                            </div>
+                            <h3>Canal</h3>
+                        </div>
+                    </div>
+                    <div class="item" data-index="3">
+                        <div class="item-content">
+                            <div class="item-icon">
+                                <img src="../leyes/concha.png" alt="Molde Ventilado">
+                            </div>
+                            <h3>Cocha Biopor</h3>
+                        </div>
+                    </div>
+                    <div class="item" data-index="4">
+                        <div class="item-content">
+                            <div class="item-icon">
+                                <img src="../leyes/concha.png" alt="Molde Personalizado">
+                            </div>
+                            <h3>Personalizado</h3>
+                        </div>
+                    </div>
+                    <div class="item" data-index="5">
+                        <div class="item-content">
+                            <div class="item-icon">
+                                <img src="../leyes/concha.png" alt="Molde Resistente">
+                            </div>
+                            <h3>Resistente</h3>
+                        </div>
+                    </div>
+                    <div class="item" data-index="6">
+                        <div class="item-content">
+                            <div class="item-icon">
+                                <img src="../leyes/concha.png" alt="Molde Premium">
+                            </div>
+                            <h3>Premium</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="btn" id="prev">◀ Anterior</button>
+                <button class="btn" id="playPause">Pausa</button>
+                <button class="btn" id="next">Siguiente ▶</button>
+            </div>
+
+            <div class="indicador" id="indicador"></div>
+        </div>
+    </div>
+</section>
 
     <!-- ================= SECCIÓN TECNOLOGÍA ================= -->
     <section class="tecnologia-section">
@@ -209,16 +260,29 @@
         </div>
     </section>
 
-    <!-- Los modales y footer permanecen igual -->
-    <!-- ... -->
+    <!-- ================= MODAL PARA MOLDES ================= -->
+    <div class="modal fade" id="moldeModal" tabindex="-1" aria-labelledby="moldeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="moldeModalLabel">Información del Molde</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- Contenido dinámico se insertará aquí -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ================= BOTONES FLOTANTES ================= -->
-    <!-- WhatsApp -->
     <a href="https://wa.link/cetggt" class="flotante whatsapp" target="_blank" title="Chat WhatsApp">
         <i class="icono fab fa-whatsapp"></i>
     </a>
 
-    <!-- Facebook -->
     <a href="https://www.facebook.com/AUREAEVOLUCIONAUDITIVA" class="flotante facebook" target="_blank" title="Síguenos en Facebook">
         <i class="icono fab fa-facebook-f"></i>
     </a>
@@ -246,14 +310,12 @@
                 </div>
             </div>
             
-            <!-- ================= MAPA ================= -->
             <div class="text-center mt-4">
                 <button type="button" class="btn btn-light btn-sm rounded-pill px-4 py-2 shadow" data-bs-toggle="modal" data-bs-target="#mapaModal">
                     📍 Ver Mapa
                 </button>
             </div>
 
-            <!-- Ventana Emergente -->
             <div class="modal fade" id="mapaModal" tabindex="-1" aria-labelledby="mapaModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-centered">
                     <div class="modal-content">
@@ -276,7 +338,7 @@
     <!-- Botón Scroll Top -->
     <button class="acroll" id="btntop">↑</button>
 
-    <!-- Bootstrap JS -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="leyes.js"></script>
 </body>
