@@ -39,7 +39,7 @@ window.addEventListener('scroll', function() {
             title: "Manguera",
             imagenes: [
                 "../leyes/manguera.png",
-                "../leyes/convencional2.png"
+                "../leyes/manguera.png"
             ],
             subtitle: "Para pérdidas auditivas leves a moderadas",
             caracteristicas: [
@@ -156,10 +156,10 @@ window.addEventListener('scroll', function() {
             ]
         },
         {
-            title: "Molde Premium",
+            title: "Sleeve vented",
             imagenes: [
-                "../leyes/premium1.png",
-                "../leyes/premium2.png"
+                "../leyes/venta.png",
+                "../leyes/venta2.png"
             ],
             subtitle: "Máxima calidad y confort",
             caracteristicas: [
