@@ -116,10 +116,10 @@ window.addEventListener('scroll', function() {
             ]
         },
         {
-            title: "Molde Personalizado",
+            title: "THINTUBE",
             imagenes: [
-                "../leyes/personalizado1.png",
-                "../leyes/personalizado2.png"
+                "../leyes/THINTUBE.png",
+                "../leyes/THINTUBE2.png"
             ],
             subtitle: "Adaptado a necesidades específicas",
             caracteristicas: [
@@ -138,8 +138,8 @@ window.addEventListener('scroll', function() {
         {
             title: "Molde Resistente",
             imagenes: [
-                "../leyes/resistente1.png",
-                "../leyes/resistente2.png"
+                "../leyes/molde9.png",
+                "../leyes/molde10.png"
             ],
             subtitle: "Para entornos exigentes",
             caracteristicas: [
