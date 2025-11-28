@@ -52,7 +52,7 @@ window.addEventListener('scroll', function() {
                 "Sellado excelente que previene la retroalimentación",
                 "Amplificación eficiente del sonido",
                 "Fácil mantenimiento y limpieza",
-                "Comodidad prolongada"
+                "Peizcado de Mangera"
             ]
         },
         {
