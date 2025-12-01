@@ -1,49 +1,6 @@
-// script.js - Funcionalidades para Áurea Centro Auditivo
+// implante.js - Funcionalidades específicas para la página de Campañas Auditivas
 
 document.addEventListener('DOMContentLoaded', function() {
-    // ================= SCROLL SUAVE =================
-    const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
-    
-    smoothScrollLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - 100;
-                
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // ================= BOTÓN SCROLL TOP =================
-    const scrollTopBtn = document.getElementById('scrollTopBtn');
-    
-    function toggleScrollTopButton() {
-        if (window.pageYOffset > 300) {
-            scrollTopBtn.style.display = 'flex';
-        } else {
-            scrollTopBtn.style.display = 'none';
-        }
-    }
-    
-    scrollTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-    
-    window.addEventListener('scroll', toggleScrollTopButton);
-    toggleScrollTopButton(); // Estado inicial
-
     // ================= ANIMACIONES AL SCROLL =================
     const animateOnScroll = function() {
         const elements = document.querySelectorAll('.campaign-content, .location-card, .sede-card');
@@ -68,21 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll(); // Ejecutar una vez al cargar
-
-    // ================= NAVBAR SCROLL EFFECT =================
-    const navbar = document.querySelector('.navbar');
-    
-    function handleNavbarScroll() {
-        if (window.scrollY > 100) {
-            navbar.style.padding = '10px 20px';
-            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-        } else {
-            navbar.style.padding = '15px 20px';
-            navbar.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.2)';
-        }
-    }
-    
-    window.addEventListener('scroll', handleNavbarScroll);
 
     // ================= INTERACCIÓN CON TARJETAS =================
     const cards = document.querySelectorAll('.location-card, .sede-card');
@@ -126,74 +68,46 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ================= CONTADOR DE VISITAS =================
-    function updateVisitCounter() {
-        let visits = localStorage.getItem('aureaVisits');
-        
-        if (!visits) {
-            visits = 1;
+    // ================= BOTONES FLOTANTES ESPECÍFICOS =================
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    
+    function toggleScrollTopButton() {
+        if (window.pageYOffset > 300) {
+            scrollTopBtn.style.display = 'flex';
         } else {
-            visits = parseInt(visits) + 1;
+            scrollTopBtn.style.display = 'none';
         }
-        
-        localStorage.setItem('aureaVisits', visits);
-        console.log(`Visitas a la página: ${visits}`);
     }
     
-    updateVisitCounter();
+    scrollTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    window.addEventListener('scroll', toggleScrollTopButton);
+    toggleScrollTopButton(); // Estado inicial
 
-    // ================= MEJORA DE ACCESIBILIDAD =================
-    function improveAccessibility() {
-        // Agregar labels a los botones sin texto
-        const iconButtons = document.querySelectorAll('button:not([aria-label])');
-        
-        iconButtons.forEach(button => {
-            if (button.querySelector('i') && !button.textContent.trim()) {
-                const iconClass = button.querySelector('i').className;
-                
-                if (iconClass.includes('fa-whatsapp')) {
-                    button.setAttribute('aria-label', 'Contactar por WhatsApp');
-                } else if (iconClass.includes('fa-map-marker-alt')) {
-                    button.setAttribute('aria-label', 'Ver ubicación en mapa');
-                } else if (iconClass.includes('fa-chevron-up')) {
-                    button.setAttribute('aria-label', 'Volver al inicio');
-                }
+    // ================= FUNCIONES DE AGENDADO =================
+    window.scheduleAppointment = function(location, service) {
+        const message = `Hola, me gustaría agendar una cita para ${service} en ${location}`;
+        const whatsappUrl = `https://wa.link/cetggt?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+    };
+
+    // Agregar eventos a los botones de agendar
+    const agendarButtons = document.querySelectorAll('a[href*="wa.link/cetggt"]');
+    agendarButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            if (!this.hasAttribute('target')) {
+                e.preventDefault();
+                const location = this.closest('.campaign-section').querySelector('h2').textContent;
+                const service = "campaña auditiva";
+                scheduleAppointment(location, service);
             }
         });
-    }
-    
-    improveAccessibility();
+    });
 
-    console.log('Áurea Centro Auditivo - Página cargada correctamente');
+    console.log('Página de Campañas Auditivas cargada correctamente');
 });
-
-// ================= FUNCIONES GLOBALES =================
-function shareOnSocialMedia(platform) {
-    const url = encodeURIComponent(window.location.href);
-    const title = encodeURIComponent('Áurea Centro Auditivo - Campañas Auditivas');
-    
-    let shareUrl;
-    
-    switch(platform) {
-        case 'facebook':
-            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-            break;
-        case 'twitter':
-            shareUrl = `https://twitter.com/intent/tweet?text=${title}&url=${url}`;
-            break;
-        case 'whatsapp':
-            shareUrl = `https://api.whatsapp.com/send?text=${title} ${url}`;
-            break;
-        default:
-            return;
-    }
-    
-    window.open(shareUrl, '_blank', 'width=600,height=400');
-}
-
-// Función para agendar cita automáticamente
-function scheduleAppointment(location, service) {
-    const message = `Hola, me gustaría agendar una cita para ${service} en ${location}`;
-    const whatsappUrl = `https://wa.link/cetggt?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-}

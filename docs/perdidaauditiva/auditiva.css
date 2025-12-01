@@ -9,395 +9,207 @@
   --white: #ffffff;
   --light-gray: #f8f9fa;
   --shadow: rgba(0,0,0,0.2);
-  --primary-color: #851111;
-  --secondary-color: #f2982e;
-  --accent-color: #ff4800;
-  --light-color: #f8f9fa;
-  --dark-color: #222;
-}
 
-/* ========================
-   BASE Y RESET
-   ======================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
-
-body {
-  font-family: 'Segoe UI', 'Roboto', sans-serif;
-  background-color: var(--light-gray);
-  color: var(--aurea-dark);
-  line-height: 1.6;
-  padding-top: 130px;
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   color: var(--aurea-granate);
 }
-
-/* ========================
-   HERO / PORTADA
-   ======================== */
-.hero-cover {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  margin-top: -30px;
-}
-
-#heroCarousel {
-  height: 100%;
-}
-
-.carousel-inner {
-  height: 100%;
-}
-
-.carousel-item {
-  height: 100%;
-  position: relative;
-}
-
-.carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  filter: brightness(0.7);
-}
-
-.carousel-caption {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  text-align: center;
-  z-index: 10;
-  padding: 2rem;
-}
-
-.carousel-caption h1 {
-  font-size: 4rem;
-  font-weight: 700;
-  color: #fff;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-  margin-bottom: 1rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  animation: fadeInDown 1s ease-out;
-}
-
-.carousel-caption p {
-  font-size: 2rem;
-  font-weight: 300;
-  color: #fff;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-  letter-spacing: 2px;
-  animation: fadeInUp 1s ease-out 0.5s both;
-}
-
-/* Efectos de animación */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Botones de navegación */
-.carousel-control-prev,
-.carousel-control-next {
-  width: 60px;
-  height: 60px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-  margin: 0 20px;
-  opacity: 0;
-  transition: all 0.3s ease;
-}
-
-.hero-cover:hover .carousel-control-prev,
-.hero-cover:hover .carousel-control-next {
-  opacity: 1;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  width: 25px;
-  height: 25px;
-}
-
-/* Efecto de superposición para mejor legibilidad */
-.carousel-item::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.4) 0%,
-    rgba(0, 0, 0, 0.2) 50%,
-    rgba(0, 0, 0, 0.4) 100%
-  );
-  z-index: 1;
-}
-
-.carousel-caption {
-  z-index: 2;
-}
-
-/* ========================
-   SECCIÓN PRINCIPAL
-   ======================== */
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
+/* ================= SECCIÓN PRINCIPAL ================= */
+.main-section {
+  padding: 30px 15px;
+  max-width: 1600px; /* Más ancho para imágenes grandes */
+  margin: 0 auto;
 }
 
 .main-section h1 {
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 2.5rem;
+  color: var(--aurea-granate);
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
 }
 
 .description {
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 1.2rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1rem;
+  padding: 0 10px;
 }
 
-/* ================= IMÁGENES CENTRADAS ================= */
+/* ================= IMAGEN PRINCIPAL ================= */
 .centered-img {
-    text-align: center;
-    margin: 50px 0;
-    display: inline-block;
-    padding: 10px;
-    border-radius: 20px;
-    background-color: #fff;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    transition: transform 0.4s, box-shadow 0.4s;
-    width: 100%;
+  text-align: center;
+  margin: 30px auto;
+  max-width: 900px;
 }
 
 .centered-img img {
-    width: 100%;
-    max-width: 650px;
-    height: 380px;
-    object-fit: cover;
-    border-radius: 15px;
-    transition: transform 0.5s, box-shadow 0.5s, filter 0.5s;
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 10px;
 }
 
-.centered-img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-}
-
-.centered-img:hover img {
-    transform: scale(1.03);
-    filter: brightness(1.05);
-}
-
-/* ================= TARJETAS ================= */
+/* ================= TARJETAS DE GRADOS ================= */
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-bottom: 80px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin: 40px auto;
+  max-width: 1600px;
 }
 
 .grid-item {
-    background: #fff;
-    border-radius: 20px;
-    padding: 25px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border-top: 5px solid var(--secondary-color);
+  background: var(--white);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  border-top: 5px solid var(--aurea-orange);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
 }
 
+/* IMÁGENES GRANDES */
 .grid-item img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 15px;
-    margin-bottom: 15px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.grid-item img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 100%;
+  height: 250px; /* Más grande */
+  object-fit: contain; /* Imagen completa */
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background: #f8f8f8; /* Fondo para contraste */
+  padding: 10px;
 }
 
 .grid-item h2 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
-    font-size: 1.3rem;
+  color: var(--aurea-granate);
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  min-height: auto;
 }
 
 .grid-item p {
-    font-size: 0.95rem;
-    color: var(--dark-color);
-    line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .grid-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 45px rgba(0,0,0,0.3);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
-/* ================= BOTONES ================= */
-.btn-granate {
-  background: var(--aurea-granate);
-  color: var(--white);
-  padding: 10px 25px;
-  border-radius: 50px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border: none;
+/* ================= MEDIA QUERIES ================= */
+
+/* Tablets pequeñas */
+@media (min-width: 576px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+  
+  .grid-item img {
+    height: 280px; /* Aún más grande */
+  }
 }
 
-.btn-granate:hover {
-  background: var(--aurea-orange);
-  transform: translateY(-3px);
-  color: var(--white);
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-  body {
-    padding-top: 100px;
-  }
-  
-  .navbar {
-    height: 100px;
-    padding: 10px 15px;
-  }
-  
-  .hero-cover {
-    height: 70vh;
-  }
-  
-  .carousel-caption h1 {
-    font-size: 2.5rem;
-    letter-spacing: 2px;
-  }
-  
-  .carousel-caption p {
-    font-size: 1.5rem;
-  }
-  
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 50px;
-    height: 50px;
-    margin: 0 10px;
-  }
-  
-  .aurea2 {
-    width: 200px;
-    height: 80px;
-    line-height: 80px;
-  }
-  
-  .flotante {
-    width: 50px;
-    height: 50px;
-    right: 15px;
-  }
-  
-  .flotante.whatsapp {
-    bottom: 15px;
-  }
-  
-  .flotante.facebook {
-    bottom: 75px;
-  }
-  
-  .acroll {
-    width: 45px;
-    height: 45px;
-    bottom: 15px;
-    left: 15px;
-  }
-  
+/* Tablets grandes */
+@media (min-width: 768px) {
   .main-section h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   
   .description {
-    font-size: 1rem;
-  }
-  
-  .grid-container {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-}
-
-@media (max-width: 576px) {
-  .hero-cover {
-    height: 60vh;
-  }
-  
-  .carousel-caption h1 {
-    font-size: 2rem;
-    letter-spacing: 1px;
-  }
-  
-  .carousel-caption p {
     font-size: 1.2rem;
   }
   
-  .carousel-caption {
-    padding: 1rem;
+  .grid-item img {
+    height: 300px; /* Más grande aún */
   }
-  
-  .aurea2 {
-    width: 150px;
-    height: 60px;
-    line-height: 60px;
-  }
-  
-  .centered-img img {
-    height: 250px;
+}
+
+/* DESKTOP - 4 EN FILA CON IMÁGENES GRANDES */
+@media (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    gap: 25px;
   }
   
   .grid-item {
     padding: 20px;
+    height: 100%;
+  }
+  
+  /* IMÁGENES MUY GRANDES PERO 4 EN FILA */
+  .grid-item img {
+    height: 200px; /* Ajustado para 4 columnas */
+    min-height: 200px;
+    object-fit: contain; /* Imagen completa */
+  }
+  
+  .grid-item h2 {
+    font-size: 1.3rem;
+    margin: 15px 0 10px 0;
+  }
+  
+  .grid-item p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Pantallas grandes - IMÁGENES MÁS GRANDES */
+@media (min-width: 1200px) {
+  .grid-container {
+    gap: 30px;
   }
   
   .grid-item img {
-    width: 150px;
-    height: 150px;
+    height: 240px; /* Más grande en pantallas grandes */
+    min-height: 240px;
+  }
+  
+  .grid-item h2 {
+    font-size: 1.4rem;
+  }
+  
+  .grid-item p {
+    font-size: 1rem;
+  }
+}
+
+/* Pantallas extra grandes - IMÁGENES AÚN MÁS GRANDES */
+@media (min-width: 1400px) {
+  .grid-item img {
+    height: 280px; /* Muy grandes */
+    min-height: 280px;
+  }
+  
+  .grid-item {
+    padding: 25px;
+  }
+}
+
+/* Pantallas muy grandes */
+@media (min-width: 1600px) {
+  .grid-item img {
+    height: 300px; /* Máximo tamaño */
+    min-height: 300px;
+  }
+}
+
+/* Versión alternativa si quieres imágenes aún más grandes */
+/* .grid-item img {
+  height: 350px;
+  min-height: 350px;
+  object-fit: contain;
+} */
+
+/* Para pantallas pequeñas */
+@media (max-width: 575px) {
+  .grid-item img {
+    height: 200px; /* Grandes en móvil también */
   }
 }

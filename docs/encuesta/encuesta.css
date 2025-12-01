@@ -1,7 +1,9 @@
-/* ======================== VARIABLES DE COLOR ======================== */
+/* ========================
+   VARIABLES DE COLOR
+   ======================== */
 :root {
-  --aurea-granate: #851111;
-  --aurea-orange: #f2982e;
+  --aurea-granate: #8B2C2C;
+  --aurea-orange: #F4911E;
   --aurea-dark: #222;
   --aurea-gray: #555;
   --white: #ffffff;
@@ -9,14 +11,22 @@
   --shadow: rgba(0,0,0,0.2);
 }
 
-/* ======================== BASE ======================== */
+/* ========================
+   BASE
+   ======================== */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
-    margin: 0;
-    padding: 20px;
-    min-height: 100vh;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  background-color: var(--light-gray);
+  color: var(--aurea-dark);
+  line-height: 1.6;
+  padding-top: 130px;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--aurea-granate);
+}
+
 
 /* ======================== FORMULARIO CON FONDO BLANCO ======================== */
 .form-container {
@@ -161,6 +171,21 @@ input[type="radio"] {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* ======================== BOTÓN VER MAPA CENTRADO ======================== */
+.btn-mapa-centered {
+    display: block !important;
+    margin: 25px auto !important;
+    width: fit-content !important;
+    text-align: center !important;
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 576px) {
+    .btn-mapa-centered {
+        margin: 20px auto !important;
+    }
+}
+
 /* ======================== BOTONES ======================== */
 .form-buttons {
     display: flex;
@@ -237,7 +262,7 @@ input[type="radio"] {
 footer {
     background: linear-gradient(to right, #F4911E, #8B2C2C);
     color: #fff;
-    padding: 50px 20px;
+    padding: 40px 20px 30px;
     font-family: 'Segoe UI', sans-serif;
     border-radius: 15px 15px 0 0;
     margin-top: 40px;
@@ -254,6 +279,7 @@ footer p {
     margin-bottom: 10px;
     color: rgba(255,255,255,0.9);
     line-height: 1.6;
+    font-size: 0.95rem;
 }
 
 footer a {
@@ -265,11 +291,30 @@ footer a {
 footer a:hover {
     color: var(--aurea-orange);
     text-decoration: underline;
+   
 }
 
 footer hr {
     border-top: 1px solid rgba(255,255,255,0.3);
-    margin: 30px 0;
+    margin: 25px 0;
+}
+
+/* Estilos para el mapa modal */
+.modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.modal-header {
+ 
+    color: #8B2C2C;
+    border-bottom: none;
+}
+
+.modal-body iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
 }
 
 /* ======================== BOTONES FLOTANTES ======================== */
@@ -378,6 +423,10 @@ footer hr {
         margin-bottom: 20px;
         text-align: center;
     }
+    
+    .modal-body iframe {
+        height: 350px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -391,5 +440,17 @@ footer hr {
     
     h1 {
         font-size: 1.8rem;
+    }
+    
+    footer {
+        padding: 30px 15px 20px;
+    }
+    
+    .modal-body iframe {
+        height: 300px;
+    }
+    
+    .btn-mapa-centered {
+        margin: 20px auto !important;
     }
 }

@@ -1,220 +1,588 @@
- /* ========================
-       VARIABLES DE COLOR
-       ======================== */
-    :root {
-      --aurea-granate: #8B2C2C;
-      --aurea-orange: #F4911E;
-      --aurea-dark: #222;
-      --aurea-gray: #555;
-      --white: #ffffff;
-      --light-gray: #f8f9fa;
-      --shadow: rgba(0,0,0,0.2);
-    }
+/* ventas.css - CSS completo corregido para página de ventas */
 
-    /* ========================
-       BASE
-       ======================== */
-    body {
-      font-family: 'Segoe UI', 'Roboto', sans-serif;
-      background-color: var(--light-gray);
-      color: var(--aurea-dark);
-      line-height: 1.6;
-      padding-top: 130px;
-      margin: 0;
-    }
+:root {
+  --aurea-granate: #8B2C2C;
+  --aurea-orange: #F4911E;
+  --aurea-dark: #222;
+  --aurea-gray: #555;
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+  --shadow: rgba(0,0,0,0.2);
+}
 
-    h1, h2, h3, h4, h5, h6 {
-      font-weight: 700;
-      color: var(--aurea-granate);
-    }
+/* ================= CORRECCIÓN PARA TÍTULO NO VISIBLE ================= */
 
-    /* ================= TEXTO ESPECÍFICO ================= */
-    p.letras {
-        color: var(--aurea-dark);
-        font-size: 18px;
-        font-weight: 500;
-        line-height: 1.6;
-        text-align: center;
-    }
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--aurea-granate);
+}
 
-    /* ================= BODY ================= */
-    body {
-        font-family: 'Arial', sans-serif;
-        background-color: var(--light-gray);
-        color: var(--aurea-dark);
-        margin: 0;
-        padding: 0;
-    }
 
-    /* BOTONES */
-    button, .btn, .btna {
-        background-color: var(--aurea-orange);
-        color: var(--white);
-        border: none;
-        border-radius: 5px;
-        padding: 10px 20px;
-        cursor: pointer;
-        font-size: 16px;
-        transition: all 0.3s ease;
-    }
+/* Espaciador para compensar navbar fijo */
+.navbar-spacer {
+    height: 80px; /* Ajusta según altura de tu navbar */
+    width: 100%;
+    display: block;
+}
 
-    button:hover, .btn:hover, .btna:hover {
-        background-color: var(--aurea-granate);
-    }
+/* Header de sección mejorado */
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 20px;
+}
 
-    /* ================= SECCIONES ================= */
+.section-header h2 {
+    color: var(--aurea-granate);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--aurea-orange);
+    border-radius: 2px;
+}
+
+.section-header .letras {
+    color: var(--aurea-dark);
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Subtitle para segunda sección */
+.section-subtitle {
+    color: var(--aurea-gray);
+    font-size: 1.1rem;
+    margin-top: -10px;
+    margin-bottom: 30px;
+}
+
+/* ================= SECCIÓN AUDÍFONOS ================= */
+.audifonos-section {
+    padding: 80px 15px 30px 15px; /* Aumentado padding-top para compensar navbar */
+    background-color: #fff5f0;
+    text-align: center;
+    margin-top: 0; /* Quitado margen top */
+    position: relative;
+    scroll-margin-top: 100px; /* Para enlaces anchor */
+}
+
+/* Pseudo-elemento para crear espacio visual antes de la sección */
+.audifonos-section::before {
+    content: '';
+    display: block;
+    height: 20px; /* Espacio adicional */
+    width: 100%;
+}
+
+.audifonos-section h2 {
+    color: var(--aurea-granate);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+    padding-top: 10px; /* Padding extra */
+    position: relative;
+    z-index: 1;
+}
+
+.audifonos-section p.letras {
+    color: var(--aurea-dark);
+    font-size: 1rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    padding: 0 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.audifonos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.audifono-item {
+    background-color: var(--white);
+    color: var(--aurea-dark);
+    padding: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.audifono-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.audifono-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background: #f8f8f8;
+    padding: 10px;
+}
+
+.audifono-item h3 {
+    color: var(--aurea-granate);
+    margin: 10px 0;
+    font-size: 1.3rem;
+    line-height: 1.3;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.audifono-item p {
+    color: var(--aurea-dark);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+/* ================= SECCIÓN PRODUCTOS ================= */
+.products-section {
+    padding: 50px 15px;
+    background-color: var(--white);
+}
+
+.products-section h2 {
+    color: var(--aurea-granate);
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.producta-carda {
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid #e9ecef;
+}
+
+.producta-carda:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.imgBx {
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f8f8;
+}
+
+.imgBx img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 15px;
+}
+
+.details, .detailsa {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.details h2, .detailsa h2 {
+    color: var(--aurea-granate);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    line-height: 1.3;
+    min-height: 60px;
+}
+
+.details h2 span, .detailsa h2 span {
+    color: var(--aurea-orange);
+    font-size: 1rem;
+}
+
+.details p, .detailsa p {
+    color: var(--aurea-dark);
+    line-height: 1.5;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.producta-colors {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.producta-colors span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease;
+}
+
+.producta-colors span:hover {
+    transform: scale(1.2);
+    border: 2px solid var(--aurea-dark);
+}
+
+/* ================= BOTONES ESPECÍFICOS ================= */
+.boton {
+    background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-width: 150px;
+    margin: 10px auto;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.boton:hover {
+    background: linear-gradient(135deg, var(--aurea-orange), var(--aurea-granate));
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    color: var(--white);
+}
+
+/* Botón específico del mapa (blanco) */
+.boton.boton-light {
+    background: var(--white);
+    color: var(--aurea-granate);
+    border: 2px solid var(--aurea-granate);
+    margin: 20px auto;
+    display: block;
+}
+
+.boton.boton-light:hover {
+    background: var(--aurea-granate);
+    color: var(--white);
+    border-color: var(--aurea-granate);
+}
+
+/* ================= MEDIA QUERIES RESPONSIVE ================= */
+
+/* Ajustes para móvil pequeño */
+@media (max-width: 575.98px) {
+    .navbar-spacer {
+        height: 60px;
+    }
+    
     .audifonos-section {
-        padding: 50px 20px;
-        background-color: #fff5f0;
-        text-align: center;
+        padding-top: 50px;
     }
-
+    
     .audifonos-section h2 {
-        color: var(--aurea-granate);
-        font-size: 36px;
-        margin-bottom: 15px;
+        font-size: 1.6rem;
+        margin-top: 10px;
     }
+    
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    .section-header .letras,
+    .audifonos-section p.letras {
+        font-size: 0.95rem;
+        padding: 0 5px;
+    }
+    
+    .audifonos-grid {
+        gap: 15px;
+    }
+    
+    .audifono-item {
+        padding: 15px;
+    }
+    
+    .audifono-item img {
+        height: 160px;
+    }
+    
+    .audifono-item h3 {
+        font-size: 1.1rem;
+        min-height: 50px;
+    }
+    
+    .products-section {
+        padding: 25px 10px;
+    }
+    
+    .products-section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+    
+    .products {
+        gap: 15px;
+    }
+    
+    .imgBx {
+        height: 180px;
+    }
+    
+    .details h2, .detailsa h2 {
+        font-size: 1.1rem;
+        min-height: 50px;
+    }
+    
+    .boton {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        min-width: 130px;
+    }
+}
 
-    .audifonos-section p {
-        color: var(--aurea-dark);
-        font-size: 18px;
+/* Tablets pequeñas (576px - 767px) */
+@media (min-width: 576px) {
+    .audifonos-section {
+        padding-top: 90px;
+    }
+    
+    .audifonos-section h2 {
+        font-size: 2rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .audifonos-section p.letras {
+        font-size: 1.1rem;
+        padding: 0 20px;
+    }
+    
+    .audifonos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .products-section {
+        padding: 40px 20px;
+    }
+    
+    .products-section h2 {
+        font-size: 2rem;
         margin-bottom: 40px;
     }
-
-    /* GRID TARJETAS */
-    .audifonos-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-    }
-
-    .audifono-item {
-        background-color: var(--white);
-        color: var(--aurea-dark);
-        padding: 20px;
-        border-radius: 10px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        text-align: center;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-
-    .audifono-item:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    }
-
-    .audifono-item img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        margin-bottom: 15px;
-    }
-
-    .audifono-item h3 {
-        color: var(--aurea-granate);
-        margin: 10px 0;
-    }
-
-    .audifono-item p {
-        color: var(--aurea-dark);
-    }
-
-    /* ================= PRODUCTS ================= */
+    
     .products {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        padding: 50px 20px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
     }
-
-    .producta-carda {
-        background-color: var(--white);
-        border-radius: 12px;
-        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-        overflow: hidden;
-        transition: transform 0.3s ease;
+    
+    .audifono-item img {
+        height: 200px;
     }
-
-    .producta-carda:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    
+    .imgBx {
+        height: 220px;
     }
-
-    .imgBx img {
-        width: 100%;
-        border-radius: 12px 12px 0 0;
+    
+    .boton.boton-light {
+        display: inline-block;
+        margin: 20px auto;
     }
+}
 
-    .details, .detailsa {
-        padding: 20px;
+/* Tablets grandes (768px - 991px) */
+@media (min-width: 768px) {
+    .audifonos-section {
+        padding-top: 100px;
     }
-
+    
+    .audifonos-section h2,
+    .products-section h2,
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+    
+    .audifonos-section p.letras {
+        font-size: 1.2rem;
+        max-width: 700px;
+    }
+    
+    .audifonos-grid {
+        gap: 30px;
+    }
+    
+    .products {
+        gap: 30px;
+    }
+    
+    .audifono-item {
+        padding: 25px;
+    }
+    
     .details h2, .detailsa h2 {
-        color: var(--aurea-granate);
-        margin-bottom: 10px;
+        font-size: 1.4rem;
     }
+}
 
+/* Escritorio (992px en adelante) */
+@media (min-width: 992px) {
+    .audifonos-section {
+        padding: 120px 40px 50px 40px;
+    }
+    
+    .audifonos-section h2,
+    .section-header h2 {
+        font-size: 2.5rem;
+    }
+    
+    .audifonos-section p.letras {
+        font-size: 1.3rem;
+        margin-bottom: 50px;
+    }
+    
+    .audifonos-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    
+    .products-section {
+        padding: 60px 40px;
+    }
+    
+    .products-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+    }
+    
+    .products {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    
+    .audifono-item img {
+        height: 220px;
+    }
+    
+    .imgBx {
+        height: 240px;
+    }
+    
+    .boton {
+        padding: 14px 30px;
+        font-size: 1.1rem;
+        min-width: 180px;
+    }
+}
+
+/* Pantallas grandes (1200px en adelante) */
+@media (min-width: 1200px) {
+    .audifonos-grid,
+    .products {
+        gap: 35px;
+    }
+}
+
+/* Orientación landscape en móviles */
+@media (max-height: 600px) and (orientation: landscape) {
+    .audifonos-section {
+        padding: 20px 15px;
+    }
+    
+    .audifonos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .audifono-item img {
+        height: 150px;
+    }
+    
+    .audifono-item h3 {
+        min-height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Mejorar accesibilidad en móvil */
+@media (max-width: 768px) {
+    .boton {
+        min-width: 140px;
+        min-height: 44px;
+    }
+    
+    .producta-colors span {
+        min-width: 25px;
+        min-height: 25px;
+    }
+    
+    .audifono-item h3,
+    .details h2, .detailsa h2 {
+        line-height: 1.3;
+    }
+    
+    .audifono-item p,
     .details p, .detailsa p {
-        color: var(--aurea-dark);
         line-height: 1.5;
     }
+}
 
-    .producta-colors span {
-        display: inline-block;
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        margin-right: 10px;
-        cursor: pointer;
-        border: 2px solid transparent;
-    }
+/* Solución definitiva para título oculto */
+body {
+    padding-top: 80px !important;
+}
 
-    .producta-colors span:hover {
-        border: 2px solid var(--aurea-dark);
-    }
+.audifonos-section:first-of-type {
+    margin-top: 20px;
+}
 
-
-    /* ========================
-       RESPONSIVE
-       ======================== */
-    @media (max-width: 768px) {
-      body {
-        padding-top: 100px;
-      }
-      
-      .navbar {
-        height: 100px;
-      }
-      
-      .aurea2 {
-        width: 200px;
-        height: 80px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .aurea2 {
-        width: 150px;
-        height: 60px;
-      }
-    }
-
-    /* ========================
-       BOTONES
-       ======================== */
-    .btn-granate {
-      background: var(--aurea-granate);
-      color: var(--white);
-      padding: 10px 25px;
-      border-radius: 50px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      border: none;
-    }
-
-    .btn-granate:hover {
-      background: var(--aurea-orange);
-      transform: translateY(-3px);
-      color: var(--white);
-    }
-  
+.audifonos-section h2:first-child {
+    margin-top: 0;
+    padding-top: 20px;
+    position: relative;
+    z-index: 1;
+}

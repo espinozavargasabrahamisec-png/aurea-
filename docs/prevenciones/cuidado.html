@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AUREA - Servicio Técnico de Audífonos</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="servicio-tecnico.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="cuida.css">
-  <link rel="stylesheet" href="cuida.js">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../global.css">
 </head>
 <body>
 
@@ -40,7 +39,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="../ventas/ventas.html">Audiología</a></li>
-                        <li><a class="dropdown-item" href="../prevenciones/cuidado.html">Servcio Técnico</a></li>
+                        <li><a class="dropdown-item" href="../prevenciones/cuidado.html">Servicio Técnico</a></li>
                         <li><a class="dropdown-item" href="../leyes/leyes.html">Laboratorio</a></li>
                     </ul>
                 </li>
@@ -77,11 +76,11 @@
         <h1 class="hero-title">Servicio Técnico Especializado</h1>
         <p class="hero-description">Reparación y mantenimiento profesional de audífonos y prótesis auditivas</p>
         <div class="hero-buttons">
-            <button class="btn-primary" onclick="solicitarServicio()">
+            <button class="btn-primary" id="btnHeroServicio">
                 <i class="fas fa-tools"></i>
                 Solicitar Servicio
             </button>
-            <button class="btn-secondary" onclick="llamarEmergencia()">
+            <button class="btn-secondary" id="btnHeroEmergencia">
                 <i class="fas fa-phone"></i>
                 Emergencia 24/7
             </button>
@@ -92,7 +91,6 @@
     </div>
 </section>
 
-
 <!-- Sección de Servicios -->
 <section class="servicios-section">
     <div class="container">
@@ -100,7 +98,7 @@
         <div class="servicios-grid">
             <div class="servicio-card">
                 <div class="servicio-image">
-                    <img src="../prevenciones/herramientas.png" alt="Reparación de Audífonos" >
+                    <img src="../prevenciones/herramientas.png" alt="Reparación de Audífonos">
                 </div>
                 <div class="servicio-content">
                     <h3>Reparación de Audífonos</h3>
@@ -111,7 +109,9 @@
                         <li><i class="fas fa-check"></i> Sustitución de altavoces</li>
                         <li><i class="fas fa-check"></i> Limpieza profunda</li>
                     </ul>
-                    <button class="btn-servicio" onclick="solicitarServicio()">Solicitar Reparación</button>
+                    <button class="btn-servicio" id="btnReparacion">
+                        Solicitar Reparación
+                    </button>
                 </div>
             </div>
 
@@ -128,13 +128,11 @@
                         <li><i class="fas fa-check"></i> Calibración de sonido</li>
                         <li><i class="fas fa-check"></i> Actualización de software</li>
                     </ul>
-                    <button class="btn-servicio" onclick="solicitarServicio()">Programar Mantenimiento</button>
+                    <button class="btn-servicio" id="btnMantenimiento">
+                        Programar Mantenimiento
+                    </button>
                 </div>
             </div>
-            
-
-            
-            
         </div>
     </div>
 </section>
@@ -224,7 +222,7 @@
                         <i class="fas fa-shield-alt"></i>
                         <div>
                             <h4>Garantía Extendida</h4>
-                            <p> 1 meses en todas las reparaciones</p>
+                            <p>1 mes en todas las reparaciones</p>
                         </div>
                     </div>
                     <div class="feature">
@@ -237,11 +235,11 @@
                 </div>
 
                 <div class="emergencia-buttons">
-                    <button class="btn-emergencia" onclick="llamarEmergencia()">
+                    <button class="btn-emergencia" id="btnEmergenciaLlamar">
                         <i class="fas fa-phone"></i>
                         Llamar Emergencia: +591 70111673
                     </button>
-                    <button class="btn-whatsapp" onclick="contactarWhatsApp()">
+                    <button class="btn-whatsapp" id="btnEmergenciaWhatsApp">
                         <i class="fab fa-whatsapp"></i>
                         WhatsApp Urgente
                     </button>
@@ -271,42 +269,46 @@
       
             <div class="col-md-4">
                 <h4>Horario</h4>
-                <p>Lunes y Miércoles: 15:00 - 19:00</p>
-                <p>Martes y Jueves: 10:00 - 18:00</p>
-                <p>Viernes: 14:00 - 18:00</p>       
+                <p>Lunes y Miércoles: 15:00 am - 19:00pm</p>
+                <p>Martes y jueves: 10:00 am - 18:00pm</p>
+                <p>Viernes: 14:00 pm - 18:00pm</p>       
             </div>
         </div>
         
-        <!-- ================= MAPA ================= -->
-        <div class="text-center mt-4">
-            <button type="button" class="btn btn-light btn-sm rounded-pill px-4 py-2 shadow" data-bs-toggle="modal" data-bs-target="#mapaModal">
-                📍 Ver Mapa
-            </button>
-        </div>
-
-        <!-- Ventana Emergente -->
-        <div class="modal fade" id="mapaModal" tabindex="-1" aria-labelledby="mapaModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="mapaModalLabel">Ubicación</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                    </div>
-                    <div class="modal-body p-0">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d1116.1146343179062!2d-68.12314552347775!3d-16.5115717753784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e6!4m4!1s0x915f2061d125ed5b%3A0x79c073ff64b8ac2b!3m2!1d-16.5115216!2d-68.1227171!4m5!1s0x915f2061d125ed5b%3A0x79c073ff64b8ac2b!2sAv.%20Arce%20Nro.%202652%20Edificio%20MILA%20Mezzanine%202%20Of.%202%2C%20La%20Paz!3m2!1d-16.5115216!2d-68.1227171!5e0!3m2!1ses-419!2sbo!4v1761098004108!5m2!1ses-419!2sbo" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
+        <!-- ================= BOTÓN MAPA CENTRADO ================= -->
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <button type="button" class="btn btn-light btn-sm rounded-pill px-4 py-2 shadow btn-mapa-centered" data-bs-toggle="modal" data-bs-target="#mapaModal">
+                    📍 Ver Mapa
+                </button>
             </div>
         </div>
+        <!-- ================= FIN BOTÓN MAPA ================= -->
         
         <hr>
         <p class="text-center mb-0">&copy; 2025 Áurea Centro Auditivo. Todos los derechos reservados.</p>
+    </div>
+    
+    <!-- Ventana Emergente del Mapa -->
+    <div class="modal fade" id="mapaModal" tabindex="-1" aria-labelledby="mapaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mapaModalLabel">Ubicación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+               <div class="modal-body p-0">
+         <iframe src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d1116.1146343179062!2d-68.12314552347775!3d-16.5115717753784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e6!4m4!1s0x915f2061d125ed5b%3A0x79c073ff64b8ac2b!3m2!1d-16.5115216!2d-68.1227171!4m5!1s0x915f2061d125ed5b%3A0x79c073ff64b8ac2b!2sAv.%20Arce%20Nro.%202652%20Edificio%20MILA%20Mezzanine%202%20Of.%202%2C%20La%20Paz!3m2!1d-16.5115216!2d-68.1227171!5e0!3m2!1ses-419!2sbo!4v1761098004108!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+      </div>
+            </div>
+        </div>
     </div>
 </footer>
 
 <!-- ================= Botones Flotantes ================= -->
 <!-- WhatsApp -->
-<a href="https://wa.link/8uq61i" class="flotante whatsapp" target="_blank" title="Chat WhatsApp">
+<a href="https://wa.me/59177534284" class="flotante whatsapp" target="_blank" title="Chat WhatsApp">
   <i class="icono fab fa-whatsapp"></i>
 </a>
 
@@ -320,7 +322,7 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="servicio-tecnico.js"></script>
+<script src="cuida.js"></script>
 
 </body>
 </html>
