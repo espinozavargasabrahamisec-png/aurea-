@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Áurea - Campañas Auditivas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="implante.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+       <a class="aurea2" href="../index.html">
+    <img src="./Asset 10@4x.png" alt="Logo Aurea">Logo aurea</a>
+      
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link text-white fw-semibold dropdown-toggle" href="#servicios" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Nosotros
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="../nosotros/Nosotros.html">Conócenos</a></li>
+                    <li><a class="dropdown-item" href="../perdidaauditiva/auditiva.html">Cuidado auditivo</a></li>
+                    <li><a class="dropdown-item" href="../encuesta/Encuesta.html">Mini Test</a></li>
+                </ul>
+            </li>
+            
+            <li class="nav-item dropdown">
+                <a class="nav-link text-white fw-semibold dropdown-toggle" href="#audifonos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Servicios
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="../ventas/ventas.html">Audiología</a></li>
+                    <li><a class="dropdown-item" href="../prevenciones/cuidado.html">Servcio Técnico</a></li>
+                    <li><a class="dropdown-item" href="../leyes/leyes.html">Laboratorio</a></li>
+                </ul>
+            </li>
+            
+            <li class="nav-item dropdown">
+                <a class="nav-link text-white fw-semibold dropdown-toggle" href="#nosotros" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Productos
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="../estadistica/estadistica.html" target="_blank">Accesorios</a></li>
+                    <li><a class="dropdown-item" href="../ventas/ventas.html" target="_blank">Audífonos</a></li>
+                </ul>
+            </li>
+            
+            <li class="nav-item dropdown">
+                <a class="nav-link text-white fw-semibold dropdown-toggle" href="#contacto" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Contactos
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#la-paz">La Paz</a></li>
+                    <li><a class="dropdown-item" href="#el-alto">El Alto</a></li>
+                    <li><a class="dropdown-item" href="#oruro">Oruro</a></li>
+                    <li><a class="dropdown-item" href="#tarija">Tarija</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero-section">
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="carousel-img oruro-img"></div>
+        <div class="carousel-caption">
+          <h1>Campaña Auditiva en Oruro</h1>
+          <p>28 de Noviembre - Calle Tarapacá entre Caro y Montesinos</p>
+          <a href="#oruro" class="btn btn-primary">Más Información</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-img tarija-img"></div>
+        <div class="carousel-caption">
+          <h1>Campaña Auditiva en Tarija</h1>
+          <p>25 al 28 de Noviembre - Calle Bolivar 808 esquina Ramon Rojas</p>
+          <a href="#tarija" class="btn btn-primary">Más Información</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-img la-paz-img"></div>
+        <div class="carousel-caption">
+          <h1>Áurea Centro Auditivo</h1>
+          <p>Expertos en soluciones auditivas con más de 15 años de experiencia</p>
+          <a href="#la-paz" class="btn btn-primary">Nuestra Sede</a>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+</section>
+
+<!-- ================= CAMPAÑA ORURO ================= -->
+<section id="oruro" class="campaign-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <div class="campaign-content">
+          <h2>¡Hola! El día 28 de noviembre estaremos en Oruro</h2>
+          <p class="lead">Ofrecemos los siguientes servicios:</p>
+          <ul class="services-list">
+            <li><i class="fas fa-headphones"></i> <span>Audiometría tonal: <strong>Bs. 120</strong></span></li>
+            <li><i class="fas fa-volume-up"></i> <span>Audiometría completa: <strong>Bs. 250</strong></span></li>
+            <li><i class="fas fa-ear"></i> <span>Cotización de audífonos medicados</span></li>
+          </ul>
+          <p>¿Quieres agendar tu cita? 📲 Escríbenos y te la reservamos con gusto.</p>
+          <div class="btn-group">
+            <a href="https://wa.link/cetggt" class="btn btn-primary" target="_blank">
+              <i class="fab fa-whatsapp"></i> Agendar Cita
+            </a>
+            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#oruroMapModal">
+              <i class="fas fa-map-marker-alt"></i> Ver Ubicación
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="location-card">
+          <h3><i class="fas fa-map-marker-alt"></i> Ubicación Oruro</h3>
+          <p>Calle Tarapacá entre Caro y Montesinos</p>
+          <div class="map-preview" data-bs-toggle="modal" data-bs-target="#oruroMapModal">
+            <div class="map-placeholder">
+              <i class="fas fa-map"></i>
+              <p>Ver mapa de Oruro</p>
+            </div>
+          </div>
+          <a href="https://maps.app.goo.gl/MGmB8BCDJURCzZhDA" class="btn btn-sm btn-outline-secondary mt-2" target="_blank">
+            Abrir en Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAMPAÑA TARIJA ================= -->
+<section id="tarija" class="campaign-section bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 order-lg-2">
+        <div class="campaign-content">
+          <h2>¡Hola! Te invitamos a nuestra Campaña Auditiva en Tarija</h2>
+          <p class="lead">Los días 25, 26, 27 y 28 de noviembre</p>
+          <p class="lead">Ofrecemos los siguientes servicios:</p>
+          <ul class="services-list">
+            <li><i class="fas fa-ear"></i> <span>Lavado de oído: <strong>Bs. 50 por cada lado</strong></span></li>
+            <li><i class="fas fa-headphones"></i> <span>Audiometría tonal: <strong>Bs. 150</strong></span></li>
+            <li><i class="fas fa-volume-up"></i> <span>Audiometría completa: <strong>Bs. 250</strong></span></li>
+            <li><i class="fas fa-ear"></i> <span>Cotización de audífonos medicados</span></li>
+          </ul>
+          
+          <div class="promo-card">
+            <div class="promo-header">
+              <i class="fas fa-gift"></i>
+              <h4>¡Aprovecha, Llegó el Black Friday a Áurea!</h4>
+            </div>
+            <p>Durante todo el mes, aprovecha nuestros descuentos especiales en audífonos medicados 👂💫</p>
+            <div class="discount-badges">
+              <span class="badge">10%</span>
+              <span class="badge">20%</span>
+              <span class="badge">30%</span>
+            </div>
+            <p class="small">Para poder realizar tu cotización personalizada, necesitamos una audiometría reciente (no mayor a 3 meses) y que puedas asistir de forma presencial.</p>
+          </div>
+          
+          <p>¿Quieres agendar tu cita? 📲 Escríbenos y te la reservamos con gusto.</p>
+          <div class="btn-group">
+            <a href="https://wa.link/cetggt" class="btn btn-primary" target="_blank">
+              <i class="fab fa-whatsapp"></i> Agendar Cita
+            </a>
+            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#tarijaMapModal">
+              <i class="fas fa-map-marker-alt"></i> Ver Ubicación
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 order-lg-1">
+        <div class="location-card">
+          <h3><i class="fas fa-map-marker-alt"></i> Ubicación Tarija</h3>
+          <p>Calle Bolivar 808 esquina Ramon Rojas (Barrio El Molino)</p>
+          <div class="map-preview" data-bs-toggle="modal" data-bs-target="#tarijaMapModal">
+            <div class="map-placeholder">
+              <i class="fas fa-map"></i>
+              <p>Ver mapa de Tarija</p>
+            </div>
+          </div>
+          <a href="#" class="btn btn-sm btn-outline-secondary mt-2" target="_blank">
+            Abrir en Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SEDES ================= -->
+<section id="sedes" class="sedes-section">
+  <div class="container">
+    <h2 class="section-title">Nuestras Sedes</h2>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="sede-card" id="la-paz">
+          <div class="sede-header">
+            <h3>La Paz</h3>
+            <span class="status-badge active">Abierto</span>
+          </div>
+          <div class="sede-body">
+            <p><i class="fas fa-map-marker-alt"></i> Av. Arce Nro. 2652 Edif. MILA Mezanine 1 Of. L21 (al frente del Multicine)</p>
+            <p><i class="fas fa-phone"></i> +591 70111673</p>
+            <div class="sede-schedule">
+              <h5>Horario de atención:</h5>
+              <ul>
+                <li>Lunes y Miércoles: 15:00 - 19:00</li>
+                <li>Martes y Jueves: 10:00 - 18:00</li>
+                <li>Viernes: 14:00 - 18:00</li>
+              </ul>
+            </div>
+          </div>
+          <div class="sede-footer">
+            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#laPazMapModal">
+              <i class="fas fa-map-marked-alt"></i> Ver Mapa
+            </button>
+            <a href="https://wa.link/cetggt" class="btn btn-primary" target="_blank">
+              <i class="fab fa-whatsapp"></i> Contactar
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="sede-card" id="el-alto">
+          <div class="sede-header">
+            <h3>El Alto</h3>
+            <span class="status-badge coming-soon">Próximamente</span>
+          </div>
+          <div class="sede-body">
+            <p><i class="fas fa-map-marker-alt"></i> Próximamente...</p>
+            <p><i class="fas fa-phone"></i> +591 70111673</p>
+            <div class="sede-schedule">
+              <h5>Horario de atención:</h5>
+              <p>Información próximamente disponible</p>
+            </div>
+          </div>
+          <div class="sede-footer">
+            <button class="btn btn-outline-secondary" disabled>
+              <i class="fas fa-map-marked-alt"></i> Próximamente
+            </button>
+            <a href="https://wa.link/cetggt" class="btn btn-primary" target="_blank">
+              <i class="fab fa-whatsapp"></i> Contactar
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="row text-center text-md-start">
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h4>Áurea Centro Auditivo</h4>
+        <p>Expertos en soluciones auditivas con más de 15 años de experiencia mejorando la calidad de vida de nuestros pacientes.</p>
+      </div>
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h4>Contacto</h4>
+        <p>📍 Av. Arce Nro. 2652 Edif. MILA Mezanine 1 Of. L21<br> (al frente del Multicine La Paz) La Paz Bolivia</p>
+        <p>📞 +591 70111673</p>
+        <p>✉️ contacto@aureamed.com.bo</p>
+      </div>
+      <div class="col-md-4">
+        <h4>Horario</h4>
+        <p>Lunes y Miércoles: 15:00 - 19:00</p>
+        <p>Martes y Jueves: 10:00 - 18:00</p>
+        <p>Viernes: 14:00 - 18:00</p>       
+      </div>
+    </div>
+    
+    <!-- ================= MAPA ================= -->
+    <div class="text-center mt-4">
+      <button type="button" class="btn btn-light btn-sm rounded-pill px-4 py-2 shadow" data-bs-toggle="modal" data-bs-target="#mapaModal">
+        📍 Ver Mapa
+      </button>
+    </div>
+
+    <!-- Ventana Emergente -->
+    <div class="modal fade" id="mapaModal" tabindex="-1" aria-labelledby="mapaModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="mapaModalLabel">Ubicación - La Paz</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body p-0">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d1116.1146343179062!2d-68.12314552347775!3d-16.5115717753784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e6!4m4!1s0x915f2061d125ed5b%3A0x79c073ff64b8ac2b!3m2!1d-16.5115216!2d-68.1227171!4m5!1s0x915f2061d125ed5b%3A0x79c073ff64b8ac2b!2sAv.%20Arce%20Nro.%202652%20Edificio%20MILA%20Mezzanine%202%20Of.%202%2C%20La%20Paz!3m2!1d-16.5115216!2d-68.1227171!5e0!3m2!1ses-419!2sbo!4v1761098004108!5m2!1ses-419!2sbo" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <hr>
+    <p class="text-center mb-0">&copy; 2025 Áurea Centro Auditivo. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!-- ================= MODALES DE MAPAS ================= -->
+<!-- Modal Oruro -->
+<div class="modal fade" id="oruroMapModal" tabindex="-1" aria-labelledby="oruroMapModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="oruroMapModalLabel">Ubicación - Oruro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Dirección:</strong> Calle Tarapacá entre Caro y Montesinos, Oruro</p>
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.621855918483!2d-67.10820472479045!3d-17.96935299307083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDU4JzA5LjciUyA2N8KwMDYnMjIuMyJX!5e0!3m2!1ses!2sbo!4v1638225876542!5m2!1ses!2sbo" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Tarija -->
+<div class="modal fade" id="tarijaMapModal" tabindex="-1" aria-labelledby="tarijaMapModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="tarijaMapModalLabel">Ubicación - Tarija</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Dirección:</strong> Calle Bolivar 808 esquina Ramon Rojas (Barrio El Molino), Tarija</p>
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.499684484882!2d-64.73178872478913!3d-21.53245898722217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDMxJzU2LjkiUyA2NMKwNDMnNDkuNyJX!5e0!3m2!1ses!2sbo!4v1638225876542!5m2!1ses!2sbo" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal La Paz -->
+<div class="modal fade" id="laPazMapModal" tabindex="-1" aria-labelledby="laPazMapModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="laPazMapModalLabel">Ubicación - La Paz</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Dirección:</strong> Av. Arce Nro. 2652 Edif. MILA Mezanine 1 Of. L21, La Paz</p>
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3822.123456789012!2d-68.12345678901234!3d-16.512345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDMwJzQ0LjQiUyA2OMKwMDcnMjMuNCJX!5e0!3m2!1ses!2sbo!4v1638225876542!5m2!1ses!2sbo" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= BOTONES FLOTANTES ================= -->
+<div class="floating-buttons">
+  <a href="https://wa.link/cetggt" class="floating-btn whatsapp-btn" target="_blank" title="Chatear por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://www.facebook.com/AUREAEVOLUCIONAUDITIVA" class="floating-btn facebook-btn" target="_blank" title="Síguenos en Facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <button class="floating-btn scroll-top-btn" id="scrollTopBtn" title="Volver arriba">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="implante.js"></script>
+</body>
+</html>

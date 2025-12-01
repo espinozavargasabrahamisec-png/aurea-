@@ -129,7 +129,7 @@ h2, h3, h4, h5, h6 {
 .wave-header {
   height: 420px;
   background: 
-    url('./consultorio.jpg') center/cover no-repeat,
+    url('./consultorio2.jpg') center/cover no-repeat,
     linear-gradient(135deg, rgba(244, 145, 30, 0.85), rgba(139, 44, 44, 0.85));
   display: flex;
   align-items: center;
