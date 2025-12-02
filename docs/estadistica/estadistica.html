@@ -89,41 +89,207 @@
 <!-- Botón Scroll Top -->
 <button class="acroll" id="btntop">↑</button>
 
-<!-- Hero Section -->
-    <section class="hero">
-        <h2>Cuida tus Audífonos con los Mejores Accesorios</h2>
-        <p>Descubre todos los accesorios que necesitas para el cuidado y mantenimiento de tus audífonos médicos.</p>
-        <button onclick="window.location.href='#catalogo'">Ver Accesorios</button>
-    </section>
 
-    <!-- Catalogo -->
-    <section id="catalogo" class="catalogo">
-        <h2>Accesorios Disponibles</h2>
-        <div class="product">
-            <img src="../imagenes copy/A.png" alt="Tubo Slim">
-            <p class="product-title">Tubo Slim</p>
-            <p class="product-price">15.00 Bs</p>
-            <button class="add-to-cart" onclick="window.location.href='https://wa.link/cetggt?text=Me%20interesa%20el%20tubo%20slim';">Has tu pedido</button>
+
+
+
+<!-- Hero Section MEJORADA -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <span class="hero-badge">🎯 PRODUCTOS ORIGINALES</span>
+        <h1 class="hero-title">Cuida tus Audífonos con los <span class="highlight">Mejores Accesorios</span></h1>
+        <p class="hero-description">Descubre accesorios de calidad premium para el cuidado y mantenimiento profesional de tus audífonos médicos.</p>
+        
+        <div class="hero-features">
+            <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Garantía 1 año</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-shipping-fast"></i>
+                <span>Envío gratis en La Paz</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-headset"></i>
+                <span>Asesoría especializada</span>
+            </div>
         </div>
-        <div class="product">
-            <img src="../imagenes copy/A.png" alt="Tubo Taigon">
-            <p class="product-title">Tubo Taigón</p>
-            <p class="product-price">18.00 Bs</p>
-            <button class="add-to-cart" onclick="window.location.href='https://wa.link/cetggt?text=Me%20interesa%20el%20tubo%20Taigon';">Has tu pedido</button>
+        
+        <button class="hero-button" onclick="window.location.href='#catalogo'">
+            <span>Explorar Catálogo</span>
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+    <div class="hero-wave">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="currentColor"></path>
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35,6.36,119.13-6.2,32.18-10.69,59.74-28.65,87.09-45.92,30.67-19.29,62.34-38.83,97.2-45.66,47.67-9.24,96.67-11,144.67-5.51,41.68,4.73,81.84,17.19,118.6,35.86,46,23.39,90.94,51.6,135.76,75.85C1001.57,245.5,1052.7,254,1200,254V0Z" opacity=".5" fill="currentColor"></path>
+            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</section>
+
+<!-- Catálogo MEJORADO -->
+<section id="catalogo" class="catalogo">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Accesorios <span class="highlight">Disponibles</span></h2>
+            <p class="section-subtitle">Productos originales y de alta calidad para el cuidado de tus audífonos</p>
+            <div class="title-decoration">
+                <div class="line"></div>
+                <i class="fas fa-hearing"></i>
+                <div class="line"></div>
+            </div>
         </div>
-        <div class="product">
-            <img src="../imagenes copy/A.png" alt="Filtros para Audífono">
-            <p class="product-title">Filtros para Audífonos</p>
-            <p class="product-price">10.00 Bs</p>
-            <button class="add-to-cart" onclick="window.location.href='https://wa.link/cetggt?text=Me%20interesa%20el%20filtro%20de%20audifono';">Has tu pedido</button>
+        
+        <div class="products-grid">
+            <!-- Producto 1 -->
+            <div class="product-card">
+                <div class="product-badge hot">MÁS VENDIDO</div>
+                <div class="product-image">
+                    <img src="./D9BTE_M_Pbeige.png" alt="Tubo Slim" loading="lazy">
+                    <div class="product-overlay">
+                        <a href="https://wa.link/cetggt?text=Me%20interesa%20el%20tubo%20slim" class="quick-view" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Consultar
+                        </a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Tubo Slim</h3>
+                    <p class="product-description">Tubo delgado y resistente para mayor comodidad</p>
+                    <div class="product-price">
+                        <span class="current">15.00 Bs</span>
+                        <span class="old">18.00 Bs</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(4.5)</span>
+                    </div>
+                    <button class="product-button" onclick="window.location.href='https://wa.link/cetggt?text=Me%20interesa%20el%20tubo%20slim'">
+                        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Producto 2 -->
+            <div class="product-card">
+                <div class="product-badge new">NUEVO</div>
+                <div class="product-image">
+                    <img src="./Tubo Taigón.png" alt="Tubo Taigon" loading="lazy">
+                    <div class="product-overlay">
+                        <a href="https://wa.link/cetggt?text=Me%20interesa%20el%20tubo%20Taigon" class="quick-view" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Consultar
+                        </a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Tubo Taigón</h3>
+                    <p class="product-description">Material flexible y antibacteriano</p>
+                    <div class="product-price">
+                        <span class="current">18.00 Bs</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(4.0)</span>
+                    </div>
+                    <button class="product-button" onclick="window.location.href='https://wa.link/cetggt?text=Me%20interesa%20el%20tubo%20Taigon'">
+                        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Producto 3 -->
+            <div class="product-card">
+                <div class="product-badge offer">OFERTA</div>
+                <div class="product-image">
+                    <img src="./filtro.png" alt="Filtros para Audífono" loading="lazy">
+                    <div class="product-overlay">
+                        <a href="https://wa.link/cetggt?text=Me%20interesa%20el%20filtro%20de%20audifono" class="quick-view" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Consultar
+                        </a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Filtros para Audífonos</h3>
+                    <p class="product-description">Paquete de filtros anti-cera</p>
+                    <div class="product-price">
+                        <span class="current">10.00 Bs</span>
+                        <span class="old">12.00 Bs</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(5.0)</span>
+                    </div>
+                    <button class="product-button" onclick="window.location.href='https://wa.link/cetggt?text=Me%20interesa%20el%20filtro%20de%20audifono'">
+                        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Producto 4 -->
+            <div class="product-card">
+                <div class="product-badge stock">ÚLTIMAS UNIDADES</div>
+                <div class="product-image">
+                    <img src="./Estuche de Limpieza para Audífonos.png" alt="Estuche de Limpieza" loading="lazy">
+                    <div class="product-overlay">
+                        <a href="https://wa.link/cetggt?text=Me%20interesa%20el%20estuche%20de%20limpieza" class="quick-view" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Consultar
+                        </a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Estuche de Limpieza</h3>
+                    <p class="product-description">Kit completo para mantenimiento</p>
+                    <div class="product-price">
+                        <span class="current">20.00 Bs</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(4.5)</span>
+                    </div>
+                    <button class="product-button" onclick="window.location.href='https://wa.link/cetggt?text=Me%20interesa%20el%20estuche%20de%20limpieza'">
+                        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="product">
-            <img src="../imagenes copy/A.png" alt="Estuche de Limpieza">
-            <p class="product-title">Estuche de Limpieza para Audífonos</p>
-            <p class="product-price">20.00 Bs</p>
-            <button class="add-to-cart" onclick="window.location.href='https://wa.link/cetggt?text=Me%20interesa%20el%20estuche%20de%20limpieza';">Has tu pedido</button>
+        
+        <!-- Banner Promocional -->
+        <div class="promo-banner">
+            <div class="promo-content">
+                <div class="promo-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <div class="promo-text">
+                    <h3>🚚 ¡Envío Gratis en La Paz!</h3>
+                    <p>En compras mayores a 50 Bs. Aprovecha esta oferta especial</p>
+                </div>
+                <a href="https://wa.link/cetggt" class="promo-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Consultar Promoción
+                </a>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
 
 <!-- ================= FOOTER ================= -->
 <footer>
