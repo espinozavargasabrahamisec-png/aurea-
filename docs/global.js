@@ -51,6 +51,12 @@ document.addEventListener('click', () => {
         menu.style.display = 'none';
     });
 });
+// Cerrar menú  (móvil)
+document.addEventListener('click', () => {
+    if (navMenu && navMenu.classList.contains('show')) {
+        navMenu.classList.remove('show');
+    }
+});
 // Scrul ubicaciones 
 function scrollToHash() {
     const hash = window.location.hash;
@@ -63,7 +69,11 @@ function scrollToHash() {
             window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
         }
     }
-}
+}document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        menu.style.display = 'none';
+    });
+});
 
 // Scrul cuando cargue Ubicaciones
 window.addEventListener('load', scrollToHash);
