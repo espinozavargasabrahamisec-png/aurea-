@@ -23,25 +23,23 @@
 
 .aurea2 {
     display: inline-block;
-    width: 180px;       /* tamaño móvil */
+    width: 180px;
     height: 60px;
-    background-image: url('Asset 10@4x.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    /* IMAGEN ENCIMA + DEGRADADO DE FONDO */
+    background: 
+        url('Asset 10@4x.png') center/contain no-repeat,
+        linear-gradient(to right, var(--aurea-orange), var(--aurea-granate));
     border-radius: 10px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s, box-shadow 0.2s;
     text-indent: -9999px;
     overflow: hidden;
-    background-color: var(--white);
 }
 
 .aurea2:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
-
 .navbar-toggler {
     border: 2px solid rgba(255,255,255,0.8);
     padding: 5px 8px;
@@ -304,22 +302,4 @@ footer a:hover {
 footer hr {
     border-top: 1px solid rgba(255,255,255,0.3);
     margin: 25px 0;
-}
-
-/* Estilos para el mapa modal */
-.modal-content {
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.modal-header {
- 
-    color: #8B2C2C;
-    border-bottom: none;
-}
-
-.modal-body iframe {
-    width: 100%;
-    height: 450px;
-    border: none;
 }
