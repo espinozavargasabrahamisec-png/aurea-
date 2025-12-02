@@ -1,21 +1,3 @@
-// Botón Scroll Top
-const btntop = document.getElementById("btntop");
-if (btntop) {
-    window.addEventListener("scroll", function() {
-        if (window.scrollY > 300) {
-            btntop.style.display = "block";
-        } else {
-            btntop.style.display = "none";
-        }
-    });
-
-    btntop.addEventListener("click", function() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    });
-}
 
 // Animaciones al cargar la página
 document.addEventListener('DOMContentLoaded', function() {
