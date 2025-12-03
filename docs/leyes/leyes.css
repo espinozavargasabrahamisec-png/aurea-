@@ -24,7 +24,7 @@ body {
     background-color: var(--light-gray);
     color: var(--aurea-dark);
     line-height: 1.6;
-    padding-top: 80px;
+    padding-top: 80px !important; /* Solución definitiva para navbar */
     margin: 0;
 }
 
@@ -32,30 +32,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     color: var(--aurea-granate);
 }
-
-
-
-.dropdown-menu {
-    background: var(--aurea-granate);
-    border-radius: 12px;
-    overflow: hidden;
-    border: none;
-    margin-top: 5px;
-}
-
-.dropdown-item {
-    color: var(--white) !important;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    text-align: center;
-}
-
-.dropdown-item:hover {
-    background: var(--aurea-orange);
-    transform: translateX(5px);
-    border-radius: 8px;
-}
-
 
 /* ========================
    HEADER
@@ -162,51 +138,302 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--aurea-granate);
     font-weight: bold;
 }
-
 /* ========================
-   SERVICIOS
+   SERVICIOS - MEJOR CENTRADO CON MÁS ESPACIO
    ======================== */
 .services-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
-    margin-top: 25px;
+    gap: 100px; /* Más espacio entre cards */
+    margin-top: 100px; /* Más espacio arriba */
+    margin-bottom: 20px; /* Más espacio abajo */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px; /* Más padding lateral */
 }
 
 .service-card {
     background: white;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 4px solid var(--aurea-orange);
+    border-radius: 15px;
+    padding: 100px 250px; /* Más padding interno */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border-top: 5px solid var(--aurea-orange);
     cursor: pointer;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 280px; /* Más altura */
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    border-top-color: var(--aurea-granate);
 }
 
 .service-card i {
-    font-size: 2.5rem;
+    font-size: 3rem; /* Iconos más grandes */
     color: var(--aurea-granate);
-    margin-bottom: 15px;
+    margin-bottom: 25px; /* Más espacio debajo del icono */
+    background: linear-gradient(135deg, rgba(139, 44, 44, 0.1), rgba(244, 145, 30, 0.1));
+    width: 90px; /* Más ancho */
+    height: 90px; /* Más alto */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .service-card h4 {
     color: var(--aurea-granate);
-    margin-bottom: 12px;
-    font-weight: 600;
-    font-size: 1.2rem;
+    margin-bottom: 20px; /* Más espacio debajo del título */
+    font-weight: 700;
+    font-size: 1.4rem; /* Título más grande */
+    line-height: 1.4;
+    padding: 0 10px; /* Padding interno en títulos largos */
 }
 
 .service-card p {
-    font-size: 0.95em;
+    font-size: 1.05em; /* Texto ligeramente más grande */
     color: var(--aurea-gray);
+    line-height: 1.7; /* Más espacio entre líneas */
+    margin: 0;
+    max-width: 300px; /* Ancho máximo del texto */
+    padding: 0 5px; /* Pequeño padding interno */
 }
 
+/* ========================
+   MEDIA QUERIES PARA SERVICIOS
+   ======================== */
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .services-grid {
+        gap: 25px; /* Un poco menos de espacio en móvil */
+        padding: 0 15px; /* Menos padding lateral en móvil */
+        margin-top: 30px; /* Menos espacio arriba en móvil */
+    }
+    
+    .service-card {
+        padding: 25px 20px; /* Menos padding interno en móvil */
+        min-height: 260px; /* Un poco menos de altura en móvil */
+    }
+    
+    .service-card i {
+        font-size: 2.8rem;
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+    }
+    
+    .service-card h4 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    
+    .service-card p {
+        font-size: 1em;
+        max-width: 280px;
+        line-height: 1.6;
+    }
+}
+
+/* Tablet / Pantallas medianas */
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px; /* Más espacio entre cards en tablet */
+        padding: 0 30px; /* Más padding lateral */
+        margin-top: 50px; /* Más espacio arriba */
+    }
+    
+    .service-card {
+        padding: 35px 30px; /* Más padding interno */
+        min-height: 320px; /* Más altura */
+    }
+    
+    .service-card i {
+        font-size: 3.3rem; /* Iconos aún más grandes */
+        width: 100px;
+        height: 100px;
+        margin-bottom: 30px; /* Más espacio debajo del icono */
+    }
+    
+    .service-card h4 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+    
+    .service-card p {
+        font-size: 1.1em; /* Texto más grande */
+        max-width: 320px;
+        line-height: 1.8; /* Más espacio entre líneas */
+    }
+}
+
+/* Escritorio / Pantallas grandes */
+@media (min-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+        gap: 40px; /* Aún más espacio entre cards */
+        padding: 0; /* Sin padding lateral */
+        margin-top: 60px; /* Más espacio arriba */
+        margin-bottom: 40px; /* Más espacio abajo */
+    }
+    
+    .service-card {
+        padding: 40px 35px; /* Aún más padding interno */
+        min-height: 350px; /* Aún más altura */
+    }
+    
+    .service-card i {
+        font-size: 3.5rem; /* Iconos grandes */
+        width: 110px;
+        height: 110px;
+        margin-bottom: 35px; /* Mucho espacio debajo del icono */
+    }
+    
+    .service-card h4 {
+        font-size: 1.6rem; /* Títulos grandes */
+        margin-bottom: 30px;
+        padding: 0 15px; /* Más padding interno */
+    }
+    
+    .service-card p {
+        font-size: 1.15em; /* Texto más grande */
+        max-width: 350px;
+        line-height: 1.9; /* Mucho espacio entre líneas */
+    }
+}
+
+/* Pantallas extra grandes */
+@media (min-width: 1200px) {
+    .services-grid {
+        max-width: 1300px; /* Un poco más ancho */
+        gap: 130px; /* Máximo espacio entre cards */
+        margin-top: 70px; /* Máximo espacio arriba */
+    }
+    
+    .service-card {
+        padding: 45px 40px; /* Máximo padding interno */
+        min-height: 380px; /* Máxima altura */
+    }
+    
+    .service-card i {
+        font-size: 3.8rem; /* Iconos muy grandes */
+        width: 120px;
+        height: 120px;
+        margin-bottom: 40px; /* Máximo espacio debajo del icono */
+    }
+    
+    .service-card h4 {
+        font-size: 1.7rem;
+        margin-bottom: 35px;
+    }
+    
+    .service-card p {
+        font-size: 1.2em; /* Texto más grande */
+        max-width: 380px;
+        line-height: 2.0; /* Máximo espacio entre líneas */
+    }
+}
+
+/* ========================
+   ESPACIO EXTRA PARA LA SECCIÓN LABORATORIO
+   ======================== */
+.lab-section {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px 25px; /* Más padding interno */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    text-align: left;
+    color: var(--aurea-dark);
+    margin-bottom: 50px; /* Más espacio abajo */
+    border: 2px solid var(--aurea-orange);
+    max-width: 1200px; /* Limitar ancho máximo */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Más espacio alrededor del título principal */
+.lab-section h2 {
+    color: var(--aurea-granate);
+    text-align: center;
+    margin-bottom: 40px; /* Más espacio debajo del título */
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 20px; /* Más espacio para la línea decorativa */
+    font-size: 2rem; /* Título más grande */
+    margin-top: 20px; /* Espacio arriba del título */
+}
+
+/* Más espacio alrededor del subtítulo */
+.lab-section h3 {
+    color: var(--aurea-orange);
+    margin-top: 40px; /* Más espacio arriba */
+    margin-bottom: 25px; /* Más espacio debajo */
+    font-size: 1.6rem; /* Subtítulo más grande */
+}
+
+/* Más espacio entre párrafos */
+.lab-section p {
+    font-size: 1.05em;
+    line-height: 1.7; /* Más espacio entre líneas */
+    margin-bottom: 20px; /* Más espacio entre párrafos */
+}
+
+@media (min-width: 768px) {
+    .lab-section {
+        padding: 50px 40px; /* Aún más padding en tablet */
+        margin-bottom: 60px; /* Más espacio abajo */
+    }
+    
+    .lab-section h2 {
+        font-size: 2.3rem; /* Título aún más grande */
+        margin-bottom: 50px; /* Más espacio debajo */
+    }
+    
+    .lab-section h3 {
+        font-size: 1.8rem; /* Subtítulo más grande */
+        margin-top: 50px; /* Más espacio arriba */
+        margin-bottom: 30px; /* Más espacio debajo */
+    }
+    
+    .lab-section p {
+        font-size: 1.1em; /* Texto más grande */
+        line-height: 1.8; /* Más espacio entre líneas */
+        margin-bottom: 25px; /* Más espacio entre párrafos */
+    }
+}
+
+@media (min-width: 992px) {
+    .lab-section {
+        padding: 60px 50px; /* Máximo padding */
+        margin-bottom: 70px; /* Máximo espacio abajo */
+    }
+    
+    .lab-section h2 {
+        font-size: 2.5rem; /* Título muy grande */
+        margin-bottom: 60px; /* Mucho espacio debajo */
+    }
+    
+    .lab-section h3 {
+        font-size: 2rem; /* Subtítulo muy grande */
+        margin-top: 60px; /* Mucho espacio arriba */
+        margin-bottom: 35px; /* Mucho espacio debajo */
+    }
+    
+    .lab-section p {
+        font-size: 1.15em; /* Texto más grande */
+        line-height: 1.9; /* Mucho espacio entre líneas */
+        margin-bottom: 30px; /* Mucho espacio entre párrafos */
+    }
+}
 /* ========================
    CARRUSEL 3D
    ======================== */
@@ -315,8 +542,6 @@ h1, h2, h3, h4, h5, h6 {
     justify-content:center;
 }
 
-
-
 .indicador{
     margin-top:12px;
     display:flex;
@@ -336,12 +561,55 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ========================
+   MAPA EN PÁGINA PRINCIPAL
+   ======================== */
+.mapa-section {
+    padding: 50px 15px;
+    background-color: rgba(139, 44, 44, 0.05);
+    margin: 30px 0;
+}
+
+.mapa-section h2 {
+    color: var(--aurea-granate);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.mapa-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border: 3px solid var(--aurea-orange);
+}
+
+.mapa-contenedor {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* Relación 16:9 */
+    overflow: hidden;
+}
+
+.mapa-contenedor iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ========================
    MODALES
    ======================== */
 .modal-molde .modal-content {
     border-radius: 15px;
     overflow: hidden;
     border: 3px solid var(--aurea-orange);
+    /* CÓDIGO ELIMINADO: width: 100%; */
 }
 
 .modal-molde .modal-header {
@@ -361,27 +629,6 @@ h1, h2, h3, h4, h5, h6 {
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 15px;
-}
-
-.modal-content {
-    background: #1a1d23;
-    color: #fff;
-    border: 2px solid var(--aurea-orange);
-    border-radius: 15px;
-}
-
-.modal-header {
-    background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
-    border-bottom: 1px solid var(--aurea-orange);
-}
-
-.modal-title {
-    color: #fff;
-    font-weight: 700;
-}
-
-.btn-close {
-    filter: invert(1);
 }
 
 .molde-info {
@@ -465,7 +712,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Galería de imágenes en modal */
-
 .imagenes-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -487,18 +733,6 @@ h1, h2, h3, h4, h5, h6 {
 .imagenes-gallery img:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 25px rgba(244, 145, 30, 0.3);
-}
-
-/* Responsive para móviles */
-@media (max-width: 768px) {
-    .imagenes-gallery {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-    
-    .imagenes-gallery img {
-        height: 150px;
-    }
 }
 
 /* ========================
@@ -547,145 +781,37 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ========================
-   BOTONES FLOTANTES
+   MEDIA QUERIES RESPONSIVE
    ======================== */
-.flotante {
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    right: 15px;
-    color: white;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 24px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    z-index: 100;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .imagenes-gallery {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .imagenes-gallery img {
+        height: 150px;
+    }
+    
+    #mapaModal .modal-dialog {
+        max-width: 100%;
+        margin: 0.5rem;
+    }
+    
+    .mapa-contenedor {
+        padding-bottom: 75%; /* Más alto en móviles */
+    }
+    
+    .molde-details {
+        grid-template-columns: 1fr;
+    }
 }
 
-/* WhatsApp */
-.flotante.whatsapp {
-    background-color: #25D366;
-    bottom: 15px;
-}
-
-/* Facebook */
-.flotante.facebook {
-    background-color: #1877F2;
-    bottom: 75px;
-}
-
-/* Efectos hover */
-.flotante:hover {
-    transform: scale(1.1);
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
-}
-
-.flotante.whatsapp:hover {
-    background-color: #1DA851;
-}
-
-.flotante.facebook:hover {
-    background-color: #166FE5;
-}
-
-/* Iconos */
-.icono {
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Botón Scroll Top */
-.acroll {
-    position: fixed;
-    width: 45px;
-    height: 45px;
-    bottom: 15px;
-    left: 15px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    font-size: 18px;
-    cursor: pointer;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    z-index: 100;
-    transition: all 0.3s ease;
-    display: none;
-}
-
-.acroll:hover {
-    background-color: #555;
-    transform: scale(1.1);
-}
-
-/* ========================
-   FOOTER
-   ======================== */
-footer {
-    background: linear-gradient(to right, #F4911E, #8B2C2C);
-    color: #fff;
-    padding: 40px 15px;
-    font-family: 'Segoe UI', sans-serif;
-    border-radius: 15px 15px 0 0;
-}
-
-footer h4 {
-    font-weight: 1000;
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-    color: #f8d5b3;
-}
-
-footer p {
-    margin-bottom: 10px;
-    color: rgba(255,255,255,0.9);
-    line-height: 1.6;
-    font-size: 0.9rem;
-}
-
-footer a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-footer a:hover {
-    color: var(--aurea-orange);
-    text-decoration: underline;
-}
-
-footer hr {
-    border-top: 1px solid rgba(255,255,255,0.3);
-    margin: 25px 0;
-}
-
-/* ========================
-   MEDIA QUERIES PARA DISPOSITIVOS MÁS GRANDES
-   ======================== */
 @media (min-width: 768px) {
     body {
         padding-top: 100px;
-    }
-    
-    .navbar {
-        padding: 15px 20px;
-        min-height: 100px;
-    }
-    
-    .aurea2 {
-        width: 220px;
-        height: 80px;
-    }
-    
-    .navbar-brand {
-        font-size: 1.8rem;
     }
     
     .hero-section {
@@ -715,16 +841,20 @@ footer hr {
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .moldes-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
     .tecnologia-grid {
         grid-template-columns: repeat(2, 1fr);
     }
     
     .molde-details {
         grid-template-columns: 1fr 1fr;
+    }
+    
+    #mapaModal .modal-dialog {
+        max-width: 800px;
+    }
+    
+    .mapa-section {
+        padding: 70px 20px;
     }
 }
 
@@ -733,29 +863,7 @@ footer hr {
         padding-top: 130px;
     }
     
-    .navbar {
-        min-height: 130px;
-    }
-    
-    .aurea2 {
-        width: 260px;
-        height: 100px;
-    }
-    
-    .navbar-nav .nav-link {
-        margin: 0 8px;
-        text-align: left;
-    }
-    
-    .dropdown-item {
-        text-align: left;
-    }
-    
     .services-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-    
-    .moldes-grid {
         grid-template-columns: repeat(4, 1fr);
     }
     
@@ -766,43 +874,39 @@ footer hr {
     .hero-section h1 {
         font-size: 3.5rem;
     }
+    
+    .mapa-section {
+        padding: 80px 40px;
+    }
+    
+    .mapa-section h2 {
+        font-size: 2.2rem;
+    }
 }
 
-@media (max-width:420px){
-    :root{--size:260px}
+@media (max-width: 420px) {
+    :root {
+        --size: 260px;
+    }
+    
     .molde-details {
         grid-template-columns: 1fr;
     }
+    
     .item-icon img {
         width: 80px;
         height: 80px;
     }
+    
     .item h3 {
         font-size: 1.1rem;
     }
+    
     .imagenes-gallery {
         grid-template-columns: 1fr;
     }
-}
-.btntop {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background: #800020;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-    font-size: 26px;
-    border: none;
-    outline: none;
-    transition: transform 0.25s 
-ease;
-    opacity: 0;
-    pointer-events: none;
+    
+    .mapa-contenedor {
+        padding-bottom: 80%; /* Aún más alto en pantallas muy pequeñas */
+    }
 }
