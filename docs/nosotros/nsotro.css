@@ -234,11 +234,6 @@ section {
   padding: 80px 20px;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
 
 h2 {
   color: var(--aurea-granate);
