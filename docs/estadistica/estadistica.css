@@ -18,6 +18,9 @@
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
     --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.16);
     --transition: all 0.3s ease;
+     --white: #ffffff;
+    --aurea-granate: #8B2C2C;
+    --aurea-orange: #F4911E;
 }
 
 /* ========== HERO SECTION ========== */
