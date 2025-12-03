@@ -1,182 +1,148 @@
-/* ================= GENERAL ================= */
+/* ============================================================
+   VARIABLES Y TIPOGRAFÍA
+   ============================================================ */
+:root {
+  /* Colores principales */
+  --aurea-granate: #851111;
+  --aurea-orange: #f2982e;
+  --aurea-dark: #222;
+  --aurea-gray: #555;
+  --white: #fff;
+  --light-gray: #f8f9fa;
+  --shadow: rgba(0,0,0,0.2);
+
+  /* Sombras */
+  --shadow-sm: 0 3px 8px rgba(0,0,0,.15);
+  --shadow-md: 0 6px 16px rgba(0,0,0,.22);
+  --shadow-lg: 0 10px 28px rgba(0,0,0,.25);
+
+  /* Transiciones */
+  --transition: .3s ease;
+}
+
+/* ============================================================
+   RESET Y BASE
+   ============================================================ */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Segoe UI', 'Roboto', sans-serif;
-    background-color: #f8f9fa;
-    color: #222;
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  background: var(--light-gray);
+  color: var(--aurea-dark);
+  padding-top: 80px;
+  overflow-x: hidden;
 }
 
 
-/* ================= HEADER ================= */
-header {
+/* Hero Section */
+.hero {
+    background-color: #F4911E;
     color: white;
-    padding: 6rem 20px;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-        url(https://azurecdn.widex.com/-/media/widex/global/images/campaigns/widex-sound-philosophy/sound-philosophy_woman-with-friends_1920x1080.jpg?w=1900&rev=e1908d21f1f94ca0a91f8e2219131e92&extension=webp&hash=94388D80FC8D302AF6B61F0DEC511D15) no-repeat center center/cover;
-    height: 50vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-header h1 {
-    font-size: 40px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
-}
-
-
-
-.volver-box a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.volver-box a:hover {
-    text-decoration: underline;
-}
-
-/* ================= SECCIÓN DE BIENVENIDA ================= */
-.welcome {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    padding: 80px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 40px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.welcome .text-content {
-    flex: 1;
-    min-width: 250px;
-    margin-right: 20px;
-}
-
-.welcome .text-content h2 {
-    font-size: 28px;
-    color: #851111;
-    margin-bottom: 10px;
-}
-
-.welcome .text-content p {
-    font-size: 16px;
-    color: #555;
-}
-
-.welcome .image-box {
-    flex: 1;
-    min-width: 250px;
-    text-align: center;
-}
-
-.welcome .image-box img {
-    max-width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-/* ================= SECCIÓN SOBRE AUDÍFONOS ================= */
-.about {
-    background-color: #fff;
-    padding: 40px 20px;
-    margin-bottom: 40px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.about h2 {
-    font-size: 32px;
-    color: #851111;
+.hero h2 {
+    font-size: 36px;
     margin-bottom: 20px;
+    font-weight: bold;
 }
 
-.text-image {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.text-image .text-content {
-    flex: 1;
-    min-width: 250px;
-    margin-right: 20px;
-    font-size: 16px;
-    color: #555;
-}
-
-.text-image .image-box {
-    flex: 1;
-    min-width: 250px;
-    text-align: center;
-}
-
-.text-image .image-box img {
-    max-width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-/* ================= SECCIÓN DE BENEFICIOS ================= */
-.benefits {
-    background-color: #f9f9f9;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.benefits h2 {
-    color: #851111;
+.hero p {
+    font-size: 20px;
     margin-bottom: 30px;
 }
 
-.benefit-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+.hero button {
+    background-color: #8B2C2C;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+.hero button:hover {
+    background-color: #661D1D;
+}
+
+/* Catálogo */
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
     padding: 20px;
-    max-width: 300px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.catalogo h2 {
     text-align: center;
-    transition: transform 0.3s;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #8B2C2C;
+    font-weight: bold;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+/* Producto */
+.product {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card img {
-    max-width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-.card p {
+.product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-title {
+    font-size: 20px;
+    margin: 15px 0;
+    color: #333;
+    font-weight: bold;
+}
+
+.product-price {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #8B2C2C;
+}
+
+.add-to-cart {
+    background-color: #F4911E;
+    color: white;
+    padding: 12px 25px;
     font-size: 16px;
-    color: #555;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #D57919;
 }

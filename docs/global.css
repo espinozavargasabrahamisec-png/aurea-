@@ -27,7 +27,7 @@
     height: 60px;
     background: 
         url('Asset 10@4x.png') center/contain no-repeat,
-        linear-gradient(135deg, #ffffff, #F4911E, #8B2C2C); /* mismo degradado que navbar */
+        linear-gradient(135deg, #ffffff, #F4911E, #8B2C2C); /* Color fondo */
     border-radius: 10px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s, box-shadow 0.2s;
