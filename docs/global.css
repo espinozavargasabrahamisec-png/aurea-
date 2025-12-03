@@ -2,15 +2,15 @@
    NAVBAR GLOBAL
    ======================== */
 .navbar {
-    background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
+    background: linear-gradient(135deg, #ffffff, #F4911E, #8B2C2C);
     box-shadow: 0 6px 20px var(--shadow);
-    padding: 10px 15px;  /* tamaño base móvil */
+    padding: 10px 15px;  
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    min-height: 80px;    /* altura base móvil */
+    min-height: 80px;    
     transition: all 0.3s ease;
 }
 
@@ -25,10 +25,9 @@
     display: inline-block;
     width: 180px;
     height: 60px;
-    /* IMAGEN ENCIMA + DEGRADADO DE FONDO */
     background: 
         url('Asset 10@4x.png') center/contain no-repeat,
-        linear-gradient(to right, var(--aurea-orange), var(--aurea-granate));
+        linear-gradient(135deg, #ffffff, #F4911E, #8B2C2C); /* mismo degradado que navbar */
     border-radius: 10px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s, box-shadow 0.2s;
