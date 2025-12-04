@@ -15,8 +15,8 @@
    BASE
    ======================== */
 body {
-  font-family: 'Segoe UI', 'Roboto', sans-serif;
-  background-color: var(--light-gray);
+ font-family: 'Segoe UI', 'Roboto', sans-serif;
+  background: linear-gradient(125deg, #8B2C2C 0%, #F4911E 100%);
   color: var(--aurea-dark);
   line-height: 1.6;
   padding-top: 130px;

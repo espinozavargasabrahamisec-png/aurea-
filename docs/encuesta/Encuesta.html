@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../global.css">
 </head>
-<body>
+<body >
     <div class="volver-box">
         <a href="../index.html">← Volver al Inicio</a>
     </div>
@@ -22,7 +22,7 @@
         
         <form id="surveyForm">
             <div class="question">
-                <label for="audioQuality">1. ¿Cómo calificarías la calidad del audio en los videos didácticos?</label>
+                <label for="audioQuality">1.Reproduce el audio, ponga pausa cuando deje de escuchar el sonido:</label>
                 <select id="audioQuality" name="audioQuality" class="form-control" required>
                     <option value="">Selecciona una opción</option>
                     <option value="Excelente">Excelente</option>
@@ -33,7 +33,7 @@
             </div>
 
             <div class="question">
-                <label>2. Reproduce el audio, ponga pausa cuando deje de escuchar el sonido:</label>
+                <label>2.¿Has tenido problemas para escuchar el audio?</label>
                 <div class="video-container">
                     <video id="videoTest" width="100%" controls class="rounded">
                      <source src="./How Old Are Your Ears_ _ HEARING TEST! - White Noise & Relaxation (720p, h264, youtube) (online-video-cutter.com).mp4"video/mp4">
@@ -43,7 +43,7 @@
             </div>
 
             <div class="question">
-                <label>3. ¿Has tenido problemas para escuchar el audio?</label>
+                <label>3. ¿Hasta que frecuencia escuchaste?</label>
                 <div class="radio-group">
                     <input type="radio" id="yes" name="hearingIssues" value="Sí" required>
                     <label for="yes" class="radio-label">Sí</label>
@@ -58,7 +58,7 @@
             </div>
             
             <div class="question">
-                <label for="hearWell">5. ¿Escuchas bien?</label>
+                <label for="hearWell"> 5.¿Hay antecedentes familiares de problemas auditivos?</label>
                 <select id="hearWell" name="hearWell" class="form-control" onchange="handleSelection()">
                     <option value="">Selecciona una opción</option>
                     <option value="yes">Sí</option>
@@ -72,12 +72,12 @@
             </div>
 
             <div class="question">
-                <label for="ageHearingIssues">6. ¿A qué edad empezaste a notar problemas de audición?</label>
+                <label for="ageHearingIssues">6. ¿Desde qué edad dejaste de escuchar?</label>
                 <input type="number" id="ageHearingIssues" name="ageHearingIssues" min="0" max="100" class="form-control" placeholder="Edad en años">
             </div>
 
             <div class="question">
-                <label>7. ¿Hay antecedentes familiares de problemas auditivos?</label>
+                <label>7. ¿Escuchas bien?</label>
                 <div class="radio-group">
                     <input type="radio" id="familyYes" name="familyHistory" value="Sí" required>
                     <label for="familyYes" class="radio-label">Sí</label>
@@ -87,7 +87,7 @@
             </div>
 
             <div class="question">
-                <label>8. ¿Has consultado a un profesional de la salud sobre tu audición?</label>
+                <label>8. ¿A qué edad empezaste a notar problemas de audición?</label>
                 <div class="radio-group">
                     <input type="radio" id="consultationYes" name="consultation" value="Sí" required>
                     <label for="consultationYes" class="radio-label">Sí</label>
@@ -97,7 +97,7 @@
             </div>
 
             <div class="question">
-                <label>9. ¿Utilizas algún dispositivo de asistencia auditiva (audífonos, implantes, etc.)?</label>
+                <label>9. ¿Conoce los audifonos Med?</label>
                 <div class="radio-group">
                     <input type="radio" id="aidYes" name="hearingAid" value="Sí" required>
                     <label for="aidYes" class="radio-label">Sí</label>
