@@ -268,7 +268,7 @@ h2::after {
 
 .grid-2 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  grid-template-columns: repeat(3, 1fr); /* Cantidad columnas */
   gap: 30px;
   margin-top: 30px;
   align-items: stretch; /* Fuerza que todas las cajas midan lo mismo */
@@ -432,6 +432,8 @@ h2::after {
   border-radius: 20px;
   margin-top: 60px;
   box-shadow: var(--shadow-md);
+  margin-bottom: 100px; /* Ajustael espacio */
+    padding-bottom: 60px; /* Mantiene espacio interno extra */
 }
 
 .about-commitment h2 {
