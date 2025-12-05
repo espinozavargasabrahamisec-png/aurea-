@@ -267,7 +267,11 @@ h2::after {
 }
 
 .grid-2 {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 30px;
+  margin-top: 30px;
+  align-items: stretch; /* Fuerza que todas las cajas midan lo mismo */
 }
 
 .grid-3 {
