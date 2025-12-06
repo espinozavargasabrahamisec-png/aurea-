@@ -1,65 +1,79 @@
+
 /* ===============================
-   🔼 BOTÓN SCROLL HACIA ARRIBA
+   🔼 Botón Scroll hacia arriba
    =============================== */
 const btnTop = document.getElementById("btntop");
 
 window.addEventListener("scroll", () => {
-    btnTop.classList.toggle("show", window.scrollY > 200);
-});
-
-btnTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-
-/* ===============================
-   📌 SCROLL A ANCLAS CON OFFSET
-   =============================== */
-function smoothScrollWithOffset(targetID) {
-    const target = document.querySelector(targetID);
-    if (!target) return;
-
-    const offset = 70; // Altura navbar
-    const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
-    
-    window.scrollTo({
-        top: elementPosition - offset,
-        behavior: "smooth"
-    });
-}
-
-// Detectar si la URL tiene #hash al cargar
-window.addEventListener("load", () => {
-    if (window.location.hash) {
-        smoothScrollWithOffset(window.location.hash);
+    if (window.scrollY > 200) {
+        btnTop.classList.add("show");
+    } else {
+        btnTop.classList.remove("show");
     }
 });
 
-// Scroll para enlaces internos
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", (e) => {
-        const href = link.getAttribute("href");
-        if (href === "#") return;
-        
-        if (document.querySelector(href)) {
-            e.preventDefault();
-            smoothScrollWithOffset(href);
-        }
+btnTop.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
     });
 });
-
 
 /* ===============================
-   📱 CERRAR NAV EN MÓVIL AL CLIC
+   📌 Menús desplegables (dropdown)
    =============================== */
-const navBar = document.getElementById("navbarNavDropdown");
+document.querySelectorAll('.nav-item.dropdown').forEach(item => {
+    const menu = item.querySelector('.dropdown-menu');
+    if (!menu) return;
 
-document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
-    link.addEventListener("click", () => {
-        const isShown = navBar.classList.contains("show");
-        if (isShown) {
-            const bsCollapse = new bootstrap.Collapse(navBar, { toggle: false });
-            bsCollapse.hide();
+    // Ocultar inicialmente
+    menu.style.display = 'none';
+
+    // Abrir/Cerrar con toggle
+    item.addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        const isOpen = menu.style.display === 'block';
+
+        // Cerrar todos los menús primero
+        document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
+
+        // Reabrir solo si no estaba ya abierto
+        if (!isOpen) {
+            menu.style.display = 'block';
         }
     });
 });
+
+// Cerrar al hacer click fuera
+document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        menu.style.display = 'none';
+    });
+});
+// Cerrar menú  (móvil)
+document.addEventListener('click', () => {
+    if (navMenu && navMenu.classList.contains('show')) {
+        navMenu.classList.remove('show');
+    }
+});
+// Scrul ubicaciones 
+function scrollToHash() {
+    const hash = window.location.hash;
+    if(hash) {
+        const target = document.querySelector(hash);
+        if(target){
+            const offset = 70; // Ajusta según altura de tu navbar fixed-top
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offset;
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        }
+    }
+}document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        menu.style.display = 'none';
+    });
+});
+
+// Scrul cuando cargue Ubicaciones
+window.addEventListener('load', scrollToHash);
