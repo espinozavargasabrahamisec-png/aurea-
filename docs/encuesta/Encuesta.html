@@ -54,8 +54,9 @@
 
             <div class="question">
                 <label for="suggestions">4. ¿Desde qué edad dejaste de escuchar?</label>
-                <textarea id="suggestions" name="suggestions" rows="4" class="form-control" placeholder="Describe desde qué edad has notado cambios en tu audición..."></textarea>
+                 <input type="number" id="ageHearingIssues" name="ageHearingIssues" min="0" max="100" class="form-control" placeholder="Edad en años">
             </div>
+               
             
             <div class="question">
                 <label for="hearWell"> 5.¿Hay antecedentes familiares de problemas auditivos?</label>
@@ -72,12 +73,12 @@
             </div>
 
             <div class="question">
-                <label for="ageHearingIssues">6. ¿Desde qué edad dejaste de escuchar?</label>
-                <input type="number" id="ageHearingIssues" name="ageHearingIssues" min="0" max="100" class="form-control" placeholder="Edad en años">
+                <label for="ageHearingIssues">6.¿Has consultado a un profesional de la salud sobre tu audición?</label>
+                <textarea id="suggestions" name="suggestions" rows="4" class="form-control" placeholder="Describe desde qué edad has notado cambios en tu audición..."></textarea>
             </div>
 
             <div class="question">
-                <label>7. ¿Escuchas bien?</label>
+                <label>7. ¿Conoce los audifonos Med?</label>
                 <div class="radio-group">
                     <input type="radio" id="familyYes" name="familyHistory" value="Sí" required>
                     <label for="familyYes" class="radio-label">Sí</label>
@@ -87,7 +88,7 @@
             </div>
 
             <div class="question">
-                <label>8. ¿A qué edad empezaste a notar problemas de audición?</label>
+                <label>8. ¿Conoce los audifonos Med?</label>
                 <div class="radio-group">
                     <input type="radio" id="consultationYes" name="consultation" value="Sí" required>
                     <label for="consultationYes" class="radio-label">Sí</label>
@@ -96,18 +97,9 @@
                 </div>
             </div>
 
+          
             <div class="question">
-                <label>9. ¿Conoce los audifonos Med?</label>
-                <div class="radio-group">
-                    <input type="radio" id="aidYes" name="hearingAid" value="Sí" required>
-                    <label for="aidYes" class="radio-label">Sí</label>
-                    <input type="radio" id="aidNo" name="hearingAid" value="No">
-                    <label for="aidNo" class="radio-label">No</label>
-                </div>
-            </div>
-
-            <div class="question">
-                <label for="audioClarity">10. ¿Cuánto calificarías nuestro test de audición? (1 a 100)</label>
+                <label for="audioClarity">9. ¿Cuánto calificarías nuestro test de audición? (1 a 100)</label>
                 <div class="range-container">
                     <input type="range" id="audioClarity" name="audioClarity" min="1" max="100" value="50" class="form-range" oninput="document.getElementById('rangeValue').textContent = this.value">
                     <div class="range-value">
