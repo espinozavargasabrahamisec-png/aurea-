@@ -1,0 +1,317 @@
+/* ============================================================
+   VARIABLES Y TIPOGRAFÍA
+   ============================================================ */
+:root {
+  /* Colores principales */
+  --aurea-granate: #851111;
+  --aurea-orange: #f2982e;
+  --aurea-dark: #222;
+  --aurea-gray: #555;
+  --white: #fff;
+  --light-gray: #f8f9fa;
+  --shadow: rgba(0,0,0,0.2);
+
+  /* Sombras */
+  --shadow-sm: 0 3px 8px rgba(0,0,0,.15);
+  --shadow-md: 0 6px 16px rgba(0,0,0,.22);
+  --shadow-lg: 0 10px 28px rgba(0,0,0,.25);
+
+  /* Transiciones */
+  --transition: .3s ease;
+}
+
+/* ============================================================
+   CONTENIDO PRINCIPAL AUDIOLOGÍA
+   ============================================================ */
+
+/* Ajuste para el navbar alto del global.css */
+body.audiologia-page {
+    padding-top: 140px; /* Ajustado según el navbar alto del global */
+}
+
+/* Secciones de servicios */
+.servicio {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de borde animado */
+.servicio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    transition: width 0.4s ease;
+}
+
+.servicio:hover::before {
+    width: 8px;
+}
+
+/* Fondos específicos para cada servicio */
+.servicio.revision {
+    background: var(--servicio-revision);
+}
+
+.servicio.revision::before {
+    background: #8B2C2C;
+}
+
+.servicio.audiometria {
+    background: var(--servicio-audiometria);
+}
+
+.servicio.audiometria::before {
+    background: #F4911E;
+}
+
+.servicio.adaptacion {
+    background: var(--servicio-adaptacion);
+}
+
+.servicio.adaptacion::before {
+    background: #2C8B2C;
+}
+
+/* Efecto hover */
+.servicio:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+}
+
+/* Imágenes de servicios */
+.servicio img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    border-radius: 15px;
+    flex-shrink: 0;
+    border: 3px solid white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.servicio:hover img {
+    transform: scale(1.05);
+    border-color: var(--aurea-orange);
+}
+
+/* Contenido de texto */
+.servicio .contenido {
+    flex: 1;
+}
+
+.servicio h2 {
+    color: var(--aurea-granate);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.servicio h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--aurea-orange);
+    transition: width 0.3s ease;
+}
+
+.servicio:hover h2::after {
+    width: 100px;
+}
+
+/* Listas */
+.servicio ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.servicio li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    color: var(--aurea-dark);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.servicio li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--aurea-orange);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Título principal de la página */
+main .display-4 {
+    color: var(--aurea-granate);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+main .lead {
+    color: var(--aurea-dark);
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+/* ============================================================
+   RESPONSIVE PARA AUDIOLOGÍA
+   ============================================================ */
+
+/* Tablets */
+@media (max-width: 992px) {
+    body.audiologia-page {
+        padding-top: 120px;
+    }
+    
+    .servicio {
+        padding: 25px;
+        gap: 25px;
+    }
+    
+    .servicio img {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .servicio h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+    body.audiologia-page {
+        padding-top: 100px;
+    }
+    
+    .servicio {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+        margin-bottom: 30px;
+    }
+    
+    .servicio::before {
+        width: 100%;
+        height: 5px;
+        transition: height 0.4s ease;
+    }
+    
+    .servicio:hover::before {
+        height: 8px;
+    }
+    
+    .servicio img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 20px;
+    }
+    
+    .servicio h2 {
+        font-size: 1.5rem;
+    }
+    
+    .servicio h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .servicio li {
+        text-align: left;
+        padding-left: 30px;
+    }
+    
+    main .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    main .lead {
+        font-size: 1.1rem;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 576px) {
+    body.audiologia-page {
+        padding-top: 90px;
+    }
+    
+    .servicio {
+        padding: 20px 15px;
+        margin-bottom: 25px;
+    }
+    
+    .servicio img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .servicio h2 {
+        font-size: 1.3rem;
+    }
+    
+    .servicio li {
+        font-size: 1rem;
+        padding-left: 25px;
+    }
+    
+    main .display-4 {
+        font-size: 2rem;
+    }
+    
+    main .lead {
+        font-size: 1rem;
+    }
+}
+
+/* ============================================================
+   ANIMACIONES ESPECÍFICAS
+   ============================================================ */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.servicio {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.servicio.revision {
+    animation-delay: 0.1s;
+}
+
+.servicio.audiometria {
+    animation-delay: 0.3s;
+}
+
+.servicio.adaptacion {
+    animation-delay: 0.5s;
+}

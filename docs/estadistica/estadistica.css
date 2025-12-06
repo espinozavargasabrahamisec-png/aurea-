@@ -22,6 +22,27 @@ body
     --aurea-granate: #8B2C2C;
     --aurea-orange: #F4911E;
 }
+/* ============================================================
+   VARIABLES Y TIPOGRAFÍA
+   ============================================================ */
+:root {
+  /* Colores principales */
+  --aurea-granate: #851111;
+  --aurea-orange: #f2982e;
+  --aurea-dark: #222;
+  --aurea-gray: #555;
+  --white: #fff;
+  --light-gray: #f8f9fa;
+  --shadow: rgba(0,0,0,0.2);
+
+  /* Sombras */
+  --shadow-sm: 0 3px 8px rgba(0,0,0,.15);
+  --shadow-md: 0 6px 16px rgba(0,0,0,.22);
+  --shadow-lg: 0 10px 28px rgba(0,0,0,.25);
+
+  /* Transiciones */
+  --transition: .3s ease;
+}
 
 /* ========== HERO SECTION ========== */
 .hero {

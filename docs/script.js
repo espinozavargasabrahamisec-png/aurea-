@@ -9,7 +9,7 @@
   document.getElementById('form-contacto').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    emailjs.send("TU_SERVICE_ID", "TU_TEMPLATE_ID", {
+    emailjs.send(" contacto@aureamed.com.bo", "TU_TEMPLATE_ID", {
       nombre: document.getElementById("nombre").value,
       correo: document.getElementById("correo").value,
       asunto: document.getElementById("asunto").value,
