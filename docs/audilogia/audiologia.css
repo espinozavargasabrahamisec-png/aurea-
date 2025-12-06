@@ -92,8 +92,8 @@ body.audiologia-page {
 
 /* Imágenes de servicios */
 .servicio img {
-    width: 160px;
-    height: 160px;
+    width: 231px;
+    height: 216px;
     object-fit: contain;
     border-radius: 15px;
     flex-shrink: 0;
@@ -262,8 +262,9 @@ main .lead {
     }
     
     .servicio img {
-        width: 100px;
-        height: 100px;
+         width: 231px;
+    height: 216px;
+        
     }
     
     .servicio h2 {
