@@ -1,79 +1,65 @@
-
 /* ===============================
-   🔼 Botón Scroll hacia arriba
+   🔼 BOTÓN SCROLL HACIA ARRIBA
    =============================== */
 const btnTop = document.getElementById("btntop");
 
 window.addEventListener("scroll", () => {
-    if (window.scrollY > 200) {
-        btnTop.classList.add("show");
-    } else {
-        btnTop.classList.remove("show");
-    }
+    btnTop.classList.toggle("show", window.scrollY > 200);
 });
 
 btnTop.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
 
 /* ===============================
-   📌 Menús desplegables (dropdown)
+   📌 SCROLL A ANCLAS CON OFFSET
    =============================== */
-document.querySelectorAll('.nav-item.dropdown').forEach(item => {
-    const menu = item.querySelector('.dropdown-menu');
-    if (!menu) return;
+function smoothScrollWithOffset(targetID) {
+    const target = document.querySelector(targetID);
+    if (!target) return;
 
-    // Ocultar inicialmente
-    menu.style.display = 'none';
+    const offset = 70; // Altura navbar
+    const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+    
+    window.scrollTo({
+        top: elementPosition - offset,
+        behavior: "smooth"
+    });
+}
 
-    // Abrir/Cerrar con toggle
-    item.addEventListener('click', (e) => {
-        e.stopPropagation();
+// Detectar si la URL tiene #hash al cargar
+window.addEventListener("load", () => {
+    if (window.location.hash) {
+        smoothScrollWithOffset(window.location.hash);
+    }
+});
 
-        const isOpen = menu.style.display === 'block';
-
-        // Cerrar todos los menús primero
-        document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
-
-        // Reabrir solo si no estaba ya abierto
-        if (!isOpen) {
-            menu.style.display = 'block';
+// Scroll para enlaces internos
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", (e) => {
+        const href = link.getAttribute("href");
+        if (href === "#") return;
+        
+        if (document.querySelector(href)) {
+            e.preventDefault();
+            smoothScrollWithOffset(href);
         }
     });
 });
 
-// Cerrar al hacer click fuera
-document.addEventListener('click', () => {
-    document.querySelectorAll('.dropdown-menu').forEach(menu => {
-        menu.style.display = 'none';
-    });
-});
-// Cerrar menú  (móvil)
-document.addEventListener('click', () => {
-    if (navMenu && navMenu.classList.contains('show')) {
-        navMenu.classList.remove('show');
-    }
-});
-// Scrul ubicaciones 
-function scrollToHash() {
-    const hash = window.location.hash;
-    if(hash) {
-        const target = document.querySelector(hash);
-        if(target){
-            const offset = 70; // Ajusta según altura de tu navbar fixed-top
-            const elementPosition = target.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - offset;
-            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-        }
-    }
-}document.addEventListener('click', () => {
-    document.querySelectorAll('.dropdown-menu').forEach(menu => {
-        menu.style.display = 'none';
-    });
-});
 
-// Scrul cuando cargue Ubicaciones
-window.addEventListener('load', scrollToHash);
+/* ===============================
+   📱 CERRAR NAV EN MÓVIL AL CLIC
+   =============================== */
+const navBar = document.getElementById("navbarNavDropdown");
+
+document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+    link.addEventListener("click", () => {
+        const isShown = navBar.classList.contains("show");
+        if (isShown) {
+            const bsCollapse = new bootstrap.Collapse(navBar, { toggle: false });
+            bsCollapse.hide();
+        }
+    });
+});
