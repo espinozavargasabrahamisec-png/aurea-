@@ -19,7 +19,10 @@
     min-height: 80px;    
     transition: all 0.3s ease;
 }
-
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--aurea-granate);
+}
 .navbar-brand {
     font-size: 1.5rem;  /* móvil */
     font-weight: 800;
@@ -307,4 +310,27 @@ footer a:hover {
 footer hr {
     border-top: 1px solid rgba(255,255,255,0.3);
     margin: 25px 0;
+}
+/* -----Para pantallas pequeñas --------*/
+@media (max-width: 575px) {
+  .grid-item img {
+    height: 200px; /* Grandes en móvil también */
+  }
+}
+/* -------Estilos para el mapa modal------ */
+.modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.modal-header {
+ 
+    color: #8B2C2C;
+    border-bottom: none;
+}
+
+.modal-body iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
 }
