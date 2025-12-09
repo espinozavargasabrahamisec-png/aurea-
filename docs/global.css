@@ -34,11 +34,9 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-block;
     width: 180px;
     height: 60px;
-    background: 
-        url('Asset 10@4x.png') center/contain no-repeat,
-        linear-gradient(135deg, #ffffff); /* Color fondo */
-    border-radius: 10px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    background: url('Asset 10@4x.png') center/contain no-repeat;
+    border-radius: 0;
+    box-shadow: none;
     transition: transform 0.2s, box-shadow 0.2s;
     text-indent: -9999px;
     overflow: hidden;
@@ -46,7 +44,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .aurea2:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 .navbar-toggler {
     border: 2px solid rgba(255,255,255,0.8);
@@ -261,6 +258,22 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 6px 18px rgba(0,0,0,0.25);
     color: white !important;
 }
+/* Contenedor responsive para el mapa */
+.map-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* proporción 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+.map-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
 
 /* Para pantallas pequeñas */
 @media (max-width: 576px) {
@@ -270,67 +283,55 @@ h1, h2, h3, h4, h5, h6 {
         margin: 20px auto;
     }
 }
-
-/* ========================
-   FOOTER
-   ======================== */
+/* ================= FOOTER OPTIMIZADO ================= */
 footer {
     background: linear-gradient(to right, #F4911E, #8B2C2C);
     color: #fff;
-    padding: 40px 15px;
+    padding: 20px 20px; /* Más espacio interno */
     font-family: 'Segoe UI', sans-serif;
     border-radius: 15px 15px 0 0;
 }
 
 footer h4 {
-    font-weight: 1000;
-    margin-bottom: 15px;
     font-size: 1.2rem;
-    color: #f8d5b3;
+    font-weight: 800;
+    margin-bottom: 12px; /* Más separación del contenido */
 }
 
 footer p {
-    margin-bottom: 10px;
-    color: rgba(255,255,255,0.9);
-    line-height: 1.6;
-    font-size: 0.9rem;
+    margin-bottom: 8px; /* Espacio entre párrafos */
+    line-height: 1.5;
+    font-size: 0.95rem;
 }
 
-footer a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 600;
+footer .col-md-4 {
+    margin-bottom: 20px; /* Más separación entre columnas */
 }
 
-footer a:hover {
-    color: var(--aurea-orange);
-    text-decoration: underline;
+.btn-mapa-centered {
+    margin: 15px auto 0 auto; /* Centrado y algo de espacio */
+    display: block;
 }
 
 footer hr {
-    border-top: 1px solid rgba(255,255,255,0.3);
-    margin: 25px 0;
+    margin: 20px 0; /* Separación más armoniosa */
 }
-/* -----Para pantallas pequeñas --------*/
+
+/* En móvil */
 @media (max-width: 575px) {
-  .grid-item img {
-    height: 200px; /* Grandes en móvil también */
-  }
-}
-/* -------Estilos para el mapa modal------ */
-.modal-content {
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.modal-header {
- 
-    color: #8B2C2C;
-    border-bottom: none;
-}
-
-.modal-body iframe {
-    width: 100%;
-    height: 450px;
-    border: none;
+    footer {
+        padding: 20px 12px;
+    }
+    footer h4 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    footer p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 6px;
+    }
+    footer .col-md-4 {
+        margin-bottom: 15px;
+    }
 }
