@@ -12,6 +12,7 @@
     emailjs.send(" contacto@aureamed.com.bo", "TU_TEMPLATE_ID", {
       nombre: document.getElementById("nombre").value,
       correo: document.getElementById("correo").value,
+      telefono: document.getElementById("telefono").value,
       asunto: document.getElementById("asunto").value,
       mensaje: document.getElementById("mensaje").value
     })

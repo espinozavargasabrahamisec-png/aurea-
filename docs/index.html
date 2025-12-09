@@ -355,7 +355,7 @@
       <p class="contacto-descripcion">¿Tienes alguna pregunta o comentario? <br> Escríbenos y te responderemos a la brevedad.</p>
     </div>
 
-    <form action="mailto:contacto@aureamed.com.bo" method="POST" enctype="text/plain">
+    <form id="form-contacto" action="mailto:contacto@aureamed.com.bo" method="POST" enctype="text/plain">
 
       <div class="form-group">
         <label for="nombre">Nombre Completo *</label>
@@ -365,6 +365,12 @@
       <div class="form-group">
         <label for="correo">Correo Electrónico *</label>
         <input type="email" id="correo" name="Correo" required>
+      </div>
+
+      
+      <div class="form-group">
+        <label for="telefono">Número Telefónico *</label>
+        <input type="text" id="telefono" name="Telefono" required>
       </div>
 
       <div class="form-group">
@@ -381,7 +387,6 @@
     </form>
   </div>
 </section>
-
 
 <!-- ================= FOOTER ================= -->
 <footer>
