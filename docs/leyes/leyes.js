@@ -333,3 +333,22 @@
     setupCarousel();
     startAuto();
 })();
+  // ================= ESTADÍSTICAS ANIMADO =================
+const statItems = document.querySelectorAll('.stat-item');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      // Animación escalonada
+      statItems.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.add('visible');
+        }, index * 200); // 200ms de retraso entre cada ítem
+      });
+
+      observer.unobserve(entry.target); // solo se activa una vez
+    }
+  });
+}, { threshold: 0.5 });
+
+statItems.forEach(item => observer.observe(item));

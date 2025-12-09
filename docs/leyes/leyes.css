@@ -12,6 +12,7 @@
     --size: 320px;
     --perspective: 1100px;
     --items: 7;
+    --gradient-primary: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
 }
 
 /* ========================
@@ -733,6 +734,80 @@ h1, h2, h3, h4, h5, h6 {
 .imagenes-gallery img:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 25px rgba(244, 145, 30, 0.3);
+}
+/* ================= STATS SECTION ================= */
+.stats-section {
+   padding: 80px 20px; /* Más espacio arriba y abajo */
+  margin: 40px 0; 
+  background: var(--gradient-primary); /* Gradiente granate a naranja */
+  color: var(--white);
+  overflow: hidden;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 1 columna en móvil */
+  gap: 25px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+/* Animación inicial */
+.stat-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+/* Clase que se activa al aparecer */
+.stat-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.stat-icon i {
+  font-size: 4em; /* íconos grandes */
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 1em;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablets pequeñas (576px - 767px) */
+@media (min-width: 576px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  }
+}
+
+/* Desktop mediano (768px - 991px) */
+@media (min-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  }
+}
+
+/* Desktop grande (992px en adelante) */
+@media (min-width: 992px) {
+  .stats-grid {
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas en línea */
+    gap: 30px;
+  }
+
+  .stat-icon i {
+    font-size: 5em; /* íconos más grandes en escritorio */
+  }
+
+  .stat-label {
+    font-size: 1.1em;
+  }
 }
 
 /* ========================

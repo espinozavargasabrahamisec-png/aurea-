@@ -318,39 +318,6 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 5px;
 }
 
-/* ================= STATS SECTION - CORREGIDO ================= */
-.stats-section {
-  padding: 40px 20px;
-  background: var(--gradient-primary);
-  color: var(--white);
-  overflow: hidden;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-  text-align: center;
-  padding: 0 10px;
-}
-
-.stat-item {
-  padding: 15px 10px;
-}
-
-.stat-number {
-  font-size: 2em; /* Reducido para móvil */
-  font-weight: 800;
-  margin-bottom: 5px;
-  color: var(--white);
-}
-
-.stat-label {
-  font-size: 0.9em;
-  opacity: 0.9;
-  font-weight: 600;
-  word-wrap: break-word;
-}
 
 /* ================= EMERGENCIA SECTION - CORREGIDO ================= */
 .emergencia-section {

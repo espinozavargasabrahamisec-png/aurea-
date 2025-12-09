@@ -1,4 +1,4 @@
-
+// Reparar error Abraham
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 
@@ -23,3 +23,33 @@
     });
   });
 
+    // ================= CONTADOR DE ESTADÍSTICAS ANIMADO =================
+    function animateCounter(element) {
+        const target = parseInt(element.getAttribute('data-count'));
+        const duration = 2000; 
+        const step = Math.ceil(target / (duration / 16));
+        const plus = element.getAttribute('data-plus') === 'true' ? '+' : '';
+        
+        let current = 0;
+        const timer = setInterval(function() {
+            current += step;
+            if (current >= target) {
+                element.textContent = plus + target;
+                clearInterval(timer);
+            } else {
+                element.textContent = plus + current;
+            }
+        }, 16);
+    }
+
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    statNumbers.forEach(number => observer.observe(number));

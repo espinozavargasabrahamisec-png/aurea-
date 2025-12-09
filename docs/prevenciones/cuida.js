@@ -85,38 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ================= CONTADOR DE ESTADÍSTICAS ANIMADO =================
-    function animateCounter(element) {
-        const target = parseInt(element.getAttribute('data-count'));
-        const duration = 2000; // 2 segundos
-        const step = Math.ceil(target / (duration / 16)); // 60fps
-        
-        let current = 0;
-        const timer = setInterval(function() {
-            current += step;
-            if (current >= target) {
-                element.textContent = target + (element.getAttribute('data-count') === '5000' ? '+' : '');
-                clearInterval(timer);
-            } else {
-                element.textContent = current + (element.getAttribute('data-count') === '5000' ? '+' : '');
-            }
-        }, 16);
-    }
 
-    // Observador para animar contadores cuando son visibles
-    const statNumbers = document.querySelectorAll('.stat-number');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateCounter(entry.target);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    statNumbers.forEach(number => {
-        observer.observe(number);
-    });
 
     // ================= ANIMACIONES DE TARJETAS =================
     const cards = document.querySelectorAll('.servicio-card, .proceso-step');
