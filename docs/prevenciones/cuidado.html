@@ -85,10 +85,7 @@
                 <i class="fas fa-tools"></i>
                 Solicitar Servicio
             </button>
-            <button class="btn-secondary" id="btnHeroEmergencia">
-                <i class="fas fa-phone"></i>
-                Emergencia 24/7
-            </button>
+            
         </div>
     </div>
     <div class="hero-image">
@@ -114,9 +111,9 @@
                         <li><i class="fas fa-check"></i> Sustitución de altavoces</li>
                         <li><i class="fas fa-check"></i> Limpieza profunda</li>
                     </ul>
-                    <button class="btn-servicio" id="btnReparacion">
+                   <!--  <button class="btn-servicio" id="btnReparacion">
                         Solicitar Reparación
-                    </button>
+                    </button> -->
                 </div>
             </div>
 
@@ -133,9 +130,9 @@
                         <li><i class="fas fa-check"></i> Calibración de sonido</li>
                         <li><i class="fas fa-check"></i> Actualización de software</li>
                     </ul>
-                    <button class="btn-servicio" id="btnMantenimiento">
+                   <!--  <button class="btn-servicio" id="btnMantenimiento">
                         Programar Mantenimiento
-                    </button>
+                    </button> -->
                 </div>
             </div>
         </div>
@@ -183,131 +180,60 @@
     </div>
 </section>
 
-<!-- Sección de Estadísticas -->
-<section class="stats-section">
-    <div class="container">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number" data-count="5000">500</div>
-                <div class="stat-label">Audífonos Reparados</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" data-count="15">15</div>
-                <div class="stat-label">Años de Experiencia</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" data-count="98">98</div>
-                <div class="stat-label">% de Satisfacción</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" data-count="24">24</div>
-                <div class="stat-label">Horas de Respuesta</div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- Sección de Emergencias -->
-<section class="emergencia-section">
-    <div class="container">
-        <div class="emergencia-card">
-            <div class="emergencia-content">
-                <h2>¿Problemas con tu Audífono?</h2>
-                <p class="emergencia-text">Servicio de emergencia disponible las 24 horas para reparaciones urgentes. No te quedes sin escuchar.</p>
-                
-                <div class="emergencia-features">
-                    <div class="feature">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Atención Inmediata</h4>
-                            <p>Reparaciones en 24 horas</p>
-                        </div>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-shield-alt"></i>
-                        <div>
-                            <h4>Garantía Extendida</h4>
-                            <p>1 mes en todas las reparaciones</p>
-                        </div>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-truck"></i>
-                        <div>
-                            <h4>Servicio a Domicilio</h4>
-                            <p>En La Paz y El Alto</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="emergencia-buttons">
-                    <button class="btn-emergencia" id="btnEmergenciaLlamar">
-                        <i class="fas fa-phone"></i>
-                        Llamar Emergencia: +591 70111673
-                    </button>
-                    <button class="btn-whatsapp" id="btnEmergenciaWhatsApp">
-                        <i class="fab fa-whatsapp"></i>
-                        WhatsApp Urgente
-                    </button>
-                </div>
-            </div>
-            <div class="emergencia-image">
-                <img src="../prevenciones/ingeniero.png" alt="Servicio de Emergencia">
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- ================= FOOTER ================= -->
 <footer>
     <div class="container">
         <div class="row text-center text-md-start">
-            <div class="col-md-4 mb-4 mb-md-0">
+            
+            <div class="col-md-4">
                 <h4>Áurea Centro Auditivo</h4>
                 <p>Expertos en soluciones auditivas con más de 15 años de experiencia mejorando la calidad de vida de nuestros pacientes.</p>
             </div>
-            <div class="col-md-4 mb-4 mb-md-0">
+
+            <div class="col-md-4">
                 <h4>Contacto</h4>
-                <p>📍 Av.Arce.Nro.2652 Edif.MILA Mezanine 1 Of.L21<br> (al frente del Multicine La Paz) La Paz Bolivia</p>
+                <p>📍 Av.Arce Nro.2652 Edif. MILA Mezanine 1 Of. L21<br>(frente al Multicine La Paz, Bolivia)</p>
                 <p>📞 +591 70111673</p>
                 <p>✉️ contacto@aureamed.com.bo</p>
             </div>
-      
+
             <div class="col-md-4">
                 <h4>Horario</h4>
-                <p>Lunes y Miércoles: 15:00 am - 19:00pm</p>
-                <p>Martes y jueves: 10:00 am - 18:00pm</p>
-                <p>Viernes: 14:00 pm - 18:00pm</p>       
+                <p>Lunes y Miércoles: 15:00 - 19:00</p>
+                <p>Martes y Jueves: 10:00 - 18:00</p>
+                <p>Viernes: 14:00 - 18:00</p>
+            </div>
+
+        </div>
+
+        <!-- BOTÓN MAPA -->
+        <button type="button" class="btn btn-light btn-sm rounded-pill px-4 py-2 shadow btn-mapa-centered" 
+                data-bs-toggle="modal" data-bs-target="#mapaModal">
+            📍 Ver Mapa
+        </button>
+
+        <!-- MODAL MAPA -->
+        <div class="modal fade" id="mapaModal" tabindex="-1" aria-labelledby="mapaModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Ubicación</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                  <div class="modal-body p-0">
+    <div class="map-responsive">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d1116.1146343179062!2d-68.12314552347775!3d-16.5115717753784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e6!4m4!1s0x915f2061d125ed5b%3A0x79c073ff64b8ac2b!3m2!1d-16.5115216!2d-68.1227171!4m5!1s0x915f2061d125ed5b%3A0x79c073ff64b8ac2b!2sAv.%20Arce%20Nro.%202652%20Edificio%20MILA%20Mezzanine%202%20Of.%202%2C%20La%20Paz!3m2!1d-16.5115216!2d-68.1227171!5e0!3m2!1ses-419!2sbo!4v1761098004108!5m2!1ses-419!2sbo" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</div>
+
+                </div>
             </div>
         </div>
-        
-        <!-- ================= BOTÓN MAPA CENTRADO ================= -->
-        <div class="row mt-4">
-            <div class="col-12 text-center">
-                <button type="button" class="btn btn-light btn-sm rounded-pill px-4 py-2 shadow btn-mapa-centered" data-bs-toggle="modal" data-bs-target="#mapaModal">
-                    📍 Ver Mapa
-                </button>
-            </div>
-        </div>
-        <!-- ================= FIN BOTÓN MAPA ================= -->
-        
+
         <hr>
         <p class="text-center mb-0">&copy; 2025 Áurea Centro Auditivo. Todos los derechos reservados.</p>
-    </div>
-    
-    <!-- Ventana Emergente del Mapa -->
-    <div class="modal fade" id="mapaModal" tabindex="-1" aria-labelledby="mapaModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="mapaModalLabel">Ubicación</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-               <div class="modal-body p-0">
-         <iframe src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d1116.1146343179062!2d-68.12314552347775!3d-16.5115717753784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e6!4m4!1s0x915f2061d125ed5b%3A0x79c073ff64b8ac2b!3m2!1d-16.5115216!2d-68.1227171!4m5!1s0x915f2061d125ed5b%3A0x79c073ff64b8ac2b!2sAv.%20Arce%20Nro.%202652%20Edificio%20MILA%20Mezzanine%202%20Of.%202%2C%20La%20Paz!3m2!1d-16.5115216!2d-68.1227171!5e0!3m2!1ses-419!2sbo!4v1761098004108!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-      </div>
-            </div>
-        </div>
     </div>
 </footer>
 
