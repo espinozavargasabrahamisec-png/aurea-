@@ -347,6 +347,198 @@ h1, h2, h3, h4, h5, h6 {
 /* ========================
    ESPACIO EXTRA PARA LA SECCIÓN LABORATORIO
    ======================== */
+.lab-section {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px 25px; /* Más padding interno */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    text-align: left;
+    color: var(--aurea-dark);
+    margin-bottom: 50px; /* Más espacio abajo */
+    border: 2px solid var(--aurea-orange);
+    max-width: 1200px; /* Limitar ancho máximo */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.lab-section h2 {
+    color: var(--aurea-granate);
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 20px; 
+    font-size: 2rem; 
+    margin-top: 20px; 
+}
+
+
+.lab-section h3 {
+    color: var(--aurea-orange);
+    margin-top: 40px; 
+    margin-bottom: 25px; 
+    font-size: 1.6rem; 
+}
+
+.lab-section p {
+    font-size: 1.05em;
+    line-height: 1.7; 
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .lab-section {
+        padding: 50px 40px;
+        margin-bottom: 60px;
+    }
+    
+    .lab-section h2 {
+        font-size: 2.3rem;
+        margin-bottom: 50px;
+    }
+    .lab-section h3 {
+        font-size: 1.8rem;
+        margin-top: 50px; 
+        margin-bottom: 30px; 
+    }
+    
+    .lab-section p {
+        font-size: 1.1em; 
+        line-height: 1.8;
+        margin-bottom: 25px; 
+    }
+}
+
+@media (min-width: 992px) {
+    .lab-section {
+        padding: 60px 50px; 
+        margin-bottom: 70px;
+    }
+    
+    .lab-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 60px; 
+    }
+    
+    .lab-section h3 {
+        font-size: 2rem;
+        margin-top: 60px;
+        margin-bottom: 35px;
+    }
+    
+    .lab-section p {
+        font-size: 1.15em; 
+        line-height: 1.9;
+        margin-bottom: 30px;
+    }
+}
+/* ========================
+   GRID DE 3 MOLDES AUREA
+   ======================== */
+.moldes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 35px;
+    margin-top: 40px;
+}
+
+/* ========================
+   CARD PREMIUM AUREA
+   ======================== */
+.molde-card {
+    background: rgba(255, 255, 255, 0.20);  /* Glass suave */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-radius: 18px;
+    padding: 25px;
+    text-align: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+
+    transition: all .35s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ========================
+   BORDE DEGRADADO CORPORATIVO
+   ======================== */
+.molde-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    padding: 2px;
+
+    /* DEGRADADO AUREA */
+    background: linear-gradient(
+        135deg,
+        var(--aurea-granate),
+        var(--aurea-orange)
+    );
+
+    opacity: 0;
+    transition: .5s ease;
+    z-index: -1;
+}
+
+.molde-card:hover::before {
+    opacity: 1;
+}
+
+/* ========================
+   IMAGEN
+   ======================== */
+.molde-card img {
+    width: 100%;
+    max-width: 150px;
+    margin: auto;
+    transition: .35s ease;
+}
+
+/* ========================
+   TÍTULO
+   ======================== */
+.molde-card h3 {
+    margin-top: 18px;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--aurea-granate);
+}
+
+/* ========================
+   DESCRIPCIÓN
+   ======================== */
+.molde-card .descripcion {
+    opacity: 0;
+    margin-top: 12px;
+    font-size: 15px;
+    color: var(--aurea-dark);
+    transition: .35s ease;
+    transform: translateY(12px);
+}
+
+/* ========================
+   EFECTOS PREMIUM HOVER
+   ======================== */
+.molde-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+}
+
+.molde-card:hover img {
+    transform: scale(1.12);
+}
+
+.molde-card:hover .descripcion {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 
 /* ========================
