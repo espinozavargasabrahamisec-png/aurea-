@@ -312,60 +312,253 @@ h1, h2, h3, h4, h5, h6 {
 .w-100{
   height: 300px;
 }
+/* ================= CONTENEDOR CON ESPACIO ================= */
+.abrir-espacio {
+    width: 100%;
+    min-height: 700px; /* ESPACIO VERTICAL GARANTIZADO */
+    padding: 60px 0;
+    margin: 40px 0;
+    display: block;
+    position: relative;
+    background: #f8f9fa; /* FONDO CLARO PARA DESTACAR LA SECCIÓN */
+}
+
+/* Para que la sección ocupe todo el espacio disponible */
+.abrir-espacio .stats-section {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* Para pantallas grandes aún más espacio */
+@media (min-width: 992px) {
+    .abrir-espacio {
+        min-height: 1px;
+        padding: 80px 0;
+    }
+}
+
 /* ================= STATS SECTION - CORREGIDO ================= */
 .stats-section {
-  padding: 40px 20px;
-  background: var(--gradient-primary); /* Gradiente de granate a naranja */
-  color: var(--white);
-  overflow: hidden;
+    padding: 80px 20px;
+    background: var(--gradient-primary, linear-gradient(135deg, #8B2C2C 0%, #a83838 50%, #F4911E 100%));
+    color: white;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .stats-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
-  gap: 25px;
-  text-align: center;
-  padding: 0 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    text-align: center;
+    padding: 0 20px;
 }
 
 .stat-item {
-  padding: 15px 10px;
+    padding: 40px 25px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.stat-icon {
+    font-size: 4rem;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    display: block;
 }
 
 .stat-number {
-  font-size: 2em; /* Tamaño principal del número */
-  font-weight: 800;
-  margin-bottom: 5px;
-  color: var(--white);
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: white;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
 }
 
 .stat-label {
-  font-size: 0.9em;
-  opacity: 0.9;
-  font-weight: 600;
-  word-wrap: break-word;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    line-height: 1.5;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    max-width: 200px;
+    margin: 0 auto;
 }
 
-/* ======== MEDIA QUERIES PARA ESTADÍSTICAS ======== */
+/* ======== MEDIA QUERIES ======== */
 
 /* Tablets pequeñas (576px - 767px) */
 @media (min-width: 576px) {
-  .stats-grid {
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
-  }
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 35px;
+    }
+    
+    .stat-item {
+        padding: 45px 30px;
+        min-height: 240px;
+    }
+    
+    .stat-icon {
+        font-size: 4.5rem;
+        margin-bottom: 30px;
+    }
+    
+    .stat-number {
+        font-size: 4rem;
+        margin-bottom: 25px;
+        min-height: 80px;
+    }
+    
+    .stat-label {
+        font-size: 1.3rem;
+    }
+}
+
+/* Tablets medianas (768px - 991px) */
+@media (min-width: 768px) {
+    .stats-section {
+        padding: 100px 40px;
+    }
+    
+    .stats-grid {
+        gap: 40px;
+        padding: 0 40px;
+    }
+    
+    .stat-item {
+        padding: 50px 35px;
+        min-height: 260px;
+    }
+    
+    .stat-number {
+        font-size: 4.2rem;
+    }
+    
+    .stat-label {
+        font-size: 1.4rem;
+    }
 }
 
 /* Desktop (992px en adelante) */
 @media (min-width: 992px) {
-  .stats-grid {
-    gap: 30px;
-  }
-
-  .stat-number {
-    font-size: 3em;
-  }
+    .stats-section {
+        padding: 120px 60px;
+    }
+    
+    .stats-grid {
+        gap: 50px;
+        padding: 0 60px;
+    }
+    
+    .stat-item {
+        padding: 60px 40px;
+        min-height: 280px;
+        border-radius: 25px;
+    }
+    
+    .stat-icon {
+        font-size: 5rem;
+        margin-bottom: 35px;
+    }
+    
+    .stat-number {
+        font-size: 4.5rem;
+        margin-bottom: 30px;
+        min-height: 90px;
+    }
+    
+    .stat-label {
+        font-size: 1.5rem;
+        max-width: 250px;
+        line-height: 1.6;
+    }
 }
 
+/* Pantallas grandes (1200px+) */
+@media (min-width: 1200px) {
+    .stats-grid {
+        gap: 60px;
+    }
+    
+    .stat-item {
+        padding: 10px 45px;
+        min-height: 300px;
+    }
+    
+    .stat-icon {
+        font-size: 5.5rem;
+    }
+    
+    .stat-number {
+        font-size: 5rem;
+    }
+}
+
+/* Animación para los números */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-number {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.stat-icon {
+    animation: fadeInUp 1s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+.stat-label {
+    animation: fadeInUp 1s ease-out 0.4s forwards;
+    opacity: 0;
+}
+
+/* Decoración de fondo */
+.stats-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
 /* ========================
    EMPRESAS Y ASOCIACIONES
    ======================== */
