@@ -71,7 +71,7 @@ function setupScrollTop() {
 // Consultar por WhatsApp
 function consultarWhatsApp(modelo) {
     const mensaje = `Hola, estoy interesado en el modelo: ${modelo}. ¿Podrían darme más información?`;
-    const whatsappURL = `https://wa.me/59170111673?text=${encodeURIComponent(mensaje)}`;
+    const whatsappURL = `https://wa.me/59177534284?text=${encodeURIComponent(mensaje)}`;
     window.open(whatsappURL, '_blank');
 }
 
@@ -131,7 +131,7 @@ const audifonosData = {
             { titulo: "Batería", valor: "Hasta 30 horas" },
             { titulo: "Resistencia", valor: "IP67" },
             { titulo: "Peso", valor: "1.5g por unidad" },
-            { titulo: "Garantía", valor: "3 años" },
+            { titulo: "Garantía", valor: "1 años" },
             { titulo: "Colores", valor: "5 opciones" }
         ]
     },
@@ -160,7 +160,7 @@ const audifonosData = {
             { titulo: "Batería", valor: "Hasta 40 horas" },
             { titulo: "Conexión", valor: "Bluetooth 5.2" },
             { titulo: "Peso", valor: "1.8g por unidad" },
-            { titulo: "Garantía", valor: "5 años" },
+            { titulo: "Garantía", valor: "1 años" },
             { titulo: "Colores", valor: "7 opciones" }
         ]
     },
@@ -246,8 +246,8 @@ const audifonosData = {
             { titulo: "Tecnología", valor: "ITC Invisible AI" },
             { titulo: "Batería", valor: "Hasta 32 horas" },
             { titulo: "Tamaño", valor: "Ultra compacto" },
-            { titulo: "Procesador", valor: "IA de 4 núcleos" },
-            { titulo: "Garantía", valor: "5 años" },
+            { titulo: "Procesador", valor: "IA de 3 núcleos" },
+            { titulo: "Garantía", valor: "1 años" },
             { titulo: "Material", valor: "Aleación médica" }
         ]
     },
@@ -276,7 +276,7 @@ const audifonosData = {
             { titulo: "Batería", valor: "Hasta 45 horas" },
             { titulo: "Potencia", valor: "Ajustable" },
             { titulo: "Tamaño", valor: "Estándar" },
-            { titulo: "Garantía", valor: "2 años" },
+            { titulo: "Garantía", valor: "1 años" },
             { titulo: "Colores", valor: "Marrón, Beige, Negro" }
         ]
     },
@@ -331,10 +331,10 @@ const audifonosData = {
         ],
         especificaciones: [
             { titulo: "Tecnología", valor: "BTE Resistente" },
-            { titulo: "Batería", valor: "Hasta 55 horas" },
+         
             { titulo: "Resistencia", valor: "IP67" },
             { titulo: "Material", valor: "Policarbonato reforzado" },
-            { titulo: "Garantía", valor: "4 años" },
+            { titulo: "Garantía", valor: "1 años" },
             { titulo: "Accesorios", valor: "Kit completo incluido" }
         ]
     }
@@ -475,7 +475,7 @@ function contactarAhora() {
     if (modalImagen) modalImagen.hide();
     
     const mensaje = `Puede contactarnos por:\n\n` +
-          `📞 Llamada directa: +591 70111673\n` +
+          `📞 Llamada directa: +591 77534284\n` +
           `📧 Email: contacto@aureamed.com.bo\n` +
           `📍 Visita: Av. Arce Nro.2652, La Paz\n\n` +
           `Horarios de atención:\n` +
