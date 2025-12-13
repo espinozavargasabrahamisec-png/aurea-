@@ -26,7 +26,7 @@
 
 /* Ajuste para el navbar alto del global.css */
 body.audiologia-page {
-    padding-top: 140px; /* Ajustado según el navbar alto del global */
+    padding-top: 110px !important; /* Ajustado según el navbar alto del global */
 }
 
 /* Secciones de servicios */

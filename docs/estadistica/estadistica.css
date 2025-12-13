@@ -22,7 +22,9 @@
     --aurea-granate: #8B2C2C;
     --aurea-orange: #F4911E;
 }
-
+body{
+    padding-top: 110px !important;
+}
 /* ========== HERO SECTION ========== */
 .hero {
     position: relative;

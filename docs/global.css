@@ -10,13 +10,13 @@
         #8B2C2C 100%
     );
     box-shadow: 0 6px 20px var(--shadow);
-    padding: 10px 15px;  
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    min-height: 80px;    
+     min-height: 60px !important;
+    padding: 5px 10px !important;   
     transition: all 0.3s ease;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -40,6 +40,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: transform 0.2s, box-shadow 0.2s;
     text-indent: -9999px;
     overflow: hidden;
+    margin-left: -70px; /* Logo a la izquierda */
 }
 
 .aurea2:hover {
@@ -104,8 +105,8 @@ h1, h2, h3, h4, h5, h6 {
     body { padding-top: 100px; } /* para que no tape contenido */
     
     .navbar {
-        padding: 15px 20px;
-        min-height: 100px;
+         min-height: auto !important;
+    padding: 5px 10px !important;
     }
     
     .navbar-brand {
@@ -123,8 +124,8 @@ h1, h2, h3, h4, h5, h6 {
     body { padding-top: 130px; } /* para que no tape contenido */
     
     .navbar {
-        padding: 20px 25px;
-        min-height: 130px;
+        min-height: auto !important;
+    padding: 5px 10px !important;
     }
     
     .aurea2 {
