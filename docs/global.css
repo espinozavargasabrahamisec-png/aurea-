@@ -99,26 +99,6 @@ h1, h2, h3, h4, h5, h6 {
 /* ========================
    MEDIA QUERIES NAVBAR
    ======================== */
-
-/* Tablet / Pantallas medianas */
-@media (min-width: 768px) {
-    body { padding-top: 100px; } /* para que no tape contenido */
-    
-    .navbar {
-         min-height: auto !important;
-    padding: 5px 10px !important;
-    }
-    
-    .navbar-brand {
-        font-size: 1.8rem;
-    }
-    
-    .aurea2 {
-        width: 220px;
-        height: 80px;
-    }
-}
-
 /* Escritorio / Pantallas grandes */
 @media (min-width: 992px) {
     body { padding-top: 130px; } /* para que no tape contenido */
@@ -142,7 +122,33 @@ h1, h2, h3, h4, h5, h6 {
         text-align: left;
     }
 }
+/* Tablet / Pantallas medianas */
+@media (min-width: 768px) {
+    body { padding-top: 0px; } /* para que no tape contenido */
+    
+    .navbar {
+         min-height: auto !important;
+    padding: 5px 10px !important;
+    }
+    
+    .navbar-brand {
+        font-size: 1.8rem;
+    }
+    
+    .aurea2 {
+        width: 220px;
+        height: 80px;
+    }
+}
 
+/* Para pantallas pequeñas */
+@media (max-width: 576px) {
+    .btn-mapa-centered {
+        padding: 8px 25px;
+        font-size: 0.9rem;
+        margin: 20px auto;
+    }
+}
 
 /* ============================================================
    BOTONES FLOTANTES
@@ -276,14 +282,7 @@ h1, h2, h3, h4, h5, h6 {
     border: 0;
 }
 
-/* Para pantallas pequeñas */
-@media (max-width: 576px) {
-    .btn-mapa-centered {
-        padding: 8px 25px;
-        font-size: 0.9rem;
-        margin: 20px auto;
-    }
-}
+
 /* ================= FOOTER OPTIMIZADO ================= */
 footer {
     background: linear-gradient(to right, #F4911E, #8B2C2C);

@@ -39,7 +39,7 @@ body {
   line-height: 1.6;
   background: var(--light-gray);
   color: var(--aurea-dark);
-  padding-top: 80px;
+  padding-top: 110px !important;
   overflow-x: hidden;
 }
 
