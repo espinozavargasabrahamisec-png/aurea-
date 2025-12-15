@@ -433,6 +433,15 @@ h1, h2, h3, h4, h5, h6 {
         margin-bottom: 30px;
     }
 }
+
+.lab-section p {
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    text-align: center;
+}
 /* ========================
    GRID DE 3 MOLDES AUREA
    ======================== */
@@ -447,21 +456,22 @@ h1, h2, h3, h4, h5, h6 {
    CARD PREMIUM AUREA
    ======================== */
 .molde-card {
-    background: rgba(255, 255, 255, 0.20);  /* Glass suave */
+    background: rgba(255, 255, 255, 0.95);  /* Fondo sólido para mejor legibilidad */
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-
     border-radius: 18px;
     padding: 25px;
     text-align: center;
-
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
-
+    border: 1px solid rgba(139, 26, 59, 0.1);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
     transition: all .35s ease;
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* ========================
@@ -473,14 +483,12 @@ h1, h2, h3, h4, h5, h6 {
     inset: 0;
     border-radius: 18px;
     padding: 2px;
-
     /* DEGRADADO AUREA */
     background: linear-gradient(
         135deg,
         var(--aurea-granate),
         var(--aurea-orange)
     );
-
     opacity: 0;
     transition: .5s ease;
     z-index: -1;
@@ -490,55 +498,115 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1;
 }
 
+.molde-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    border-color: rgba(139, 26, 59, 0.3);
+}
+
+/* ========================
+   CONTENIDO DE LA CARD
+   ======================== */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 /* ========================
    IMAGEN
    ======================== */
 .molde-card img {
     width: 100%;
     max-width: 150px;
-    margin: auto;
+    margin: 0 auto 20px;
     transition: .35s ease;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
+
+.molde-card:hover img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
 }
 
 /* ========================
    TÍTULO
    ======================== */
 .molde-card h3 {
-    margin-top: 18px;
-    font-size: 20px;
-    font-weight: bold;
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: 700;
     color: var(--aurea-granate);
+    transition: .3s ease;
+}
+
+.molde-card:hover h3 {
+    color: var(--aurea-orange);
 }
 
 /* ========================
-   DESCRIPCIÓN
+   DESCRIPCIÓN - CORREGIDO
    ======================== */
 .molde-card .descripcion {
-    opacity: 0;
-    margin-top: 12px;
+    opacity: 1; /* Cambiado de 0 a 1 para que sea visible */
+    margin-top: 15px;
     font-size: 15px;
-    color: var(--aurea-dark);
+    color: var(--aurea-gray);
     transition: .35s ease;
-    transform: translateY(12px);
+    transform: translateY(0); /* Cambiado de 12px a 0 */
+    line-height: 1.6;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* ========================
-   EFECTOS PREMIUM HOVER
-   ======================== */
-.molde-card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
-}
-
-.molde-card:hover img {
-    transform: scale(1.12);
-}
-
-.molde-card:hover .descripcion {
-    opacity: 1;
+/* Versión con animación al hacer hover (opcional) */
+.molde-card .descripcion.hover-animate {
+    opacity: 0.9;
     transform: translateY(0);
 }
 
+.molde-card:hover .descripcion.hover-animate {
+    opacity: 1;
+    transform: translateY(-2px);
+    color: var(--aurea-dark);
+}
+
+/* ========================
+   BADGE DE TIPO
+   ======================== */
+.tipo-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(139, 26, 59, 0.2);
+}
+
+/* ========================
+   RESPONSIVE
+   ======================== */
+@media (max-width: 768px) {
+    .moldes-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+        gap: 25px;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .molde-card {
+        padding: 20px;
+    }
+}
 
 
 /* ========================

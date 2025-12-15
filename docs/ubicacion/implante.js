@@ -189,4 +189,78 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Página de Campañas Auditivas cargada correctamente');
     console.log('Número de contacto: +591 77534284');
     console.log('Funcionalidad de WhatsApp con ubicación activada');
+
+//----------------------------------------------------------------------
+$(document).ready(function() {
+  // Inicializar el carrusel
+  $('#carouselExampleIndicators').carousel({
+    interval: 5000,
+    ride: 'carousel',
+    wrap: true,
+    pause: 'hover',
+    keyboard: true
+  });
+  
+  // Desactivar transiciones CSS en las imágenes para evitar movimiento
+  $('.carousel-item img').css({
+    'transition': 'none !important',
+    'animation': 'none !important'
+  });
+  
+  // Controlar las flechas personalizadas
+  $('.custom-carousel-prev').on('click', function(e) {
+    e.preventDefault();
+    $('#carouselExampleIndicators').carousel('prev');
+  });
+  
+  $('.custom-carousel-next').on('click', function(e) {
+    e.preventDefault();
+    $('#carouselExampleIndicators').carousel('next');
+  });
+  
+  // Agregar efecto de clic a las flechas
+  $('.custom-carousel-prev, .custom-carousel-next').on('click', function() {
+    $(this).find('.arrow-container').css({
+      'transform': $(this).hasClass('custom-carousel-prev') ? 'translateX(10px)' : 'translateX(-10px)',
+      'background': 'rgba(139, 26, 59, 0.7)'
+    });
+    
+    setTimeout(() => {
+      $(this).find('.arrow-container').css({
+        'transform': '',
+        'background': ''
+      });
+    }, 300);
+  });
+  
+  // Efecto hover mejorado
+  $('.custom-carousel-prev, .custom-carousel-next').hover(
+    function() {
+      $(this).find('.arrow-container').css({
+        'background': 'rgba(0, 0, 0, 0.5)',
+        'border-color': 'rgba(255, 255, 255, 0.4)'
+      });
+    },
+    function() {
+      $(this).find('.arrow-container').css({
+        'background': '',
+        'border-color': ''
+      });
+    }
+  );
+  
+  // Asegurar que las imágenes no se muevan
+  $(window).on('load resize', function() {
+    $('.carousel-item img').each(function() {
+      $(this).css({
+        'position': 'absolute',
+        'top': '0',
+        'left': '0',
+        'width': '100%',
+        'height': '100%',
+        'object-fit': 'cover'
+      });
+    });
+  });
+});
 });

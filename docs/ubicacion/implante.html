@@ -72,9 +72,86 @@
     </div>
   </div>
 </nav>
-
 <!-- ================= HERO SECTION ================= -->
-<section class="hero-section">
+ 
+ <section class="hero-section">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    
+    <div class="carousel-inner">
+      
+      <!-- Slide 1: Tarija -->
+      <div class="carousel-item active">
+        <!-- Imagen con overlay -->
+        <div class="image-container">
+          <img class="d-block w-100" src="./tarija.png" alt="Tarija">
+          <div class="image-overlay"></div>
+        </div>
+        
+        <div class="carousel-caption">
+          <h1>Tarija</h1>
+          <p>Estamos en: Calle Bolivar 808 esquina Ramon Rojas</p>
+          <a href="#tarija" class="btn btn-primary">Más Información</a>
+        </div>
+      </div>
+      
+      <!-- Slide 2: La Paz -->
+      <div class="carousel-item">
+        <!-- Imagen con overlay -->
+        <div class="image-container">
+          <img class="d-block w-100" src="./paz.png" alt="La Paz">
+          <div class="image-overlay"></div>
+        </div>
+        
+        <div class="carousel-caption">
+          <h1>ÁureaMED Centro Auditivo</h1>
+          <p>Expertos en soluciones auditivas con más de 15 años de experiencia</p>
+          <a href="#la-paz" class="btn btn-primary">Nuestra Sede</a>
+        </div>
+      </div>
+      
+      <!-- Slide 3: Oruro -->
+      <div class="carousel-item">
+        <!-- Imagen con overlay -->
+        <div class="image-container">
+          <img class="d-block w-100" src="./oruro.png" alt="Oruro">
+          <div class="image-overlay"></div>
+        </div>
+        
+        <div class="carousel-caption">
+          <h1>Oruro</h1>
+          <p>Estamos en: Calle Tarapacá entre Caro y Montesinos</p>
+          <a href="#oruro" class="btn btn-primary">Más Información</a>
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- Flechas personalizadas en los bordes -->
+    <div class="custom-carousel-controls">
+      <a class="custom-carousel-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <div class="arrow-container">
+          <span class="arrow-icon">‹</span>
+        </div>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="custom-carousel-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <div class="arrow-container">
+          <span class="arrow-icon">›</span>
+        </div>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    
+  </div>
+</section>
+
+ <!-- ================= ================= -->
+<!-- <section class="hero-section">
   <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -117,7 +194,7 @@
     </button>
   </div>
 </section>
-
+ -->
 <!-- Mapas -->
  <!-- ================= LA PAZ ================= -->
 <section id="la-paz" class="location-section">
@@ -148,6 +225,7 @@
       </div>
       <div class="col-lg-6">
         <div class="location-card">
+                <h3><i class="fas fa-map-marker-alt"></i> Ver en Mapa</h3>
           <!-- Mapa de La Paz -->
           <div class="map-responsive">
             <iframe src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d1116.1146343179062!2d-68.12314552347775!3d-16.5115717753784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e6!4m4!1s0x915f2061d125ed5b%3A0x79c073ff64b8ac2b!3m2!1d-16.5115216!2d-68.1227171!4m5!1s0x915f2061d125ed5b%3A0x79c073ff64b8ac2b!2sAv.%20Arce%20Nro.%202652%20Edificio%20MILA%20Mezzanine%202%20Of.%202%2C%20La%20Paz!3m2!1d-16.5115216!2d-68.1227171!5e0!3m2!1ses-419!2sbo!4v1761098004108!5m2!1ses-419!2sbo" allowfullscreen="" loading="lazy"></iframe>
@@ -187,6 +265,7 @@
       </div>
       <div class="col-lg-6">
         <div class="location-card">
+                <h3><i class="fas fa-map-marker-alt"></i> Ver en Mapa</h3>
           <!-- Mapa de El Alto con tamaño responsivo -->
           <div class="map-responsive">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824.9781195143382!2d-68.15103092525374!3d-16.527202241425492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915edf635b6179af%3A0x9924eeaf99094804!2sHipermaxi%20Ciudad%20Satelite!5e0!3m2!1ses-419!2sbo!4v1765331586386!5m2!1ses-419!2sbo" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -268,6 +347,7 @@
       </div>
       <div class="col-lg-6">
         <div class="location-card">
+          <h3><i class="fas fa-map-marker-alt"></i> Ver en Mapa</h3>
           <!-- Mapa de Tarija con tamaño responsivo -->
           <div class="map-responsive">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3711.415737885166!2d-64.73995142509526!3d-21.530593490140333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9406480b05e29b99%3A0xf71e2cf57ab61d3f!2sEdificio%20El%20Molino!5e0!3m2!1ses-419!2sbo!4v1765331481711!5m2!1ses-419!2sbo" style="border:0;" allowfullscreen="" loading="lazy"></iframe>

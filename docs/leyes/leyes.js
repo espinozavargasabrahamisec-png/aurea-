@@ -352,3 +352,60 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.5 });
 
 statItems.forEach(item => observer.observe(item));
+
+//--------------------------------------------------------------
+// Animaciones adicionales para las cards
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.molde-card');
+    
+    // Animación de entrada escalonada
+    cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, 200 * index);
+    });
+    
+    // Efecto de clic
+    cards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Efecto de clic
+            this.style.transform = 'translateY(-8px) scale(0.98)';
+            
+            // Remover selección de otras cards
+            cards.forEach(c => {
+                if (c !== this) {
+                    c.classList.remove('selected');
+                }
+            });
+            
+            // Añadir clase selected
+            this.classList.toggle('selected');
+            
+            // Restaurar transformación después de un tiempo
+            setTimeout(() => {
+                if (this.classList.contains('selected')) {
+                    this.style.transform = 'translateY(-8px) scale(1)';
+                } else {
+                    this.style.transform = 'translateY(-8px) scale(1.03)';
+                }
+            }, 150);
+        });
+    });
+    
+    // Efecto para dispositivos táctiles
+    cards.forEach(card => {
+        card.addEventListener('touchstart', function() {
+            this.style.transform = 'translateY(-8px) scale(0.98)';
+        });
+        
+        card.addEventListener('touchend', function() {
+            this.style.transform = 'translateY(-8px) scale(1.03)';
+        });
+    });
+});
+
