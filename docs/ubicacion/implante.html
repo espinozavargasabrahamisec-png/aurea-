@@ -73,82 +73,90 @@
   </div>
 </nav>
 <!-- ================= HERO SECTION ================= -->
- 
  <section class="hero-section">
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    
+  <div id="carouselExampleIndicators"
+       class="carousel slide"
+       data-bs-ride="carousel"
+       data-bs-interval="5000"
+       data-bs-pause="hover">
+
+  <!-- ===== INDICADORES CON MINIATURA ===== -->
+<div class="carousel-indicators preview-indicators">
+  <button type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Tarija"
+          style="background-image: url('./tarija.png');">
+  </button>
+
+  <button type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+          aria-label="La Paz"
+          style="background-image: url('./paz.png');">
+  </button>
+
+  <button type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Oruro"
+          style="background-image: url('./oruro.png');">
+  </button>
+</div>
+
+
+
+    <!-- ===== SLIDES ===== -->
     <div class="carousel-inner">
-      
-      <!-- Slide 1: Tarija -->
+
+      <!-- Slide 1 -->
       <div class="carousel-item active">
-        <!-- Imagen con overlay -->
         <div class="image-container">
-          <img class="d-block w-100" src="./tarija.png" alt="Tarija">
+          <img src="./tarija.png" class="d-block w-100" alt="Tarija">
           <div class="image-overlay"></div>
         </div>
-        
         <div class="carousel-caption">
           <h1>Tarija</h1>
-          <p>Estamos en: Calle Bolivar 808 esquina Ramon Rojas</p>
+          <p>Estamos en: Calle Bolívar 808 esquina Ramón Rojas</p>
           <a href="#tarija" class="btn btn-primary">Más Información</a>
         </div>
       </div>
-      
-      <!-- Slide 2: La Paz -->
+
+      <!-- Slide 2 -->
       <div class="carousel-item">
-        <!-- Imagen con overlay -->
         <div class="image-container">
-          <img class="d-block w-100" src="./paz.png" alt="La Paz">
+          <img src="./paz.png" class="d-block w-100" alt="La Paz">
           <div class="image-overlay"></div>
         </div>
-        
         <div class="carousel-caption">
           <h1>ÁureaMED Centro Auditivo</h1>
           <p>Expertos en soluciones auditivas con más de 15 años de experiencia</p>
           <a href="#la-paz" class="btn btn-primary">Nuestra Sede</a>
         </div>
       </div>
-      
-      <!-- Slide 3: Oruro -->
+
+      <!-- Slide 3 -->
       <div class="carousel-item">
-        <!-- Imagen con overlay -->
         <div class="image-container">
-          <img class="d-block w-100" src="./oruro.png" alt="Oruro">
+          <img src="./oruro.png" class="d-block w-100" alt="Oruro">
           <div class="image-overlay"></div>
         </div>
-        
         <div class="carousel-caption">
           <h1>Oruro</h1>
           <p>Estamos en: Calle Tarapacá entre Caro y Montesinos</p>
           <a href="#oruro" class="btn btn-primary">Más Información</a>
         </div>
       </div>
-      
+
     </div>
-    
-    <!-- Flechas personalizadas en los bordes -->
-    <div class="custom-carousel-controls">
-      <a class="custom-carousel-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <div class="arrow-container">
-          <span class="arrow-icon">‹</span>
-        </div>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="custom-carousel-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <div class="arrow-container">
-          <span class="arrow-icon">›</span>
-        </div>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-    
+
+  
+
   </div>
 </section>
+
 
  <!-- ================= ================= -->
 <!-- <section class="hero-section">

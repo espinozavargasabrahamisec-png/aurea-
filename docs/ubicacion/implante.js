@@ -58,15 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ================= CAROUSEL AUTOPLAY =================
-    const heroCarousel = document.getElementById('heroCarousel');
-    if (heroCarousel) {
-        const carousel = new bootstrap.Carousel(heroCarousel, {
-            interval: 5000,
-            pause: 'hover',
-            wrap: true
-        });
-    }
+  
 
     // ================= BOTONES FLOTANTES ESPECÍFICOS =================
     const scrollTopBtn = document.getElementById('btntop');
