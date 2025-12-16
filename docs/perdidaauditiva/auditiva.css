@@ -1,0 +1,233 @@
+/* ========================
+   VARIABLES DE COLOR
+   ======================== */
+:root {
+  --aurea-granate: #8B2C2C;
+  --aurea-orange: #F4911E;
+  --aurea-dark: #222;
+  --aurea-gray: #555;
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+  --shadow: rgba(0,0,0,0.2);
+
+}
+body{padding-top: 110px !important;}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--aurea-granate);
+}
+/* ================= SECCIÓN PRINCIPAL ================= */
+.main-section {
+  padding: 30px 15px;
+  max-width: 1600px; /* Más ancho para imágenes grandes */
+  margin: 0 auto;
+}
+
+.main-section h1 {
+  color: var(--aurea-granate);
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.description {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1rem;
+  padding: 0 10px;
+}
+
+/* ================= IMAGEN PRINCIPAL ================= */
+.centered-img {
+  text-align: center;
+  margin: 30px auto;
+  max-width: 900px;
+}
+
+.centered-img img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* ================= TARJETAS DE GRADOS ================= */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin: 40px auto;
+  max-width: 1600px;
+}
+
+.grid-item {
+  background: var(--white);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  border-top: 5px solid var(--aurea-orange);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* IMÁGENES GRANDES */
+.grid-item img {
+  width: 100%;
+  max-width: 100%;
+  height: 250px; /* Más grande */
+  object-fit: contain; /* Imagen completa */
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background: #f8f8f8; /* Fondo para contraste */
+  padding: 10px;
+}
+
+.grid-item h2 {
+  color: var(--aurea-granate);
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  min-height: auto;
+}
+
+.grid-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.grid-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* ================= MEDIA QUERIES ================= */
+
+/* Tablets pequeñas */
+@media (min-width: 576px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+  
+  .grid-item img {
+    height: 280px; /* Aún más grande */
+  }
+}
+
+/* Tablets grandes */
+@media (min-width: 768px) {
+  .main-section h1 {
+    font-size: 2.2rem;
+  }
+  
+  .description {
+    font-size: 1.2rem;
+  }
+  
+  .grid-item img {
+    height: 300px; /* Más grande aún */
+  }
+}
+
+/* DESKTOP - 4 EN FILA CON IMÁGENES GRANDES */
+@media (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    gap: 25px;
+  }
+  
+  .grid-item {
+    padding: 20px;
+    height: 100%;
+  }
+  
+  /* IMÁGENES MUY GRANDES PERO 4 EN FILA */
+  .grid-item img {
+    height: 200px; /* Ajustado para 4 columnas */
+    min-height: 200px;
+    object-fit: contain; /* Imagen completa */
+  }
+  
+  .grid-item h2 {
+    font-size: 1.3rem;
+    margin: 15px 0 10px 0;
+  }
+  
+  .grid-item p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Pantallas grandes - IMÁGENES MÁS GRANDES */
+@media (min-width: 1200px) {
+  .grid-container {
+    gap: 30px;
+  }
+  
+  .grid-item img {
+    height: 240px; /* Más grande en pantallas grandes */
+    min-height: 240px;
+  }
+  
+  .grid-item h2 {
+    font-size: 1.4rem;
+  }
+  
+  .grid-item p {
+    font-size: 1rem;
+  }
+}
+
+/* Pantallas extra grandes - IMÁGENES AÚN MÁS GRANDES */
+@media (min-width: 1400px) {
+  .grid-item img {
+    height: 280px; /* Muy grandes */
+    min-height: 280px;
+  }
+  
+  .grid-item {
+    padding: 25px;
+  }
+}
+
+/* Pantallas muy grandes */
+@media (min-width: 1600px) {
+  .grid-item img {
+    height: 300px; /* Máximo tamaño */
+    min-height: 300px;
+  }
+}
+
+/* Versión alternativa si quieres imágenes aún más grandes */
+/* .grid-item img {
+  height: 350px;
+  min-height: 350px;
+  object-fit: contain;
+} */
+
+/* Para pantallas pequeñas */
+@media (max-width: 575px) {
+  .grid-item img {
+    height: 200px; /* Grandes en móvil también */
+  }
+}
+/* Estilos para el mapa modal */
+.modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.modal-header {
+ 
+    color: #8B2C2C;
+    border-bottom: none;
+}
+
+.modal-body iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+}

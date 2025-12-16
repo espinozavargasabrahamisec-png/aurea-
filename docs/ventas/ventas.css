@@ -1,0 +1,827 @@
+/* ventas.css - CSS completo optimizado para página de ventas AUREA */
+
+:root {
+  --aurea-granate: #8B2C2C;
+  --aurea-orange: #F4911E;
+  --aurea-dark: #222;
+  --aurea-gray: #555;
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+  --shadow: rgba(0,0,0,0.2);
+}
+
+/* ================= RESET Y ESTILOS GENERALES ================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+padding-top: 110px !important;
+}
+
+/* Espaciador para navbar */
+.navbar-spacer {
+  height: 80px;
+  width: 100%;
+  display: block;
+}
+
+/* ================= SECCIÓN AUDÍFONOS ================= */
+.audifonos-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+  min-height: 100vh;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 0 20px;
+}
+
+.section-header h2 {
+  color: var(--aurea-granate);
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 15px;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, var(--aurea-granate), var(--aurea-orange));
+  border-radius: 2px;
+}
+
+.section-header .letras {
+  color: var(--aurea-gray);
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid de audífonos */
+.audifonos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.audifono-item {
+  background: var(--white);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.audifono-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, var(--aurea-granate), var(--aurea-orange));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.audifono-item:hover::before {
+  transform: scaleX(1);
+}
+
+.audifono-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(139, 44, 44, 0.15);
+  border-color: var(--aurea-orange);
+}
+
+.audifono-item img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin: 0 auto 20px;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+  transition: transform 0.3s ease;
+}
+
+.audifono-item:hover img {
+  transform: scale(1.05);
+}
+
+.audifono-item h3 {
+  color: var(--aurea-granate);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  line-height: 1.3;
+  font-weight: 700;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.audifono-item p {
+  color: var(--aurea-dark);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  flex-grow: 1;
+  opacity: 0.9;
+}
+
+/* Botón principal */
+.boton {
+  background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
+  color: var(--white);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(139, 44, 44, 0.2);
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.boton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--aurea-orange), var(--aurea-granate));
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.boton:hover::before {
+  left: 0;
+}
+
+.boton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(139, 44, 44, 0.3);
+}
+
+/* Especificaciones en modal */
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.spec-item {
+  background: var(--light-gray);
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  border-left: 3px solid var(--aurea-orange);
+  transition: transform 0.2s ease;
+}
+
+.spec-item:hover {
+  transform: translateY(-2px);
+}
+
+.spec-item strong {
+  display: block;
+  color: var(--aurea-granate);
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.spec-item span {
+  color: var(--aurea-gray);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Estilos para botones de modal */
+.btn-aurea {
+  background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
+  color: var(--white);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 44, 44, 0.2);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-aurea::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--aurea-orange), var(--aurea-granate));
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.btn-aurea:hover::before {
+  left: 0;
+}
+
+.btn-aurea:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 44, 44, 0.3);
+  color: var(--white);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: var(--white);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.2);
+}
+
+.btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.3);
+  color: var(--white);
+}
+
+.btn-outline-aurea-granate {
+  color: var(--aurea-granate);
+  border: 2px solid var(--aurea-granate);
+  background: transparent;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-aurea-granate:hover {
+  background: var(--aurea-granate);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Estilos para el modal de imagen */
+.info-box {
+  border-left: 4px solid var(--aurea-orange);
+  background: var(--light-gray);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.text-aurea-granate {
+  color: var(--aurea-granate) !important;
+}
+
+.text-aurea-orange {
+  color: var(--aurea-orange) !important;
+}
+
+/* ================= SECCIÓN PRODUCTOS ================= */
+.products-section {
+  padding: 70px 20px;
+  background-color: var(--white);
+  position: relative;
+}
+
+.products-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="%23f8f9fa" d="M0,0 L100,0 L100,100 Z"/></svg>') no-repeat;
+  background-size: cover;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+.products-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.products-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.products-header h2 {
+  color: var(--aurea-granate);
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 15px;
+}
+
+.products-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 4px;
+  background: linear-gradient(to right, var(--aurea-granate), var(--aurea-orange));
+  border-radius: 2px;
+}
+
+.products-description {
+  color: var(--aurea-dark);
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Contenedor de productos */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tarjeta de producto */
+.producta-carda {
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(139, 44, 44, 0.12),
+              inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  border: 2px solid rgba(244, 145, 30, 0.1);
+  position: relative;
+}
+
+.producta-carda:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(139, 44, 44, 0.2);
+  border-color: rgba(244, 145, 30, 0.3);
+}
+
+/* Imagen del producto */
+.imgBx {
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+  padding: 35px 25px;
+  border-bottom: 2px solid rgba(244, 145, 30, 0.2);
+}
+
+.imgBx::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(to right, var(--aurea-granate), var(--aurea-orange));
+}
+
+.imgBx img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+  max-width: 75%;
+}
+
+.producta-carda:hover .imgBx img {
+  transform: scale(1.05);
+}
+
+/* Detalles del producto */
+.details {
+  padding: 30px 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.details h2 {
+  color: var(--aurea-granate);
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.details h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: var(--aurea-orange);
+}
+
+.details h2 span {
+  color: var(--aurea-orange);
+  font-size: 1.2rem;
+  display: block;
+  margin-top: 5px;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+}
+
+.details p {
+  color: var(--aurea-dark);
+  line-height: 1.6;
+  font-size: 1rem;
+  margin: 20px 0;
+  flex-grow: 1;
+  opacity: 0.9;
+}
+
+/* Sección de colores */
+.producta-colors-section {
+  margin: 20px 0 25px;
+  padding: 20px 15px;
+  background: rgba(244, 145, 30, 0.05);
+  border-radius: 15px;
+  border: 2px dashed rgba(244, 145, 30, 0.2);
+  transition: all 0.3s ease;
+}
+
+.producta-carda:hover .producta-colors-section {
+  background: rgba(244, 145, 30, 0.08);
+  border-color: rgba(244, 145, 30, 0.4);
+}
+
+.colors-label {
+  font-size: 0.95rem;
+  color: var(--aurea-granate);
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-align: center;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Contenedor de colores */
+.producta-colors {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+
+/* Círculos de color */
+.color-option {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid white;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.color-option::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.color-option:hover::after {
+  border-color: var(--aurea-orange);
+}
+
+/* Botón consultar modelo */
+.consult-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
+  color: var(--white);
+  padding: 14px 35px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+  align-self: center;
+  box-shadow: 0 6px 20px rgba(139, 44, 44, 0.2);
+  font-size: 0.95rem;
+  min-width: 200px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.consult-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--aurea-orange), var(--aurea-granate));
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.consult-btn:hover::before {
+  left: 0;
+}
+
+.consult-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(139, 44, 44, 0.3);
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* Tablets grandes y laptops pequeñas */
+@media (max-width: 1024px) {
+  .audifonos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  .products {
+    gap: 30px;
+  }
+  
+  .producta-carda {
+    max-width: 350px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .section-header h2,
+  .products-header h2 {
+    font-size: 2rem;
+  }
+  
+  .audifonos-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+  
+  .audifono-item {
+    padding: 25px 20px;
+  }
+  
+  .audifono-item img {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .products {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .producta-carda {
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .imgBx {
+    height: 220px;
+  }
+}
+
+/* Móviles */
+@media (max-width: 576px) {
+  body {
+    padding-top: 60px !important;
+  }
+  
+  .navbar-spacer {
+    height: 60px;
+  }
+  
+  .audifonos-section,
+  .products-section {
+    padding: 50px 15px;
+  }
+  
+  .section-header h2,
+  .products-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .section-header .letras,
+  .products-description {
+    font-size: 1rem;
+  }
+  
+  .audifono-item h3 {
+    font-size: 1.3rem;
+    min-height: auto;
+  }
+  
+  .audifono-item p {
+    font-size: 0.9rem;
+  }
+  
+  .boton {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+  
+  .imgBx {
+    height: 200px;
+    padding: 25px 20px;
+  }
+  
+  .details {
+    padding: 25px 20px;
+  }
+  
+  .producta-colors {
+    gap: 15px;
+  }
+  
+  .color-option {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .consult-btn {
+    padding: 12px 30px;
+    font-size: 0.9rem;
+    min-width: 180px;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 375px) {
+  .section-header h2,
+  .products-header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .audifonos-grid {
+    padding: 0 10px;
+  }
+  
+  .audifono-item {
+    padding: 20px 15px;
+  }
+  
+  .audifono-item img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .producta-colors {
+    gap: 12px;
+  }
+  
+  .color-option {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Orientación landscape en móviles */
+@media (max-height: 600px) and (orientation: landscape) {
+  .audifonos-section {
+    padding: 30px 0;
+  }
+  
+  .audifono-item {
+    padding: 15px;
+  }
+  
+  .audifono-item img {
+    height: 120px;
+  }
+  
+  .audifono-item h3 {
+    font-size: 1.1rem;
+    min-height: auto;
+  }
+}
+
+/* Mejorar accesibilidad */
+@media (max-width: 768px) {
+  .boton,
+  .consult-btn {
+    min-height: 44px;
+    min-width: 140px;
+  }
+  
+  .color-option {
+    min-width: 25px;
+    min-height: 25px;
+  }
+}
+
+/* Animaciones para mejor experiencia */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.audifono-item,
+.producta-carda {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.audifono-item:nth-child(1) { animation-delay: 0.1s; }
+.audifono-item:nth-child(2) { animation-delay: 0.2s; }
+.audifono-item:nth-child(3) { animation-delay: 0.3s; }
+.audifono-item:nth-child(4) { animation-delay: 0.4s; }
+.audifono-item:nth-child(5) { animation-delay: 0.5s; }
+.audifono-item:nth-child(6) { animation-delay: 0.6s; }
+.audifono-item:nth-child(7) { animation-delay: 0.7s; }
+.audifono-item:nth-child(8) { animation-delay: 0.8s; }
+.audifono-item:nth-child(9) { animation-delay: 0.9s; }
+
+.producta-carda:nth-child(1) { animation-delay: 0.2s; }
+.producta-carda:nth-child(2) { animation-delay: 0.4s; }
+.producta-carda:nth-child(3) { animation-delay: 0.6s; }

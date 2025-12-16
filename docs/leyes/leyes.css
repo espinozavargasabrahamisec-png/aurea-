@@ -1,0 +1,1046 @@
+/* ========================
+   VARIABLES DE COLOR
+   ======================== */
+:root {
+    --aurea-granate: #8B2C2C;
+    --aurea-orange: #F4911E;
+    --aurea-dark: #222;
+    --aurea-gray: #555;
+    --white: #ffffff;
+    --light-gray: #f8f9fa;
+    --shadow: rgba(0,0,0,0.2);
+    --size: 320px;
+    --perspective: 1100px;
+    --items: 7;
+    --gradient-primary: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
+}
+
+/* ========================
+   BASE
+   ======================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    background-color: var(--light-gray);
+    color: var(--aurea-dark);
+    line-height: 1.6;
+    padding-top: 110px !important;/* Solución definitiva para navbar */
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--aurea-granate);
+}
+
+/* ========================
+   HEADER
+   ======================== */
+.hero-section {
+    position: relative;
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.55),
+            rgba(139, 44, 44, 0.55)
+        ),
+        url("labfond.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 50vh;
+    padding: 4rem 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    color: white;
+    margin-bottom: 30px;
+}
+
+
+.hero-section h1 {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--white);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+    max-width: 100%;
+    margin: 0 auto;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    padding: 0 10px;
+}
+
+/* ========================
+   SECCIÓN LABORATORIO
+   ======================== */
+.lab-section {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    text-align: left;
+    color: var(--aurea-dark);
+    margin-bottom: 30px;
+    border: 2px solid var(--aurea-orange);
+}
+
+.lab-section h2 {
+    color: var(--aurea-granate);
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.lab-section h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, var(--aurea-granate), var(--aurea-orange));
+}
+
+.lab-section h3 {
+    color: var(--aurea-orange);
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.lab-section p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.lab-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lab-section ul li {
+    margin: 12px 0;
+    font-size: 1em;
+    line-height: 1.6;
+    padding-left: 25px;
+    position: relative;
+}
+
+.lab-section ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--aurea-granate);
+    font-weight: bold;
+}
+/* ========================
+   SERVICIOS - MEJOR CENTRADO CON MÁS ESPACIO
+   ======================== */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 100px; /* Más espacio entre cards */
+    margin-top: 100px; /* Más espacio arriba */
+    margin-bottom: 20px; /* Más espacio abajo */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px; /* Más padding lateral */
+}
+
+.service-card {
+    background: white;
+    border-radius: 15px;
+    padding: 100px 250px; /* Más padding interno */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border-top: 5px solid var(--aurea-orange);
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 280px; /* Más altura */
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    border-top-color: var(--aurea-granate);
+}
+
+.service-card i {
+    font-size: 3rem; /* Iconos más grandes */
+    color: var(--aurea-granate);
+    margin-bottom: 25px; /* Más espacio debajo del icono */
+    background: linear-gradient(135deg, rgba(139, 44, 44, 0.1), rgba(244, 145, 30, 0.1));
+    width: 90px; /* Más ancho */
+    height: 90px; /* Más alto */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-card h4 {
+    color: var(--aurea-granate);
+    margin-bottom: 20px; /* Más espacio debajo del título */
+    font-weight: 700;
+    font-size: 1.4rem; /* Título más grande */
+    line-height: 1.4;
+    padding: 0 10px; /* Padding interno en títulos largos */
+}
+
+.service-card p {
+    font-size: 1.05em; /* Texto ligeramente más grande */
+    color: var(--aurea-gray);
+    line-height: 1.7; /* Más espacio entre líneas */
+    margin: 0;
+    max-width: 300px; /* Ancho máximo del texto */
+    padding: 0 5px; /* Pequeño padding interno */
+}
+
+/* ========================
+   MEDIA QUERIES PARA SERVICIOS
+   ======================== */
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .services-grid {
+        gap: 25px; /* Un poco menos de espacio en móvil */
+        padding: 0 15px; /* Menos padding lateral en móvil */
+        margin-top: 30px; /* Menos espacio arriba en móvil */
+    }
+    
+    .service-card {
+        padding: 25px 20px; /* Menos padding interno en móvil */
+        min-height: 260px; /* Un poco menos de altura en móvil */
+    }
+    
+    .service-card i {
+        font-size: 2.8rem;
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+    }
+    
+    .service-card h4 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    
+    .service-card p {
+        font-size: 1em;
+        max-width: 280px;
+        line-height: 1.6;
+    }
+}
+
+/* Tablet / Pantallas medianas */
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px; /* Más espacio entre cards en tablet */
+        padding: 0 30px; /* Más padding lateral */
+        margin-top: 50px; /* Más espacio arriba */
+    }
+    
+    .service-card {
+        padding: 35px 30px; /* Más padding interno */
+        min-height: 320px; /* Más altura */
+    }
+    
+    .service-card i {
+        font-size: 3.3rem; /* Iconos aún más grandes */
+        width: 100px;
+        height: 100px;
+        margin-bottom: 30px; /* Más espacio debajo del icono */
+    }
+    
+    .service-card h4 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+    
+    .service-card p {
+        font-size: 1.1em; /* Texto más grande */
+        max-width: 320px;
+        line-height: 1.8; /* Más espacio entre líneas */
+    }
+}
+
+/* Escritorio / Pantallas grandes */
+@media (min-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+        gap: 40px; /* Aún más espacio entre cards */
+        padding: 0; /* Sin padding lateral */
+        margin-top: 60px; /* Más espacio arriba */
+        margin-bottom: 40px; /* Más espacio abajo */
+    }
+    
+    .service-card {
+        padding: 40px 35px; /* Aún más padding interno */
+        min-height: 350px; /* Aún más altura */
+    }
+    
+    .service-card i {
+        font-size: 3.5rem; /* Iconos grandes */
+        width: 110px;
+        height: 110px;
+        margin-bottom: 35px; /* Mucho espacio debajo del icono */
+    }
+    
+    .service-card h4 {
+        font-size: 1.6rem; /* Títulos grandes */
+        margin-bottom: 30px;
+        padding: 0 15px; /* Más padding interno */
+    }
+    
+    .service-card p {
+        font-size: 1.15em; /* Texto más grande */
+        max-width: 350px;
+        line-height: 1.9; /* Mucho espacio entre líneas */
+    }
+}
+
+/* Pantallas extra grandes */
+@media (min-width: 1200px) {
+    .services-grid {
+        max-width: 1300px; /* Un poco más ancho */
+        gap: 130px; /* Máximo espacio entre cards */
+        margin-top: 70px; /* Máximo espacio arriba */
+    }
+    
+    .service-card {
+        padding: 45px 40px; /* Máximo padding interno */
+        min-height: 380px; /* Máxima altura */
+    }
+    
+    .service-card i {
+        font-size: 3.8rem; /* Iconos muy grandes */
+        width: 120px;
+        height: 120px;
+        margin-bottom: 40px; /* Máximo espacio debajo del icono */
+    }
+    
+    .service-card h4 {
+        font-size: 1.7rem;
+        margin-bottom: 35px;
+    }
+    
+    .service-card p {
+        font-size: 1.2em; /* Texto más grande */
+        max-width: 380px;
+        line-height: 2.0; /* Máximo espacio entre líneas */
+    }
+}
+
+/* ========================
+   ESPACIO EXTRA PARA LA SECCIÓN LABORATORIO
+   ======================== */
+.lab-section {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px 25px; /* Más padding interno */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    text-align: left;
+    color: var(--aurea-dark);
+    margin-bottom: 50px; /* Más espacio abajo */
+    border: 2px solid var(--aurea-orange);
+    max-width: 1200px; /* Limitar ancho máximo */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.lab-section h2 {
+    color: var(--aurea-granate);
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 20px; 
+    font-size: 2rem; 
+    margin-top: 20px; 
+}
+
+
+.lab-section h3 {
+    color: var(--aurea-orange);
+    margin-top: 40px; 
+    margin-bottom: 25px; 
+    font-size: 1.6rem; 
+}
+
+.lab-section p {
+    font-size: 1.05em;
+    line-height: 1.7; 
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .lab-section {
+        padding: 50px 40px;
+        margin-bottom: 60px;
+    }
+    
+    .lab-section h2 {
+        font-size: 2.3rem;
+        margin-bottom: 50px;
+    }
+    .lab-section h3 {
+        font-size: 1.8rem;
+        margin-top: 50px; 
+        margin-bottom: 30px; 
+    }
+    
+    .lab-section p {
+        font-size: 1.1em; 
+        line-height: 1.8;
+        margin-bottom: 25px; 
+    }
+}
+
+@media (min-width: 992px) {
+    .lab-section {
+        padding: 60px 50px; 
+        margin-bottom: 70px;
+    }
+    
+    .lab-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 60px; 
+    }
+    
+    .lab-section h3 {
+        font-size: 2rem;
+        margin-top: 60px;
+        margin-bottom: 35px;
+    }
+    
+    .lab-section p {
+        font-size: 1.15em; 
+        line-height: 1.9;
+        margin-bottom: 30px;
+    }
+}
+
+.lab-section p {
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    text-align: center;
+}
+/* ========================
+   GRID DE 3 MOLDES AUREA
+   ======================== */
+.moldes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 35px;
+    margin-top: 40px;
+}
+
+/* ========================
+   CARD PREMIUM AUREA
+   ======================== */
+.molde-card {
+    background: rgba(255, 255, 255, 0.95);  /* Fondo sólido para mejor legibilidad */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 18px;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid rgba(139, 26, 59, 0.1);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    transition: all .35s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ========================
+   BORDE DEGRADADO CORPORATIVO
+   ======================== */
+.molde-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    padding: 2px;
+    /* DEGRADADO AUREA */
+    background: linear-gradient(
+        135deg,
+        var(--aurea-granate),
+        var(--aurea-orange)
+    );
+    opacity: 0;
+    transition: .5s ease;
+    z-index: -1;
+}
+
+.molde-card:hover::before {
+    opacity: 1;
+}
+
+.molde-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    border-color: rgba(139, 26, 59, 0.3);
+}
+
+/* ========================
+   CONTENIDO DE LA CARD
+   ======================== */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* ========================
+   IMAGEN
+   ======================== */
+.molde-card img {
+    width: 100%;
+    max-width: 150px;
+    margin: 0 auto 20px;
+    transition: .35s ease;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
+
+.molde-card:hover img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
+}
+
+/* ========================
+   TÍTULO
+   ======================== */
+.molde-card h3 {
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--aurea-granate);
+    transition: .3s ease;
+}
+
+.molde-card:hover h3 {
+    color: var(--aurea-orange);
+}
+
+/* ========================
+   DESCRIPCIÓN - CORREGIDO
+   ======================== */
+.molde-card .descripcion {
+    opacity: 1; /* Cambiado de 0 a 1 para que sea visible */
+    margin-top: 15px;
+    font-size: 15px;
+    color: var(--aurea-gray);
+    transition: .35s ease;
+    transform: translateY(0); /* Cambiado de 12px a 0 */
+    line-height: 1.6;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Versión con animación al hacer hover (opcional) */
+.molde-card .descripcion.hover-animate {
+    opacity: 0.9;
+    transform: translateY(0);
+}
+
+.molde-card:hover .descripcion.hover-animate {
+    opacity: 1;
+    transform: translateY(-2px);
+    color: var(--aurea-dark);
+}
+
+/* ========================
+   BADGE DE TIPO
+   ======================== */
+.tipo-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(139, 26, 59, 0.2);
+}
+
+/* ========================
+   RESPONSIVE
+   ======================== */
+@media (max-width: 768px) {
+    .moldes-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+        gap: 25px;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .molde-card {
+        padding: 20px;
+    }
+}
+
+
+/* ========================
+   MAPA EN PÁGINA PRINCIPAL
+   ======================== */
+.mapa-section {
+    padding: 50px 15px;
+    background-color: rgba(139, 44, 44, 0.05);
+    margin: 30px 0;
+}
+
+.mapa-section h2 {
+    color: var(--aurea-granate);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.mapa-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border: 3px solid var(--aurea-orange);
+}
+
+.mapa-contenedor {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* Relación 16:9 */
+    overflow: hidden;
+}
+
+.mapa-contenedor iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ========================
+   MODALES
+   ======================== */
+.modal-molde .modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid var(--aurea-orange);
+    /* CÓDIGO ELIMINADO: width: 100%; */
+}
+
+.modal-molde .modal-header {
+    background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
+    color: white;
+    border-bottom: none;
+    padding: 15px 20px;
+}
+
+.modal-molde .modal-body {
+    padding: 20px;
+}
+
+.modal-molde .modal-body img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.molde-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.molde-header {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(139, 44, 44, 0.1), rgba(244, 145, 30, 0.1));
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.molde-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.molde-icon img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    padding: 10px;
+}
+
+.molde-title {
+    color: var(--aurea-orange);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.molde-subtitle {
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+.molde-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.detail-section {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid var(--aurea-orange);
+}
+
+.detail-section h4 {
+    color: var(--aurea-orange);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.detail-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.detail-section li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.detail-section li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--aurea-orange);
+    font-weight: bold;
+}
+
+/* Galería de imágenes en modal */
+.imagenes-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.imagenes-gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 2px solid var(--aurea-orange);
+    background: rgba(255,255,255,0.05);
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagenes-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(244, 145, 30, 0.3);
+}
+/* ================= STATS SECTION ================= */
+.stats-section {
+   padding: 80px 20px; /* Más espacio arriba y abajo */
+  margin: 40px 0; 
+  background: var(--gradient-primary); /* Gradiente granate a naranja */
+  color: var(--white);
+  overflow: hidden;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 1 columna en móvil */
+  gap: 25px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+/* Animación inicial */
+.stat-item {
+ 
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+/* Clase que se activa al aparecer */
+.stat-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.stat-icon i {
+  font-size: 4em; /* íconos grandes */
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 1em;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablets pequeñas (576px - 767px) */
+@media (min-width: 576px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  }
+}
+
+/* Desktop mediano (768px - 991px) */
+@media (min-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  }
+}
+
+/* Desktop grande (992px en adelante) */
+@media (min-width: 992px) {
+  .stats-grid {
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas en línea */
+    gap: 30px;
+  }
+
+  .stat-icon i {
+    font-size: 5em; /* íconos más grandes en escritorio */
+  }
+
+  .stat-label {
+    font-size: 1.1em;
+  }
+}
+
+/* ========================
+   TECNOLOGÍA
+   ======================== */
+.tecnologia-section {
+    background: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
+    color: white;
+    padding: 40px 15px;
+    border-radius: 15px;
+    margin: 30px 0;
+}
+
+.tecnologia-section h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.tecnologia-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    justify-content: center; 
+}
+
+.tecnologia-item {
+    text-align: center;
+    padding: 15px;
+    text-align: center;
+}
+
+.tecnologia-item i {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    color: white;
+}
+
+.tecnologia-item h4 {
+    color: white;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.tecnologia-item p {
+    font-size: 0.95em;
+}
+
+/* ========================
+   MEDIA QUERIES RESPONSIVE
+   ======================== */
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .imagenes-gallery {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .imagenes-gallery img {
+        height: 150px;
+    }
+    
+    #mapaModal .modal-dialog {
+        max-width: 100%;
+        margin: 0.5rem;
+    }
+    
+    .mapa-contenedor {
+        padding-bottom: 75%; /* Más alto en móviles */
+    }
+    
+    .molde-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        padding-top: 100px;
+    }
+    
+    .hero-section {
+        padding: 6rem 20px;
+        height: 60vh;
+        margin-bottom: 50px;
+    }
+    
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.4rem;
+    }
+    
+    .lab-section {
+        padding: 40px 30px;
+        margin-bottom: 40px;
+    }
+    
+    .lab-section h2 {
+        font-size: 2.2rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .tecnologia-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .molde-details {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    #mapaModal .modal-dialog {
+        max-width: 800px;
+    }
+    
+    .mapa-section {
+        padding: 70px 20px;
+    }
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 130px;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .tecnologia-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .hero-section h1 {
+        font-size: 3.5rem;
+    }
+    
+    .mapa-section {
+        padding: 80px 40px;
+    }
+    
+    .mapa-section h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 420px) {
+    :root {
+        --size: 260px;
+    }
+    
+    .molde-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .item-icon img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .imagenes-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .mapa-contenedor {
+        padding-bottom: 80%; /* Aún más alto en pantallas muy pequeñas */
+    }
+}

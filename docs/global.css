@@ -1,0 +1,337 @@
+/* ========================
+   NAVBAR GLOBAL
+   ======================== */
+.navbar {
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #ffffff 20%,   /* Blanco moderado */
+        #F4911E 60%,
+        #8B2C2C 100%
+    );
+    box-shadow: 0 6px 20px var(--shadow);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+     min-height: 60px !important;
+    padding: 5px 10px !important;   
+    transition: all 0.3s ease;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--aurea-granate);
+}
+.navbar-brand {
+    font-size: 1.5rem;  /* móvil */
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--white);
+}
+
+.aurea2 {
+    display: inline-block;
+    width: 180px;
+    height: 60px;
+    background: url('Asset 10@4x.png') center/contain no-repeat;
+    border-radius: 0;
+    box-shadow: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-indent: -9999px;
+    overflow: hidden;
+    margin-left: -18px; /* Logo a la izquierda */
+}
+
+.aurea2:hover {
+    transform: scale(1.05);
+}
+.navbar-toggler {
+    border: 2px solid rgba(255,255,255,0.8);
+    padding: 5px 8px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-nav .nav-link {
+    color: var(--white) !important;
+    font-weight: 600;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+    padding: 8px 16px;
+    text-align: center;
+}
+
+.navbar-nav .nav-link:hover {
+    background: var(--white);
+    color: var(--aurea-granate) !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.dropdown-menu {
+    background: var(--aurea-granate);
+    border-radius: 12px;
+    overflow: hidden;
+    border: none;
+    margin-top: 5px;
+}
+
+.dropdown-item {
+    color: var(--white) !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.dropdown-item:hover {
+    background: var(--aurea-orange);
+    transform: translateX(5px);
+    border-radius: 8px;
+}
+
+/* ========================
+   MEDIA QUERIES NAVBAR
+   ======================== */
+/* Escritorio / Pantallas grandes */
+@media (min-width: 992px) {
+    body { padding-top: 130px; } /* para que no tape contenido */
+    
+    .navbar {
+        min-height: auto !important;
+    padding: 5px 10px !important;
+    }
+    
+    .aurea2 {
+        width: 260px;
+        height: 100px;
+    }
+    
+    .navbar-nav .nav-link {
+        margin: 0 8px;
+        text-align: left;
+    }
+    
+    .dropdown-item {
+        text-align: left;
+    }
+}
+/* Tablet / Pantallas medianas */
+@media (min-width: 768px) {
+    body { padding-top: 0px; } /* para que no tape contenido */
+    
+    .navbar {
+         min-height: auto !important;
+    padding: 5px 10px !important;
+    }
+    
+    .navbar-brand {
+        font-size: 1.8rem;
+    }
+    
+    .aurea2 {
+        width: 220px;
+        height: 80px;
+    }
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 576px) {
+    .btn-mapa-centered {
+        padding: 8px 25px;
+        font-size: 0.9rem;
+        margin: 20px auto;
+    }
+}
+
+/* ============================================================
+   BOTONES FLOTANTES
+   ============================================================ */
+.flotante {
+  position: fixed;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease;
+  z-index: 9999;
+}
+
+.flotante:hover {
+  transform: scale(1.12);
+}
+
+/* WhatsApp */
+.whatsapp {
+  background: #25D366;
+  bottom: 20px;
+  right: 20px;
+  font-size: 32px;
+}
+
+/* Facebook */
+.facebook {
+  background: #1877F2;
+  bottom: 90px;
+  right: 20px;
+  font-size: 32px;
+}
+
+/* Botón Scroll Top */
+#btntop {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #800020;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  cursor: pointer;
+  font-size: 26px;
+  border: none;
+  outline: none;
+  transition: transform 0.25s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#btntop.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#btntop:hover {
+  transform: scale(1.12);
+}
+
+/* Toast Emergente */
+.toast-custom {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--aurea-granate);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  z-index: 9999;
+}
+
+.toast-custom.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================
+   BOTÓN VER MAPA CENTRADO
+   ======================== */
+.btn-mapa-centered {
+    display: block;
+    margin: 25px auto;
+ 
+    color: rgb(0, 0, 0) !important;
+    border: none !important;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 10px 30px;
+    text-align: center;
+    width: fit-content;
+}
+
+.btn-mapa-centered:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    color: white !important;
+}
+/* Contenedor responsive para el mapa */
+.map-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* proporción 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+.map-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* ================= FOOTER OPTIMIZADO ================= */
+footer {
+    background: linear-gradient(to right, #F4911E, #8B2C2C);
+    color: #fff;
+    padding: 20px 20px; /* Más espacio interno */
+    font-family: 'Segoe UI', sans-serif;
+    border-radius: 15px 15px 0 0;
+}
+
+footer h4 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 12px; /* Más separación del contenido */
+}
+
+footer p {
+    margin-bottom: 8px; /* Espacio entre párrafos */
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+footer .col-md-4 {
+    margin-bottom: 20px; /* Más separación entre columnas */
+}
+
+.btn-mapa-centered {
+    margin: 15px auto 0 auto; /* Centrado y algo de espacio */
+    display: block;
+}
+
+footer hr {
+    margin: 20px 0; /* Separación más armoniosa */
+}
+
+/* En móvil */
+@media (max-width: 575px) {
+    footer {
+        padding: 20px 12px;
+    }
+    footer h4 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    footer p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 6px;
+    }
+    footer .col-md-4 {
+        margin-bottom: 15px;
+    }
+}

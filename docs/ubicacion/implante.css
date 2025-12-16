@@ -1,0 +1,914 @@
+/* implante.css - Solo contenido específico de la página de Campañas Auditivas */
+
+:root {
+  --aurea-granate: #8B2C2C;
+  --aurea-orange: #F4911E;
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+  --shadow: rgba(0,0,0,0.2);
+  --gradient: linear-gradient(135deg, var(--aurea-granate), var(--aurea-orange));
+}
+
+body {
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  background: var(--light-gray);
+  color: #333;
+  padding-top: 110px;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--aurea-granate);
+}
+
+/* ================= HERO SECTION - MEJORADO PARA MÓVIL ================= */
+.hero-section {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+.carousel {
+  height: 100%;
+}
+
+.carousel-inner {
+  height: 100%;
+}
+
+.carousel-item {
+  height: 100vh;
+  position: relative;
+  transition: transform 0.6s ease-in-out !important;
+}
+
+/* Contenedor de imagen para evitar movimiento */
+.image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Imagen fija que no se mueve */
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: none !important;
+  animation: none !important;
+  will-change: auto;
+}
+
+/* Overlay para mejor legibilidad */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  z-index: 1;
+}
+
+/* Contenido superpuesto - MEJORADO PARA MÓVIL */
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  padding: 0 20px;
+  z-index: 10;
+}
+
+.carousel-caption h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.carousel-caption p {
+  font-size: 1.5rem;
+  margin-bottom: 2.5rem;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+.carousel-caption .btn {
+  padding: 14px 35px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  background: linear-gradient(135deg, #8B1A3B, #F4911E);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.carousel-caption .btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #F4911E, #8B1A3B);
+}
+.carousel-indicators.preview-indicators {
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  z-index: 20;
+}
+/* Indicadores circulares */
+.carousel-indicators.preview-indicators button {
+  width: 60px;              /* tamaño del círculo */
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #fff;   /* borde blanco */
+  background-color: transparent;
+  background-size: cover;   /* mostrar imagen */
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.carousel-indicators.preview-indicators button.active {
+  opacity: 1;
+  transform: scale(1.15);
+  border-color: #F4911E;
+  box-shadow: 0 0 15px rgba(244,145,30,0.8);
+}
+
+.carousel-indicators.preview-indicators button:hover {
+  transform: scale(1.2);
+  opacity: 1;
+  box-shadow: 0 0 15px rgba(244,145,30,0.6);
+}
+.carousel-indicators {
+  bottom: 30px;
+  z-index: 20;
+  gap: 15px;
+}
+.carousel-indicators button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+.carousel-indicators button.active {
+  opacity: 1;
+  transform: scale(1.15);
+  box-shadow: 0 0 15px rgba(255,255,255,0.8);
+}
+.carousel-indicators li {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin: 0 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators li.active {
+  background-color: #ffffff;
+  transform: scale(1.4);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+.carousel-indicators li:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.3);
+}
+
+/* ================= FLECHAS PERSONALIZADAS - MEJORADAS PARA MÓVIL ================= */
+.custom-carousel-controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 15;
+  pointer-events: none;
+}
+
+.custom-carousel-prev,
+.custom-carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.custom-carousel-prev {
+  left: 0;
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+.custom-carousel-next {
+  right: 0;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+.arrow-container {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 0 50% 50% 0;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.custom-carousel-next .arrow-container {
+  border-radius: 50% 0 0 50%;
+}
+
+.arrow-icon {
+  font-size: 2.8rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Efectos hover */
+.custom-carousel-prev:hover .arrow-container {
+  background: rgba(139, 44, 44, 0.8);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateX(5px);
+  border-radius: 50%;
+}
+
+.custom-carousel-next:hover .arrow-container {
+  background: rgba(139, 44, 44, 0.8);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateX(-5px);
+  border-radius: 50%;
+}
+
+.custom-carousel-prev:hover .arrow-icon,
+.custom-carousel-next:hover .arrow-icon {
+  color: #ffffff;
+  transform: scale(1.2);
+}
+
+/* Flechas siempre visibles en móvil, con hover en desktop */
+.custom-carousel-prev,
+.custom-carousel-next {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+@media (min-width: 769px) {
+  .custom-carousel-prev,
+  .custom-carousel-next {
+    opacity: 0;
+  }
+  
+  .hero-section:hover .custom-carousel-prev,
+  .hero-section:hover .custom-carousel-next {
+    opacity: 1;
+  }
+}
+
+/* ================= CAMPAIGN SECTIONS ================= */
+.campaign-section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.campaign-content h2 {
+  color: var(--aurea-granate);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+}
+
+.campaign-content .lead {
+  font-size: 1.3rem;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.services-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.services-list li i {
+  color: var(--aurea-orange);
+  font-size: 1.3rem;
+  margin-right: 15px;
+  width: 30px;
+  text-align: center;
+}
+
+.services-list li strong {
+  color: var(--aurea-granate);
+}
+
+.btn-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--gradient);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 44, 44, 0.3);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(139, 44, 44, 0.4);
+  color: var(--white);
+}
+
+.btn-outline-primary {
+  border: 2px solid var(--aurea-granate);
+  color: var(--aurea-granate);
+  background: transparent;
+  padding: 10px 23px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background: var(--aurea-granate);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+/* ================= LOCATION CARDS ================= */
+.location-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.location-card:hover {
+  transform: translateY(-5px);
+}
+
+.location-card h3 {
+  color: var(--aurea-granate);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.location-card h3 i {
+  color: var(--aurea-orange);
+}
+
+.map-preview {
+  height: 200px;
+  background: var(--light-gray);
+  border-radius: 12px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.map-preview:hover {
+  background: var(--aurea-orange);
+  color: var(--white);
+}
+
+.map-placeholder {
+  text-align: center;
+}
+
+.map-placeholder i {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* ================= PROMO CARD ================= */
+.promo-card {
+  background: linear-gradient(135deg, #fff8f0, #ffe8d6);
+  border-left: 5px solid var(--aurea-orange);
+  border-radius: 12px;
+  padding: 25px;
+  margin: 30px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.promo-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.promo-header i {
+  font-size: 2rem;
+  color: var(--aurea-orange);
+}
+
+.promo-header h4 {
+  color: var(--aurea-granate);
+  margin: 0;
+}
+
+.discount-badges {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.badge {
+  background: var(--gradient);
+  color: var(--white);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* ================= SEDES SECTION ================= */
+section {
+  padding-top: 120px;
+  position: relative;
+  z-index: 1;
+}
+
+.sedes-section {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.section-title {
+  text-align: center;
+  color: var(--aurea-granate);
+  font-weight: 800;
+  margin-bottom: 60px;
+  font-size: 2.5rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--gradient);
+  border-radius: 2px;
+}
+
+.sede-card {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.sede-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.sede-header {
+  background: var(--gradient);
+  color: var(--white);
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sede-header h3 {
+  margin: 0;
+  font-weight: 700;
+}
+
+.status-badge {
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status-badge.active {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.status-badge.coming-soon {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sede-body {
+  padding: 25px;
+}
+
+.sede-body p {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.sede-body i {
+  color: var(--aurea-orange);
+  margin-top: 3px;
+}
+
+.sede-schedule {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.sede-schedule h5 {
+  color: var(--aurea-granate);
+  margin-bottom: 10px;
+}
+
+.sede-schedule ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sede-schedule li {
+  padding: 5px 0;
+  color: #6c757d;
+}
+
+.sede-footer {
+  padding: 20px 25px;
+  background: var(--light-gray);
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* ================= RESPONSIVE MEJORADO ================= */
+
+/* Tablet - Pantallas medianas */
+@media (max-width: 1024px) {
+  .carousel-caption h1 {
+    font-size: 3rem;
+  }
+  
+  .carousel-caption p {
+    font-size: 1.3rem;
+    max-width: 500px;
+  }
+  
+  .carousel-caption .btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+  }
+  
+  .custom-carousel-prev,
+  .custom-carousel-next {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .arrow-container {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .arrow-icon {
+    font-size: 2.3rem;
+  }
+}
+
+/* Tablet pequeña */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 80vh; /* Más alto que antes */
+    min-height: 500px; /* Altura mínima */
+  }
+  
+  .carousel-item {
+    height: 80vh;
+    min-height: 500px;
+  }
+  
+  .carousel-caption {
+    top: 55%; /* Bajamos un poco el contenido */
+    padding: 0 25px;
+  }
+  
+  .carousel-caption h1 {
+    font-size: 2.5rem; /* Más grande que antes */
+    margin-bottom: 1.2rem;
+    line-height: 1.1;
+  }
+  
+  .carousel-caption p {
+    font-size: 1.2rem; /* Más grande que antes */
+    margin-bottom: 2rem;
+    padding: 0;
+    line-height: 1.4;
+  }
+  
+  .carousel-caption .btn {
+    padding: 14px 32px; /* Más grande que antes */
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  
+  .carousel-indicators {
+    bottom: 30px; /* Subimos los indicadores */
+  }
+  
+  .carousel-indicators li {
+    width: 12px;
+    height: 12px;
+    margin: 0 8px;
+  }
+  
+  .custom-carousel-prev,
+  .custom-carousel-next {
+    width: 65px;
+    height: 65px;
+    opacity: 0.9; /* Más visibles */
+  }
+  
+  .arrow-container {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .arrow-icon {
+    font-size: 2.1rem;
+  }
+  
+  .custom-carousel-prev {
+    padding-left: 15px;
+  }
+  
+  .custom-carousel-next {
+    padding-right: 15px;
+  }
+  
+  /* Ajustes para otras secciones */
+  .campaign-section {
+    padding: 80px 0;
+  }
+  
+  .campaign-content h2 {
+    font-size: 1.9rem;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sede-footer {
+    flex-direction: column;
+  }
+  
+  .location-card,
+  .sede-card {
+    padding: 25px;
+  }
+}
+
+/* Móvil - Pantallas pequeñas */
+@media (max-width: 576px) {
+  body {
+    padding-top: 0px; /* Menos padding para móvil */
+  }
+  
+  .hero-section {
+    height: 85vh; /* Aún más alto */
+    min-height: 550px; /* Altura mínima aumentada */
+  }
+  
+  .carousel-item {
+    height: 85vh;
+    min-height: 550px;
+  }
+  
+  .carousel-caption {
+    top: 50%;
+    padding: 0 20px;
+  }
+  
+  .carousel-caption h1 {
+    font-size: 2.2rem; /* Tamaño óptimo para móvil */
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+  
+  .carousel-caption p {
+    font-size: 1.1rem; /* Tamaño óptimo para móvil */
+    margin-bottom: 1.8rem;
+    line-height: 1.4;
+  }
+  
+  .carousel-caption .btn {
+    padding: 15px 35px; /* Botón más grande */
+    font-size: 1rem;
+    min-width: 200px; /* Ancho mínimo */
+  }
+  
+  .carousel-indicators {
+    bottom: 25px;
+  }
+  
+  .carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    margin: 0 6px;
+  }
+  
+  .custom-carousel-prev,
+  .custom-carousel-next {
+    width: 55px;
+    height: 55px;
+    opacity: 0.9;
+  }
+  
+  .arrow-container {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .arrow-icon {
+    font-size: 1.9rem;
+  }
+  
+  .custom-carousel-prev {
+    padding-left: 10px;
+  }
+  
+  .custom-carousel-next {
+    padding-right: 10px;
+  }
+  
+  /* Ajustes para otras secciones en móvil */
+  .section-title {
+    font-size: 1.9rem;
+    margin-bottom: 40px;
+  }
+  
+  .section-title::after {
+    width: 60px;
+    height: 3px;
+  }
+  
+  .sedes-section {
+    padding: 70px 0;
+  }
+  
+  .campaign-section {
+    padding: 70px 0;
+  }
+  
+  .campaign-content h2 {
+    font-size: 1.7rem;
+  }
+  
+  .campaign-content .lead {
+    font-size: 1.1rem;
+  }
+  
+  .services-list li {
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+  
+  .btn-primary,
+  .btn-outline-primary {
+    padding: 12px 25px;
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .location-card,
+  .sede-card {
+    padding: 20px;
+    border-radius: 15px;
+  }
+  
+  .promo-card {
+    padding: 20px;
+  }
+}
+
+/* Móvil muy pequeño (iPhone SE, etc) */
+@media (max-width: 375px) {
+  .carousel-caption h1 {
+    font-size: 1.9rem;
+  }
+  
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+  
+  .carousel-caption .btn {
+    padding: 14px 30px;
+    font-size: 0.95rem;
+    min-width: 180px;
+  }
+  
+  .custom-carousel-prev,
+  .custom-carousel-next {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .arrow-container {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .arrow-icon {
+    font-size: 1.7rem;
+  }
+  
+  .hero-section {
+    height: 80vh;
+    min-height: 500px;
+  }
+  
+  .carousel-item {
+    height: 80vh;
+    min-height: 500px;
+  }
+}
