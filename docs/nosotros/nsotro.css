@@ -323,7 +323,16 @@ h2::after {
   border-radius: 15px;
   padding: 40px;
   margin-top: 40px;
+  margin-bottom: 60px;
   box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.about-history h2 {
+  color: var(--aurea-granate);
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  font-weight: 700;
 }
 
 .about-history p {
@@ -332,6 +341,7 @@ h2::after {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+  color: #555;
 }
 
 /* ============================================================
@@ -344,6 +354,16 @@ h2::after {
 .about-mission-vision .card {
   position: relative;
   overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  background: white;
+  transition: transform 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.about-mission-vision .card:hover {
+  transform: translateY(-5px);
 }
 
 .about-mission-vision .card::before {
@@ -356,6 +376,64 @@ h2::after {
   background: linear-gradient(90deg, var(--aurea-orange), var(--aurea-granate));
 }
 
+.about-mission-vision .card h3 {
+  color: var(--aurea-granate);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.about-mission-vision .card p {
+  line-height: 1.8;
+  color: #444;
+  font-size: 1.05rem;
+}
+
+.about-mission-vision .card p strong {
+  color: var(--aurea-orange);
+  font-weight: 700;
+}
+
+/* Grid para misión y visión en desktop */
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about-history h2 {
+    font-size: 2rem;
+  }
+  
+  .mission-vision-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .about-mission-vision .card {
+    padding: 25px;
+  }
+  
+  .about-mission-vision .card h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-history {
+    padding: 30px 20px;
+  }
+  
+  .about-history h2 {
+    font-size: 1.8rem;
+  }
+  
+  .about-history p {
+    font-size: 1rem;
+  }
+}
 /* ============================================================
    VALORES
    ============================================================ */
