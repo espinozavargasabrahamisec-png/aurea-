@@ -107,10 +107,10 @@ const audifonosData = {
         ]
     },
     'estandar': {
-        tipo: 'RIC',
-        titulo: "Audífono Estándar (RIC)",
+        tipo: 'BTE',
+        titulo: "Audífono Estándar (BTE)",
         subtitulo: "Tecnología avanzada para sonido superior",
-        imagen: "./oidoplomo.png",
+        imagen: "./bte1.png",
         descripcion: "Combina innovación tecnológica con comodidad excepcional para una experiencia auditiva enriquecida.",
         caracteristicas: [
             "Procesador quad-core",
@@ -137,9 +137,9 @@ const audifonosData = {
     },
     'premium': {
         tipo: 'RIC',
-        titulo: "Audífono Premium (RIC)",
+        titulo: "Audífono Premium (Cic fit)",
         subtitulo: "La excelencia en calidad auditiva",
-        imagen: "./D10RIC312Li_P_Pdarkgranite.png",
+        imagen: "./itc1.png",
         descripcion: "La gama más alta de nuestra colección, diseñada para los usuarios más exigentes que buscan lo mejor en tecnología auditiva.",
         caracteristicas: [
             "Procesador octa-core AI",
@@ -165,10 +165,10 @@ const audifonosData = {
         ]
     },
     'ileag5': {
-        tipo: 'ISEC',
-        titulo: "Audífono ISEC Ilea G5",
+        tipo: 'RIC',
+        titulo: "Audífono Ric Li (ion)",
         subtitulo: "Conectabilidad total con tu mundo digital",
-        imagen: "./itc1.png",
+        imagen: "./oidoplomo.png",
         descripcion: "Audífono intrauriculares con conectividad Bluetooth avanzada para una integración perfecta con tus dispositivos digitales.",
         caracteristicas: [
             "Conectividad Bluetooth 5.2",
@@ -195,9 +195,9 @@ const audifonosData = {
     },
     'quixg4': {
         tipo: 'ISEC',
-        titulo: "Audífono ISEC Quix G4",
+        titulo: "Audífono Bte LI (ion)",
         subtitulo: "Potencia y resistencia para vida activa",
-        imagen: "./itc2.png",
+        imagen: "./bte.png",
         descripcion: "Diseñado para quienes llevan un estilo de vida activo, con máxima resistencia y potencia auditiva en entornos desafiantes.",
         caracteristicas: [
             "Resistente a agua y polvo IP69",
@@ -223,10 +223,10 @@ const audifonosData = {
         ]
     },
     'vega': {
-        tipo: 'ISEC',
-        titulo: "Audífono ISEC Vega",
+        tipo: 'BTE',
+        titulo: "Audífono Clic con Molde (ITC)",
         subtitulo: "Elegancia y tecnología en un diseño premium",
-        imagen: "./itc1.png",
+        imagen: "./itc2.png",
         descripcion: "La combinación perfecta entre diseño elegante y tecnología de vanguardia para usuarios exigentes que buscan discreción y calidad.",
         caracteristicas: [
             "Diseño intrauriculares invisible",
