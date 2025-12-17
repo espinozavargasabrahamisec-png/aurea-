@@ -446,6 +446,32 @@ h2::after {
   border-color: var(--aurea-orange);
   background: var(--white);
 }
+/* ===============================
+   EQUIPO – FOTO GRUPAL
+   =============================== */
+
+/* Centrar la tarjeta única */
+.about-team .grid-3 {
+  display: flex;
+  justify-content: center;
+}
+
+/* Hacer la tarjeta más grande */
+.about-team .team-card {
+  max-width: 700px;   /* ancho de la sección */
+  width: 100%;
+}
+
+/* Imagen grupal grande (no circular) */
+.about-team .team-card img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  border-radius: 15px;   /* esquinas suaves */
+  border: none;          /* quitamos borde circular */
+  margin-bottom: 25px;
+  object-fit: cover;
+}
 
 /* ============================================================
    SERVICIOS
