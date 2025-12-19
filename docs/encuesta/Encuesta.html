@@ -19,16 +19,176 @@
         <h1 class="text-center mb-4">Test de Audición</h1>
         <p class="text-center mb-4">Complete este cuestionario para evaluar su salud auditiva</p>
         
-        <form id="surveyForm">
-            <div class="question">
-                <label>1. Se recomienda el uso de audífonos para un mejor resultado:</label>
-                <div class="video-container">
-                    <video id="videoTest" width="100%" controls class="rounded">
-                        <source src="./How Old Are Your Ears_ _ HEARING TEST! - White Noise & Relaxation (720p, h264, youtube) (online-video-cutter.com).mp4" type="video/mp4">
-                        Tu navegador no soporta la reproducción de este video.
-                    </video>
+        <!-- TEST DE AUDICIÓN CIRCULAR -->
+        <div class="test-container">
+            <div class="hearing-test-aurea">
+                <!-- Círculo central con indicador dB -->
+                <div class="circle-container">
+                    <div class="circle-progress">
+                        <svg class="progress-ring" width="220" height="220">
+                            <circle class="progress-ring-bg" cx="110" cy="110" r="100" />
+                            <circle class="progress-ring-circle" cx="110" cy="110" r="100" />
+                        </svg>
+                        <div class="circle-content">
+                            <div class="db-value" id="dbValue">60</div>
+                            <div class="db-label">dB</div>
+                            <div class="frequency-circle" id="frequencyCircleDisplay">1000 Hz</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Botones de frecuencia distribuidos en círculo -->
+                    <div class="circle-positions">
+                        <!-- Posición superior (12 en punto) -->
+                        <div class="circle-position" style="transform: rotate(0deg) translate(130px) rotate(0deg);">
+                            <button class="circle-freq-btn" data-freq="4000">
+                                <span class="circle-freq-number">4000</span>
+                                <span class="circle-freq-label">Hz</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Posición superior derecha (1 en punto) -->
+                        <div class="circle-position" style="transform: rotate(45deg) translate(130px) rotate(-45deg);">
+                            <button class="circle-freq-btn" data-freq="6000">
+                                <span class="circle-freq-number">6000</span>
+                                <span class="circle-freq-label">Hz</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Posición derecha (3 en punto) -->
+                        <div class="circle-position" style="transform: rotate(90deg) translate(130px) rotate(-90deg);">
+                            <button class="circle-freq-btn" data-freq="8000">
+                                <span class="circle-freq-number">8000</span>
+                                <span class="circle-freq-label">Hz</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Posición inferior derecha (5 en punto) -->
+                        <div class="circle-position" style="transform: rotate(135deg) translate(130px) rotate(-135deg);">
+                            <button class="circle-freq-btn" data-freq="10000">
+                                <span class="circle-freq-number">10000</span>
+                                <span class="circle-freq-label">Hz</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Posición inferior (6 en punto) -->
+                        <div class="circle-position" style="transform: rotate(180deg) translate(130px) rotate(-180deg);">
+                            <button class="circle-freq-btn" data-freq="12000">
+                                <span class="circle-freq-number">12000</span>
+                                <span class="circle-freq-label">Hz</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Posición inferior izquierda (7 en punto) -->
+                        <div class="circle-position" style="transform: rotate(225deg) translate(130px) rotate(-225deg);">
+                            <button class="circle-freq-btn active" data-freq="1000">
+                                <span class="circle-freq-number">1000</span>
+                                <span class="circle-freq-label">Hz</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Posición izquierda (9 en punto) -->
+                        <div class="circle-position" style="transform: rotate(270deg) translate(130px) rotate(-270deg);">
+                            <button class="circle-freq-btn" data-freq="500">
+                                <span class="circle-freq-number">500</span>
+                                <span class="circle-freq-label">Hz</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Posición superior izquierda (11 en punto) -->
+                        <div class="circle-position" style="transform: rotate(315deg) translate(130px) rotate(-315deg);">
+                            <button class="circle-freq-btn" data-freq="250">
+                                <span class="circle-freq-number">250</span>
+                                <span class="circle-freq-label">Hz</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Entrada personalizada -->
+                <div class="custom-frequency-input">
+                    <div class="input-group">
+                        <input type="range" id="frequencySlider" min="100" max="12000" value="1000" step="100" 
+                               class="frequency-slider">
+                        <div class="slider-labels">
+                            <span>100 Hz</span>
+                            <span>6000 Hz</span>
+                            <span>12000 Hz</span>
+                        </div>
+                    </div>
+                    
+                    <div class="custom-input-group">
+                        <div class="input-wrapper">
+                            <input type="number" id="frequencyInput" 
+                                   placeholder="Ej: 750, 1500, 3000" 
+                                   min="20" max="20000" 
+                                   value="1000"
+                                   class="frequency-input-field">
+                            <span class="input-suffix">Hz</span>
+                        </div>
+                        <button class="set-frequency-btn" id="setFrequencyBtn">
+                            <i class="fas fa-check"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Onda de sonido animada -->
+                <div class="sound-visualizer" id="soundVisualizer">
+                    <div class="wave-container">
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                    </div>
+                </div>
+                
+                <!-- Botón de reproducción -->
+                <button class="play-sound-btn-aurea" id="playSoundBtn">
+                    <i class="fas fa-play"></i>
+                    <span class="btn-text">REPRODUCIR SONIDO</span>
+                </button>
+                
+                <!-- Estado y respuestas -->
+                <div class="response-section">
+                    <div class="status-indicator-aurea" id="statusIndicator">
+                        <i class="fas fa-headphones"></i>
+                        <span>Listo para reproducir sonido</span>
+                    </div>
+                    
+                    <div class="response-buttons-aurea">
+                        <button class="response-btn-aurea yes-response" id="hearYesBtn">
+                            <i class="fas fa-check-circle"></i>
+                            <span>SI, LO OIGO</span>
+                        </button>
+                        <button class="response-btn-aurea no-response" id="hearNoBtn">
+                            <i class="fas fa-times-circle"></i>
+                            <span>NO LO OIGO</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Historial -->
+                <div class="history-section">
+                    <div class="history-header">
+                        <i class="fas fa-history"></i>
+                        <h4>Historial de Pruebas</h4>
+                    </div>
+                    <div class="history-items" id="historyList">
+                        <div class="history-item-placeholder">
+                            <i class="fas fa-music"></i>
+                            <p>Realiza tu primera prueba de audición</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+        <!-- FIN TEST DE AUDICIÓN CIRCULAR -->
+        
+        <form id="surveyForm">
+            <!-- Pregunta 1: Se eliminó la versión duplicada del test de audición -->
             
             <div class="question">
                 <label for="audioQuality">2. ¿Has tenido problemas para escuchar el audio?</label>
@@ -104,7 +264,7 @@
 
             <div class="form-buttons">
                 <button type="submit" class="btn-submit">Enviar Encuesta</button>
-                <button type="button" class="btn-reset" onclick="document.getElementById('surveyForm').reset(); handleSelection();">Borrar Respuestas</button>
+              <!--   <button type="button" class="btn-reset" onclick="document.getElementById('surveyForm').reset(); handleSelection();">Borrar Respuestas</button> -->
             </div>
         </form>
     </div>
