@@ -944,7 +944,7 @@ footer hr {
 .frequency-slider {
   width: 100%;
   height: 8px;
-  -webkit-appearance: none;
+/*   -webkit-appearance: none; */
   background: linear-gradient(to right, var(--aurea-granate), var(--aurea-orange));
   border-radius: 4px;
   outline: none;
