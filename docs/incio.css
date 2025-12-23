@@ -28,211 +28,226 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--aurea-granate);
 }
 
-
 /* ========================
    HERO / PORTADA
    ======================== */
 .hero-cover {
-            position: relative;
-            height: 100vh;
-            overflow: hidden;
-        }
-        
-        #heroCarousel {
-            height: 100%;
-        }
-        
-        .carousel-inner {
-            height: 100%;
-        }
-        
-        .carousel-item {
-            height: 100%;
-            position: relative;
-        }
-        
-        .carousel-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            filter: brightness(0.7);
-        }
-        
-        .carousel-caption {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            text-align: center;
-            z-index: 10;
-            padding: 2rem;
-        }
-        
-        .carousel-caption h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            color: #fff;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-            margin-bottom: 1rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            animation: fadeInDown 1s ease-out;
-        }
-        
-        .carousel-caption p {
-            font-size: 2rem;
-            font-weight: 300;
-            color: #fff;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-            letter-spacing: 2px;
-            animation: fadeInUp 1s ease-out 0.5s both;
-        }
-        
-        /* Efectos de animación */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Indicadores del carrusel */
-        .carousel-indicators {
-            bottom: 30px;
-        }
-        
-        .carousel-indicators button {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin: 0 8px;
-            background-color: rgba(255, 255, 255, 0.5);
-            border: 2px solid transparent;
-        }
-        
-        .carousel-indicators button.active {
-            background-color: #fff;
-            transform: scale(1.2);
-        }
-        
-        /* Botones de navegación */
-        .carousel-control-prev,
-        .carousel-control-next {
-            width: 60px;
-            height: 60px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            top: 50%;
-            transform: translateY(-50%);
-            margin: 0 20px;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-        
-        .hero-cover:hover .carousel-control-prev,
-        .hero-cover:hover .carousel-control-next {
-            opacity: 1;
-        }
-        
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            width: 25px;
-            height: 25px;
-        }
-        
-        /* Efectos de transición entre slides */
-        .carousel-item {
-            transition: transform 1.2s ease-in-out;
-        }
-        
-        .carousel-fade .carousel-item {
-            opacity: 0;
-            transition: opacity 1.2s ease-in-out;
-        }
-        
-        .carousel-fade .carousel-item.active {
-            opacity: 1;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-cover {
-                height: 70vh;
-            }
-            
-            .carousel-caption h1 {
-                font-size: 2.5rem;
-                letter-spacing: 2px;
-            }
-            
-            .carousel-caption p {
-                font-size: 1.5rem;
-            }
-            
-            .carousel-control-prev,
-            .carousel-control-next {
-                width: 50px;
-                height: 50px;
-                margin: 0 10px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero-cover {
-                height: 60vh;
-            }
-            
-            .carousel-caption h1 {
-                font-size: 2rem;
-                letter-spacing: 1px;
-            }
-            
-            .carousel-caption p {
-                font-size: 1.2rem;
-            }
-            
-            .carousel-caption {
-                padding: 1rem;
-            }
-        }
-        
-        /* Efecto de superposición para mejor legibilidad */
-        .carousel-item::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(
-                135deg,
-                rgba(0, 0, 0, 0.4) 0%,
-                rgba(0, 0, 0, 0.2) 50%,
-                rgba(0, 0, 0, 0.4) 100%
-            );
-            z-index: 1;
-        }
-        
-        .carousel-caption {
-            z-index: 2;
-        }
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#heroCarousel {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-item {
+    height: 100%;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; /* ← ESTA LÍNEA TIENES QUE CAMBIARLA */
+    filter: brightness(0.7);
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    z-index: 2;
+    padding: 2rem;
+}
+
+.carousel-caption h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    margin-bottom: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: fadeInDown 1s ease-out;
+}
+
+.carousel-caption p {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    letter-spacing: 2px;
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+/* Efectos de animación */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Indicadores del carrusel */
+.carousel-indicators {
+    bottom: 30px;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid transparent;
+}
+
+.carousel-indicators button.active {
+    background-color: #fff;
+    transform: scale(1.2);
+}
+
+/* Botones de navegación */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 20px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.hero-cover:hover .carousel-control-prev,
+.hero-cover:hover .carousel-control-next {
+    opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 25px;
+    height: 25px;
+}
+
+/* Efectos de transición entre slides */
+.carousel-item {
+    transition: transform 1.2s ease-in-out;
+}
+
+.carousel-fade .carousel-item {
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+}
+
+.carousel-fade .carousel-item.active {
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-cover {
+        height: 70vh;
+    }
+    
+    .carousel-caption h1 {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+    
+    .carousel-caption p {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 50px;
+        height: 50px;
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-cover {
+        height: 60vh;
+    }
+    
+    .carousel-caption h1 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+    
+    .carousel-caption p {
+        font-size: 1.2rem;
+    }
+    
+    .carousel-caption {
+        padding: 1rem;
+    }
+}
+
+/* Efecto de superposición para mejor legibilidad */
+.carousel-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.2) 50%,
+        rgba(0, 0, 0, 0.4) 100%
+    );
+    z-index: 1;
+}
+
+.carousel-caption {
+    z-index: 2;
+}
+
+/* ========================
+   AJUSTE DE POSICIÓN PARA MÓVILES
+   ======================== */
+@media (max-width: 768px) {
+    .carousel-item img {
+        object-position: 25% center; /* Un poco más al centro en móviles */
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-item img {
+        object-position: 30% center; /* Un poco más al centro en pantallas muy pequeñas */
+    }
+}
+
 /* ========================
    TARJETAS
    ======================== */
@@ -468,7 +483,7 @@ h1, h2, h3, h4, h5, h6 {
     
     .stats-grid {
         gap: 50px;
-        padding: 0 60px;
+        padding: 0 10px;
     }
     
     .stat-item {
@@ -498,11 +513,11 @@ h1, h2, h3, h4, h5, h6 {
 /* Pantallas grandes (1200px+) */
 @media (min-width: 1200px) {
     .stats-grid {
-        gap: 60px;
+        gap: 34px;
     }
     
     .stat-item {
-        padding: 10px 45px;
+        padding: 5px 45px;
         min-height: 300px;
     }
     
