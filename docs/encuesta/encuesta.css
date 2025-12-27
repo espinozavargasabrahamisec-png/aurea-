@@ -865,8 +865,8 @@ footer hr {
 /* Posiciones circulares */
 .circle-positions {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 85%;
+  height: 94%;
 }
 
 .circle-position {
