@@ -2,36 +2,24 @@
 // ================= FUNCIONES GLOBALES =================
 // Funciones básicas que deben estar disponibles inmediatamente
 
-// Cambiar color de audífonos (USANDO event delegation)
-document.addEventListener('click', function(e) {
-    // Cambio de color
-    if (e.target.classList.contains('color-option')) {
-        const productId = e.target.getAttribute('data-product');
-        const color = e.target.getAttribute('data-color');
-        changeColor(productId, color, e.target);
-    }
-    
-    // Botones de audífonos
-    if (e.target.classList.contains('boton') && e.target.hasAttribute('data-audifono')) {
-        const tipo = e.target.getAttribute('data-audifono');
-        mostrarDetallesAudifono(tipo);
-    }
-});
-
-// Función para cambiar color
 function changeColor(productId, color, element) {
     const img = document.getElementById(`producta-img-${productId}`);
     if (!img) return;
     
-    const colors = {
-        silver: "./ric-plomo.png",
-        beige: "./ric-negro.png",
-        brown: "./ric-plomo.png",
-        black: "./ric-negro.png"
+    // Mapeo de imágenes según TUS archivos
+    const imageMap = {
+        // Para el producto 2 (RIC G5)
+        "2-silver": "./BTE_HP_N.png",    // plateado/plomo (imagen plateada del RIC)
+        "2-black": "./negro.png",         // negro del RIC
+        
+        // Para el producto 3 (BTE)
+        "3-silver": "./ric-plomo.png",    // plateado/plomo del BTE
+        "3-black": "./ric-negro.png"      // negro del BTE
     };
     
-    if (colors[color]) {
-        img.src = colors[color];
+    const imageKey = `${productId}-${color}`;
+    if (imageMap[imageKey]) {
+        img.src = imageMap[imageKey];
         
         // Resaltar el color seleccionado
         const card = element.closest('.producta-carda');
@@ -48,7 +36,20 @@ function changeColor(productId, color, element) {
     }
 }
 
-// Scroll Top
+// El resto del código permanece igual
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('color-option')) {
+        const productId = e.target.getAttribute('data-product');
+        const color = e.target.getAttribute('data-color');
+        changeColor(productId, color, e.target);
+    }
+    
+    if (e.target.classList.contains('boton') && e.target.hasAttribute('data-audifono')) {
+        const tipo = e.target.getAttribute('data-audifono');
+        mostrarDetallesAudifono(tipo);
+    }
+});
+
 function setupScrollTop() {
     const btn = document.getElementById("btntop");
     if (!btn) return;
@@ -68,13 +69,11 @@ function setupScrollTop() {
     });
 }
 
-// Consultar por WhatsApp
 function consultarWhatsApp(modelo) {
     const mensaje = `Hola, estoy interesado en el modelo: ${modelo}. ¿Podrían darme más información?`;
     const whatsappURL = `https://wa.me/59177534284?text=${encodeURIComponent(mensaje)}`;
-    window.open(whatsappURL, '_blank');
+    window.open(whatappURL, '_blank');
 }
-
 // ================= DATOS DE AUDÍFONOS =================
 const audifonosData = {
     'compacto': {
